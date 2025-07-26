@@ -1,34 +1,32 @@
 const logo = document.querySelector('.intro-logo');
-const navLogo = document.querySelector('.logo');
-const introSection = document.querySelector('.intro-section');
+const introText = document.querySelector('.intro-text');
 const scrollTopBtn = document.querySelector('.scroll-to-top');
 
-// Logo Shrink on Scroll
 window.addEventListener('scroll', () => {
   const scrollY = window.scrollY;
-  const introBottom = introSection.offsetTop + introSection.offsetHeight;
 
-  // logo shrink animation
-  if (scrollY > 20 && scrollY < introBottom) {
-    const scale = Math.max(0.2, 1 - scrollY / introBottom);
-    logo.style.width = `${240 * scale}px`;
-    logo.style.height = `${260 * scale}px`;
-  }
+  // Logo 動畫
+  const maxScroll = 300;
+  const progress = Math.min(scrollY / maxScroll, 1);
 
-  // show scroll-to-top
-  if (scrollY > 300) {
-    scrollTopBtn.style.display = 'block';
-  } else {
-    scrollTopBtn.style.display = 'none';
-  }
+  const logoWidth = 240 - (192 * progress);  // 240 -> 48
+  const logoHeight = 260 - (208 * progress); // 260 -> 52
+  const logoTranslateX = -progress * 60;
+  const logoTranslateY = -progress * 100;
+
+  logo.style.width = `${logoWidth}px`;
+  logo.style.height = `${logoHeight}px`;
+  logo.style.transform = `translate(${logoTranslateX}px, ${logoTranslateY}px)`;
+
+  // Intro 文字動畫
+  introText.style.transform = `translateX(${-progress * 40}px)`;
+  introText.style.opacity = `${1 - progress}`;
+
+  // Scroll To Top
+  scrollTopBtn.style.display = scrollY > 200 ? 'block' : 'none';
 });
 
-// Scroll to top
+// Scroll to top click
 scrollTopBtn.addEventListener('click', () => {
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-});
-
-// Scroll to top
-scrollBtn.addEventListener('click', () => {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 });
