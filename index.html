@@ -2,64 +2,56 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Donna Chang - Work</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Donna Chang Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-  <!-- Navbar 固定在頂部 -->
   <header class="navbar">
-    <div class="container nav-container">
-      <img src="assets/images/logo.png" alt="Logo" class="logo" />
+    <div class="container nav-inner">
+      <div class="logo-area">
+        <img src="assets/logo.png" alt="Donna Chang Logo" id="logo" />
+      </div>
       <nav class="nav-links">
-        <a href="#" class="nav-link active">WORK</a>
-        <a href="about.html" class="nav-link">ABOUT</a>
+        <a href="index.html" class="nav-link work">WORK</a>
+        <a href="about.html" class="nav-link about">ABOUT</a>
       </nav>
-      <!-- 手機版漢堡 -->
-      <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">☰</button>
+      <div class="hamburger">
+        <div></div><div></div><div></div>
+      </div>
     </div>
   </header>
 
-  <!-- 主要內容區 -->
-  <main>
-    <div class="container">
-      <!-- Intro Section -->
-      <section class="intro">
-        <img src="assets/images/logo.png" alt="Intro Logo" class="intro-logo" />
+  <main class="container">
+    <section class="intro-section">
+      <div class="intro-wrapper">
+        <img src="assets/logo.png" alt="Donna Chang Logo" class="intro-logo" />
         <div class="intro-text">
           <h1>Hello, I’m Donna Chang 👋</h1>
-          <p class="subheading">I’m a product designer with user experience research background</p>
-          <p class="description">Delivering value to users and striving to make a positive impact are the goals of my work</p>
+          <p>I’m a product designer with user experience research background</p>
+          <p>Delivering value to users and striving to make a positive impact are the goals of my work</p>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <!-- 作品區 -->
-      <section class="work-cards">
-        <div class="card-row">
-          <div class="card"><img src="assets/images/placeholder.png" alt="Work 1" /></div>
-          <div class="card"><img src="assets/images/placeholder.png" alt="Work 2" /></div>
-        </div>
-        <div class="card-row">
-          <div class="card"><img src="assets/images/placeholder.png" alt="Work 3" /></div>
-          <div class="card"><img src="assets/images/placeholder.png" alt="Work 4" /></div>
-        </div>
-        <div class="card-row">
-          <div class="card"><img src="assets/images/placeholder.png" alt="Work 5" /></div>
-          <div class="card"><img src="assets/images/placeholder.png" alt="Work 6" /></div>
-        </div>
-      </section>
-    </div>
+    <section class="work-gallery">
+      <!-- 六個作品卡 -->
+      <div class="card"><img src="assets/images/work1.jpg" alt="Work 1"></div>
+      <div class="card"><img src="assets/images/work2.jpg" alt="Work 2"></div>
+      <div class="card"><img src="assets/images/work3.jpg" alt="Work 3"></div>
+      <div class="card"><img src="assets/images/work4.jpg" alt="Work 4"></div>
+      <div class="card"><img src="assets/images/work5.jpg" alt="Work 5"></div>
+      <div class="card"><img src="assets/images/work6.jpg" alt="Work 6"></div>
+    </section>
 
-    <!-- Footer -->
     <footer>
       <p>© Copyright Donna Chang 2025. All rights reserved.</p>
     </footer>
-
-    <!-- Back to Top Button -->
-    <button class="back-to-top" aria-label="Back to top">↑</button>
   </main>
 
-  <script src="script.js"></script>
+  <button id="scrollTopBtn">↑</button>
+
+  <script src="js/script.js"></script>
 </body>
 </html>
