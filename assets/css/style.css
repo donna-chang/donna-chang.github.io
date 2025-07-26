@@ -21,7 +21,7 @@ body {
     top: 0;
     width: 100%;
     background: #fff;
-    box-shadow: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     z-index: 1000;
 }
 
@@ -94,16 +94,21 @@ body {
 .intro-content {
     display: flex;
     align-items: center;
+    position: relative;
 }
 
 .intro-logo {
     width: 240px;
     height: 260px;
-    transition: all 0.5s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: all 0.1s linear;
+    z-index: 1001; /* Above navbar to prevent clipping */
 }
 
 .intro-text {
-    margin-left: 72px;
+    margin-left: 312px; /* 240px logo + 72px gap */
 }
 
 .intro-text h1 {
@@ -212,6 +217,7 @@ footer p {
     }
 
     .intro-logo {
+        position: relative;
         margin-bottom: 20px;
     }
 
