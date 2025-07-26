@@ -1,36 +1,34 @@
-const logo = document.querySelector('.logo-animated');
-const logoSmall = document.querySelector('.logo-small');
+// Scroll logo and intro animation
+const introLogo = document.querySelector('.intro-logo');
+const navLogo = document.querySelector('.nav-logo');
 const introText = document.querySelector('.intro-text');
-const scrollToTopBtn = document.querySelector('.scroll-to-top');
+const scrollBtn = document.querySelector('.scroll-to-top');
 
 window.addEventListener('scroll', () => {
   const scrollY = window.scrollY;
-  const triggerPoint = 300;
+  const maxScroll = 300;
 
-  // Animate logo shrink + position
-  if (scrollY < triggerPoint) {
-    const progress = scrollY / triggerPoint;
-    const size = 240 - (192 * progress); // from 240 to 48
-    const height = 260 - (208 * progress); // from 260 to 52
-    logo.style.width = `${size}px`;
-    logo.style.height = `${height}px`;
-    introText.style.transform = `translateX(${-72 * progress}px)`;
-    logoSmall.style.opacity = 0;
+  // Animate logo size and position
+  let scale = 1 - (scrollY / maxScroll);
+  scale = Math.max(scale, 0.2); // never shrink below 0.2 (48/240)
+  introLogo.style.width = `${240 * scale}px`;
+  introLogo.style.height = `${260 * scale}px`;
+
+  // Move text to align left
+  introText.style.transform = `translateX(-${Math.min(scrollY, 60)}px)`;
+
+  // Fade in nav logo when intro out of view
+  if (scrollY > maxScroll - 20) {
+    navLogo.style.opacity = 1;
   } else {
-    logo.style.width = `48px`;
-    logo.style.height = `52px`;
-    introText.style.transform = `translateX(-72px)`;
-    logoSmall.style.opacity = 1;
+    navLogo.style.opacity = 0;
   }
 
-  // Scroll-to-top button visibility
-  if (scrollY > 400) {
-    scrollToTopBtn.style.display = 'block';
-  } else {
-    scrollToTopBtn.style.display = 'none';
-  }
+  // Show scroll-to-top button
+  scrollBtn.style.display = scrollY > 200 ? 'block' : 'none';
 });
 
-scrollToTopBtn.addEventListener('click', () => {
+// Scroll to top
+document.querySelector('.scroll-to-top').addEventListener('click', () => {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 });
