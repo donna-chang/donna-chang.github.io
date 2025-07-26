@@ -1,32 +1,31 @@
-const scrollBtn = document.getElementById('scrollTopBtn');
-const introLogo = document.getElementById('introLogo');
-const navLogo = document.getElementById('navLogo');
-const introText = document.getElementById('introText');
-const introWrapper = document.getElementById('introWrapper');
+const logo = document.querySelector('.intro-logo');
+const navLogo = document.querySelector('.logo');
+const introSection = document.querySelector('.intro-section');
+const scrollTopBtn = document.querySelector('.scroll-to-top');
 
-// Scroll event
+// Logo Shrink on Scroll
 window.addEventListener('scroll', () => {
   const scrollY = window.scrollY;
+  const introBottom = introSection.offsetTop + introSection.offsetHeight;
 
-  // Scroll-to-top button
-  scrollBtn.style.display = scrollY > 300 ? 'block' : 'none';
-
-  // Logo & text animation
-  const shrinkPoint = 200;
-  if (scrollY > shrinkPoint) {
-    introLogo.style.width = '48px';
-    introLogo.style.height = '52px';
-    introText.style.opacity = 0;
-    introText.style.transform = 'translateX(-20px)';
-  } else {
-    const progress = 1 - scrollY / shrinkPoint;
-    const size = 48 + (192 * progress);
-    const height = 52 + (208 * progress);
-    introLogo.style.width = `${size}px`;
-    introLogo.style.height = `${height}px`;
-    introText.style.opacity = progress;
-    introText.style.transform = `translateX(${72 * progress}px)`;
+  // logo shrink animation
+  if (scrollY > 20 && scrollY < introBottom) {
+    const scale = Math.max(0.2, 1 - scrollY / introBottom);
+    logo.style.width = `${240 * scale}px`;
+    logo.style.height = `${260 * scale}px`;
   }
+
+  // show scroll-to-top
+  if (scrollY > 300) {
+    scrollTopBtn.style.display = 'block';
+  } else {
+    scrollTopBtn.style.display = 'none';
+  }
+});
+
+// Scroll to top
+scrollTopBtn.addEventListener('click', () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 });
 
 // Scroll to top
