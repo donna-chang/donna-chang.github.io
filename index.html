@@ -2,73 +2,64 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Donna Chang - Work</title>
-  <link rel="stylesheet" href="assets/css/style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <!-- Navbar 固定在頂部 -->
   <header class="navbar">
-    <div class="nav-container">
-      <div class="nav-left">
-        <!-- 漢堡選單按鈕 -->
-        <button class="hamburger" onclick="toggleMenu()">☰</button>
-
-        <!-- Navbar 縮小時顯示的小 Logo，預設隱藏，JS 會控制顯示與否 -->
-        <img src="assets/images/logo.png" alt="Small Logo" class="logo-small" />
-
-        <!-- Navbar 原本 logo，scroll 後隱藏 -->
-        <img src="assets/images/logo.png" alt="Logo" class="logo" />
-      </div>
-
-      <!-- 導航連結 -->
-      <nav id="nav-links">
+    <div class="container nav-container">
+      <img src="assets/images/logo.png" alt="Logo" class="logo" />
+      <nav class="nav-links">
         <a href="#" class="nav-link active">WORK</a>
         <a href="about.html" class="nav-link">ABOUT</a>
       </nav>
+      <!-- 手機版漢堡 -->
+      <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">☰</button>
     </div>
   </header>
 
-  <main class="main-content">
-    <section class="intro">
-      <!-- 用容器包起 logo 與文字，方便對齊和距離控制 -->
-      <div class="intro-container">
-        <!-- Intro 大 Logo，scroll 縮小控制，JS 會控制顯示與尺寸 -->
-        <img src="assets/images/logo.png" alt="Intro Logo" class="logo-large" />
-
-        <!-- 文字區塊 -->
+  <!-- 主要內容區 -->
+  <main>
+    <div class="container">
+      <!-- Intro Section -->
+      <section class="intro">
+        <img src="assets/images/logo.png" alt="Intro Logo" class="intro-logo" />
         <div class="intro-text">
           <h1>Hello, I’m Donna Chang 👋</h1>
           <p class="subheading">I’m a product designer with user experience research background</p>
           <p class="description">Delivering value to users and striving to make a positive impact are the goals of my work</p>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section class="work-cards">
-      <div class="card-row">
-        <div class="card"><img src="assets/images/placeholder.png" alt="Work 1"/></div>
-        <div class="card"><img src="assets/images/placeholder.png" alt="Work 2"/></div>
-      </div>
-      <div class="card-row">
-        <div class="card"><img src="assets/images/placeholder.png" alt="Work 3"/></div>
-        <div class="card"><img src="assets/images/placeholder.png" alt="Work 4"/></div>
-      </div>
-      <div class="card-row">
-        <div class="card"><img src="assets/images/placeholder.png" alt="Work 5"/></div>
-        <div class="card"><img src="assets/images/placeholder.png" alt="Work 6"/></div>
-      </div>
-    </section>
+      <!-- 作品區 -->
+      <section class="work-cards">
+        <div class="card-row">
+          <div class="card"><img src="assets/images/placeholder.png" alt="Work 1" /></div>
+          <div class="card"><img src="assets/images/placeholder.png" alt="Work 2" /></div>
+        </div>
+        <div class="card-row">
+          <div class="card"><img src="assets/images/placeholder.png" alt="Work 3" /></div>
+          <div class="card"><img src="assets/images/placeholder.png" alt="Work 4" /></div>
+        </div>
+        <div class="card-row">
+          <div class="card"><img src="assets/images/placeholder.png" alt="Work 5" /></div>
+          <div class="card"><img src="assets/images/placeholder.png" alt="Work 6" /></div>
+        </div>
+      </section>
+    </div>
 
-    <footer class="footer">
+    <!-- Footer -->
+    <footer>
       <p>© Copyright Donna Chang 2025. All rights reserved.</p>
     </footer>
 
-    <!-- Back to top 按鈕 -->
-    <button class="back-to-top" onclick="scrollToTop()">↑</button>
+    <!-- Back to Top Button -->
+    <button class="back-to-top" aria-label="Back to top">↑</button>
   </main>
 
-  <script src="assets/js/script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
