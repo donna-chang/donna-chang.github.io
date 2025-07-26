@@ -8,12 +8,21 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 <body>
+  <!-- Navbar 固定在頂部 -->
   <header class="navbar">
     <div class="nav-container">
       <div class="nav-left">
+        <!-- 漢堡選單按鈕 -->
         <button class="hamburger" onclick="toggleMenu()">☰</button>
-        <img src="assets/images/logo.png" alt="Logo" class="logo"/>
+
+        <!-- Navbar 縮小時顯示的小 Logo，預設隱藏，JS 會控制顯示與否 -->
+        <img src="assets/images/logo.png" alt="Small Logo" class="logo-small" />
+
+        <!-- Navbar 原本 logo，scroll 後隱藏 -->
+        <img src="assets/images/logo.png" alt="Logo" class="logo" />
       </div>
+
+      <!-- 導航連結 -->
       <nav id="nav-links">
         <a href="#" class="nav-link active">WORK</a>
         <a href="about.html" class="nav-link">ABOUT</a>
@@ -23,9 +32,18 @@
 
   <main class="main-content">
     <section class="intro">
-      <h1>Hello, I’m Donna Chang 👋</h1>
-      <p class="subheading">I’m a product designer with user experience research background</p>
-      <p class="description">Delivering value to users and striving to make a positive impact are the goals of my work</p>
+      <!-- 用容器包起 logo 與文字，方便對齊和距離控制 -->
+      <div class="intro-container">
+        <!-- Intro 大 Logo，scroll 縮小控制 -->
+        <img src="assets/images/logo.png" alt="Intro Logo" class="logo-large" />
+
+        <!-- 文字區塊 -->
+        <div class="intro-text">
+          <h1>Hello, I’m Donna Chang 👋</h1>
+          <p class="subheading">I’m a product designer with user experience research background</p>
+          <p class="description">Delivering value to users and striving to make a positive impact are the goals of my work</p>
+        </div>
+      </div>
     </section>
 
     <section class="work-cards">
@@ -46,6 +64,8 @@
     <footer class="footer">
       <p>© Copyright Donna Chang 2025. All rights reserved.</p>
     </footer>
+
+    <!-- Back to top 按鈕 -->
     <button class="back-to-top" onclick="scrollToTop()">↑</button>
   </main>
 
