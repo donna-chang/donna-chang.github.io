@@ -2,52 +2,49 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Donna Chang Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet"/>
 </head>
 <body>
   <header class="navbar">
-    <div class="container nav-inner">
-      <div class="hamburger">
-        <div></div><div></div><div></div>
-      </div>
-      <img src="assets/logo.png" alt="Logo" id="navLogo" />
-      <nav class="nav-links">
-        <a href="#" class="nav-link work">WORK</a>
-        <a href="#" class="nav-link about">ABOUT</a>
-      </nav>
+    <div class="nav-left">
+      <img src="logo.png" alt="Logo" class="logo"/>
+      <button class="hamburger">&#9776;</button>
     </div>
+    <nav class="nav-links">
+      <a href="#" class="nav-link work">WORK</a>
+      <a href="#" class="nav-link about">ABOUT</a>
+    </nav>
   </header>
 
-  <main class="container">
-    <section class="intro-section">
-      <div class="intro-wrapper" id="introWrapper">
-        <img src="assets/logo.png" alt="Intro Logo" id="introLogo" />
-        <div class="intro-text" id="introText">
-          <h1>Hello, I’m Donna Chang 👋</h1>
-          <p>I’m a product designer with user experience research background</p>
-          <p>Delivering value to users and striving to make a positive impact are the goals of my work</p>
-        </div>
-      </div>
-    </section>
+  <section class="intro-section container">
+    <img src="logo.png" alt="Donna" class="intro-logo"/>
+    <div class="intro-text">
+      <h1>Hello, I’m Donna Chang 👋</h1>
+      <p>I’m a product designer with user experience research background</p>
+      <p>Delivering value to users and striving to make a positive impact are the goals of my work</p>
+    </div>
+  </section>
 
-    <section class="work-gallery">
-      <div class="card"><img src="assets/images/work1.jpg" /></div>
-      <div class="card"><img src="assets/images/work2.jpg" /></div>
-      <div class="card"><img src="assets/images/work3.jpg" /></div>
-      <div class="card"><img src="assets/images/work4.jpg" /></div>
-      <div class="card"><img src="assets/images/work5.jpg" /></div>
-      <div class="card"><img src="assets/images/work6.jpg" /></div>
-    </section>
+  <section class="work-section container">
+    <div class="work-grid">
+      <div class="card"></div>
+      <div class="card"></div>
+      <div class="card"></div>
+      <div class="card"></div>
+      <div class="card"></div>
+      <div class="card"></div>
+    </div>
+  </section>
 
-    <footer>
-      <p>© Copyright Donna Chang 2025. All rights reserved.</p>
-    </footer>
-  </main>
+  <footer class="footer">
+    © Copyright Donna Chang 2025. All rights reserved.
+  </footer>
 
-  <button id="scrollTopBtn">↑</button>
-  <script src="js/script.js"></script>
+  <button class="scroll-to-top">↑</button>
+
+  <script src="script.js"></script>
 </body>
 </html>
