@@ -1,0 +1,155 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Roboto', sans-serif;
+  color: #000;
+  background: #fff;
+}
+.container {
+  padding: 0 60px;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 60px;
+  z-index: 1000;
+  pointer-events: none;
+}
+.navbar * {
+  pointer-events: auto;
+}
+.navbar-logo {
+  width: 48px;
+  height: 52px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 22px;
+  margin-right: 20px;
+}
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+.nav-link {
+  text-decoration: none;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+.work {
+  font-weight: 700;
+  color: #008CFF;
+}
+.about {
+  font-weight: 300;
+  color: #000;
+}
+
+.intro-section {
+  display: flex;
+  align-items: center;
+  margin-top: 140px;
+  gap: 72px;
+}
+.logo-wrapper {
+  width: 240px;
+  height: 260px;
+  position: fixed;
+  top: 140px;
+  left: 60px;
+  z-index: 999;
+  transform-origin: top left;
+  transition: transform 0.3s ease;
+}
+.intro-logo {
+  width: 100%;
+  height: 100%;
+}
+.intro-text {
+  transform: translateX(0);
+  transition: transform 0.3s ease;
+}
+.intro-text h1 {
+  font-size: 30px;
+  font-weight: 700;
+}
+.intro-text p {
+  font-size: 22px;
+  font-weight: 400;
+  margin-top: 10px;
+}
+
+.work-section {
+  margin-top: 120px;
+}
+.work-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+}
+.card {
+  width: 100%;
+  max-width: 650px;
+  height: 360px;
+  background: #dcdcdc;
+  border-radius: 10px;
+}
+
+.footer {
+  text-align: center;
+  font-size: 12px;
+  font-weight: 300;
+  color: #B7B7B7;
+  margin-top: 100px;
+  margin-bottom: 60px;
+}
+
+.scroll-to-top {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  background: #000;
+  color: #fff;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  border: none;
+  display: none;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+  .hamburger {
+    display: block;
+  }
+  .intro-section {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .intro-text {
+    align-items: center;
+  }
+  .work-grid {
+    grid-template-columns: 1fr;
+  }
+}
