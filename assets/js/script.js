@@ -1,35 +1,27 @@
-// Scroll to top button
-const scrollBtn = document.querySelector('.scroll-to-top');
-window.addEventListener('scroll', () => {
-  scrollBtn.style.display = window.scrollY > 300 ? 'block' : 'none';
-});
-scrollBtn.addEventListener('click', () => {
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-});
+const logo = document.querySelector('.intro-logo');
+const introText = document.querySelector('.intro-text');
+const introSection = document.querySelector('.intro-section');
 
-// Scroll-triggered logo shrink
-const logoIntro = document.querySelector('.logo-intro');
-const logoFixed = document.querySelector('.logo-fixed');
-const intro = document.querySelector('.intro-wrapper');
+function updateOnScroll() {
+  const scrollY = window.scrollY;
+  const introBottom = introSection.offsetTop + introSection.offsetHeight;
 
-window.addEventListener('scroll', () => {
-  const introBottom = intro.getBoundingClientRect().bottom;
-  const windowHeight = window.innerHeight;
+  const startScroll = 0;
+  const endScroll = introBottom - 100; // adjust point where logo finishes transition
+  const scrollProgress = Math.min(1, scrollY / endScroll);
 
-  // percent visible of intro
-  const progress = Math.min(Math.max(1 - introBottom / windowHeight, 0), 1);
+  // Scale from 240×260 to 48×52
+  const scale = 1 - scrollProgress * 0.8;
+  const translateX = -scrollProgress * 80;
+  const translateY = -scrollProgress * 120;
 
-  // scale from 1 to 0.2
-  const scale = 1 - progress * 0.8;
+  logo.style.transform = `scale(${scale}) translate(${translateX}px, ${translateY}px)`;
 
-  logoIntro.style.transform = `scale(${scale})`;
+  // Align intro text to left as user scrolls
+  introText.style.transform = `translateX(-${scrollProgress * 20}px)`;
+  introText.style.transition = 'transform 0.2s ease';
 
-  // When intro fully gone, show fixed nav logo
-  if (progress >= 1) {
-    logoIntro.style.opacity = 0;
-    logoFixed.style.opacity = 1;
-  } else {
-    logoIntro.style.opacity = 1;
-    logoFixed.style.opacity = 0;
-  }
-});
+  requestAnimationFrame(updateOnScroll);
+}
+
+requestAnimationFrame(updateOnScroll);
