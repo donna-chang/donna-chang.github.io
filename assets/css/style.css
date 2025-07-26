@@ -9,7 +9,7 @@
 body {
   background: white;
   color: #000;
-  padding-top: 30px;
+  padding-top: 30px; /* navbar 高度 */
 }
 
 /* Navbar 固定頂部 */
@@ -24,13 +24,16 @@ body {
   padding: 20px 60px;
   display: flex;
   align-items: center;
-  transition: padding 0.3s ease; /* scroll 動態縮小時過渡 */
+  /* 移除縮小時 padding 變化 */
+  /* transition: padding 0.3s ease; */
 }
 
-/* navbar 變小時的 padding 調整 */
+/* 移除 navbar.shrunk 樣式，navbar 不會縮小 */
+/*
 .navbar.shrunk {
   padding: 10px 40px;
 }
+*/
 
 /* navbar 內部容器 */
 .nav-container {
@@ -58,31 +61,30 @@ body {
   cursor: pointer;
 }
 
-/* navbar 大 logo 預設顯示 */
-.logo {
-  height: 30px;
-  transition: opacity 0.3s ease;
+/* 大 logo 預設隱藏，scroll 時由 JS 控制 style 顯示與大小 */
+.logo-large {
+  display: none;
+  width: 240px;
+  height: 260px;
+  object-fit: contain;
+  transition: width 0.3s ease, height 0.3s ease;
 }
 
-/* navbar 縮小時顯示的小 logo，預設隱藏 */
+/* 小 logo 預設隱藏，scroll 超過指定距離由 JS 控制顯示 */
 .logo-small {
   position: absolute;
   left: 0;
   height: 52px; /* 縮小 logo 高度 */
   width: 48px;  /* 縮小 logo 寬度 */
   display: none;
-  transition: opacity 0.3s ease;
-}
-
-/* 縮小時顯示小 logo，隱藏大 logo */
-.navbar.shrunk .logo {
   opacity: 0;
-  pointer-events: none;
+  transition: opacity 0.3s ease;
+  pointer-events: none; /* 不影響點擊 */
 }
-
-.navbar.shrunk .logo-small {
+.logo-small.visible {
   display: block;
   opacity: 1;
+  pointer-events: auto;
 }
 
 /* 導航連結 */
@@ -106,27 +108,15 @@ body {
 }
 
 /* Intro section 文字與大 Logo 包裹容器 */
-.intro {
-  padding: 60px;
-  overflow: visible;
-}
-
-/* 新增 intro-container 用 flex 置中且橫向排列 */
+/* 改成左右 padding 60px，並靠左，不要 margin auto */
 .intro-container {
   display: flex;
   align-items: center;
-  gap: 72px; /* logo 與文字距離 */
-  max-width: 1200px; /* 可依需求調整最大寬度 */
-  margin: 0 auto; /* 靠中 */
-  transition: gap 0.3s ease;
-}
-
-/* intro 大 logo */
-.logo-large {
-  width: 240px;
-  height: 260px;
-  object-fit: contain;
-  transition: width 0.3s ease, height 0.3s ease;
+  gap: 72px; /* 初始 logo 與文字距離 */
+  max-width: 1200px;
+  padding-left: 60px;
+  /* margin: 0 auto;  移除靠中 */
+  transition: gap 0.3s ease, padding-left 0.3s ease;
 }
 
 /* 文字區塊 */
@@ -199,6 +189,7 @@ body {
   opacity: 1;
 }
 
+/* RWD 手機版 */
 @media (max-width: 768px) {
   .hamburger {
     display: inline;
@@ -230,8 +221,9 @@ body {
   .intro-container {
     flex-direction: column;
     gap: 30px;
+    padding-left: 60px; /* 保持左右 padding 一致 */
   }
-  /* 隱藏小 logo 手機改用 navbar logo */
+  /* 手機隱藏小 logo */
   .logo-small {
     display: none !important;
   }
