@@ -4,30 +4,28 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Donna Chang Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
   <header class="navbar">
     <div class="container nav-inner">
-      <div class="logo-area">
-        <img src="assets/logo.png" alt="Donna Chang Logo" id="logo" />
-      </div>
-      <nav class="nav-links">
-        <a href="index.html" class="nav-link work">WORK</a>
-        <a href="about.html" class="nav-link about">ABOUT</a>
-      </nav>
       <div class="hamburger">
         <div></div><div></div><div></div>
       </div>
+      <img src="assets/logo.png" alt="Logo" id="navLogo" />
+      <nav class="nav-links">
+        <a href="#" class="nav-link work">WORK</a>
+        <a href="#" class="nav-link about">ABOUT</a>
+      </nav>
     </div>
   </header>
 
   <main class="container">
     <section class="intro-section">
-      <div class="intro-wrapper">
-        <img src="assets/logo.png" alt="Donna Chang Logo" class="intro-logo" />
-        <div class="intro-text">
+      <div class="intro-wrapper" id="introWrapper">
+        <img src="assets/logo.png" alt="Intro Logo" id="introLogo" />
+        <div class="intro-text" id="introText">
           <h1>Hello, I’m Donna Chang 👋</h1>
           <p>I’m a product designer with user experience research background</p>
           <p>Delivering value to users and striving to make a positive impact are the goals of my work</p>
@@ -36,13 +34,12 @@
     </section>
 
     <section class="work-gallery">
-      <!-- 六個作品卡 -->
-      <div class="card"><img src="assets/images/work1.jpg" alt="Work 1"></div>
-      <div class="card"><img src="assets/images/work2.jpg" alt="Work 2"></div>
-      <div class="card"><img src="assets/images/work3.jpg" alt="Work 3"></div>
-      <div class="card"><img src="assets/images/work4.jpg" alt="Work 4"></div>
-      <div class="card"><img src="assets/images/work5.jpg" alt="Work 5"></div>
-      <div class="card"><img src="assets/images/work6.jpg" alt="Work 6"></div>
+      <div class="card"><img src="assets/images/work1.jpg" /></div>
+      <div class="card"><img src="assets/images/work2.jpg" /></div>
+      <div class="card"><img src="assets/images/work3.jpg" /></div>
+      <div class="card"><img src="assets/images/work4.jpg" /></div>
+      <div class="card"><img src="assets/images/work5.jpg" /></div>
+      <div class="card"><img src="assets/images/work6.jpg" /></div>
     </section>
 
     <footer>
@@ -51,7 +48,6 @@
   </main>
 
   <button id="scrollTopBtn">↑</button>
-
   <script src="js/script.js"></script>
 </body>
 </html>
