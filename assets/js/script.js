@@ -5,7 +5,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const introLogo = document.querySelector('.intro-logo');
     const introSection = document.querySelector('.intro');
     const logoContainer = document.querySelector('.logo-container');
-    const navLogo = document.querySelector('.logo');
 
     // Hamburger menu toggle
     hamburger.addEventListener('click', () => {
@@ -31,12 +30,14 @@ document.addEventListener('DOMContentLoaded', () => {
         const startHeight = 260;
         const endHeight = 52;
 
-        // Get the target position (logo container in navbar)
+        // Calculate initial and final positions
+        const introContainer = document.querySelector('.intro-container');
+        const introContainerRect = introContainer.getBoundingClientRect();
         const logoContainerRect = logoContainer.getBoundingClientRect();
-        const startLeft = 60; // Container padding
+        const startLeft = (introContainerRect.width - (240 + 312 + introText.offsetWidth)) / 2; // Center logo+text
         const startTop = 60; // Navbar height
         const endLeft = logoContainerRect.left;
-        const endTop = logoContainerRect.top + (logoContainerRect.height - endHeight) / 2; // Center vertically
+        const endTop = logoContainerRect.top + (logoContainerRect.height - endHeight) / 2; // Center vertically in navbar
 
         const newWidth = startWidth + (endWidth - startWidth) * scrollProgress;
         const newHeight = startHeight + (endHeight - startHeight) * scrollProgress;
@@ -48,24 +49,23 @@ document.addEventListener('DOMContentLoaded', () => {
         introLogo.style.left = `${newLeft}px`;
         introLogo.style.top = `${newTop}px`;
 
-        // Show/hide logos based on scroll position
-        if (scrollProgress >= 1) {
-            introLogo.style.opacity = '0';
-            navLogo.style.opacity = '1';
-        } else {
-            introLogo.style.opacity = '1';
-            navLogo.style.opacity = '0';
-        }
-
-        // Move intro text
+        // Move intro text to maintain centering initially, then align left
         const introText = document.querySelector('.intro-text');
-        const startMarginLeft = 312; // 240px logo + 72px gap
-        const endMarginLeft = 60; // Align with container padding
-        const newMarginLeft = startMarginLeft + (endMarginLeft - startMarginLeft) * scrollProgress;
-        introText.style.marginLeft = `${newMarginLeft}px`;
+        const startTextLeft = startLeft + 240 + 72; // Logo width + gap
+        const endTextLeft = 60; // Container padding
+        const newTextLeft = startTextLeft + (endTextLeft - startTextLeft) * scrollProgress;
+        introText.style.marginLeft = `${newTextLeft}px`;
     });
 
     scrollTopBtn.addEventListener('click', () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     });
+
+    // Initial positioning
+    const introContainer = document.querySelector('.intro-container');
+    const introContainerRect = introContainer.getBoundingClientRect();
+    const introText = document.querySelector('.intro-text');
+    const initialLeft = (introContainerRect.width - (240 + 72 + introText.offsetWidth)) / 2;
+    introLogo.style.left = `${initialLeft}px`;
+    introText.style.marginLeft = `${initialLeft + 240 + 72}px`;
 });
