@@ -33,11 +33,6 @@ body {
 }
 
 .logo-container {
-    display: flex;
-    align-items: center;
-}
-
-.logo {
     width: 48px;
     height: 52px;
 }
@@ -88,7 +83,7 @@ body {
 
 .intro-container {
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
 }
 
 .intro-content {
@@ -103,12 +98,12 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    transition: all 0.1s linear;
-    z-index: 1001; /* Above navbar to prevent clipping */
+    transition: all 0.05s linear;
+    z-index: 1001;
 }
 
 .intro-text {
-    margin-left: 312px; /* 240px logo + 72px gap */
+    margin-left: 312px;
 }
 
 .intro-text h1 {
@@ -202,12 +197,17 @@ footer p {
         margin-right: 20px;
     }
 
-    .logo {
+    .logo-container {
         width: 48px;
         height: 52px;
+        margin-left: 20px;
     }
 
     .nav-content {
+        justify-content: flex-start;
+    }
+
+    .intro-container {
         justify-content: flex-start;
     }
 
