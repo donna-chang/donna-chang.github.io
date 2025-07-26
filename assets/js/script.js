@@ -1,66 +1,46 @@
-window.addEventListener('scroll', function () {
-  const btn = document.querySelector('.back-to-top');
-  const logoLarge = document.querySelector('.logo-large');
-  const logoSmall = document.querySelector('.logo-small');
-  const introContainer = document.querySelector('.intro-container');
-  const introText = introContainer.querySelector('.intro-text');
+const hamburger = document.querySelector('.hamburger');
+const navLinks = document.querySelector('.nav-links');
+const backToTopBtn = document.querySelector('.back-to-top');
+const logo = document.querySelector('.logo');
+const intro = document.querySelector('.intro');
 
-  const scrollY = window.scrollY || window.pageYOffset;
+hamburger.addEventListener('click', () => {
+  const expanded = hamburger.getAttribute('aria-expanded') === 'true';
+  hamburger.setAttribute('aria-expanded', !expanded);
+  navLinks.classList.toggle('show');
+});
 
-  // back-to-top 按鈕顯示控制
-  if (scrollY > 100) {
-    btn.classList.add('show');
+// back to top 顯示控制
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 100) {
+    backToTopBtn.classList.add('show');
   } else {
-    btn.classList.remove('show');
+    backToTopBtn.classList.remove('show');
   }
 
-  // intro-container 高度及底部距離
-  const introHeight = introContainer.offsetHeight;
-  const maxScroll = introHeight + introContainer.offsetTop;
+  // 計算 intro 距離頂部高度，控制 logo 縮放與文字平移
+  const introBottom = intro.getBoundingClientRect().bottom;
 
-  // 計算 scroll 進度 0~1
-  let progress = scrollY / maxScroll;
-  if (progress > 1) progress = 1;
-  if (progress < 0) progress = 0;
+  // 當 intro 底部往上移動至視窗頂端時，比例從0到1
+  const progress = Math.min(Math.max((window.innerHeight - introBottom) / intro.offsetHeight, 0), 1);
 
-  // 大 logo 縮小尺寸從 240x260 到 48x52
+  // Logo 大小從 240x260 到 48x52 線性縮放
   const logoWidthStart = 240;
   const logoHeightStart = 260;
   const logoWidthEnd = 48;
   const logoHeightEnd = 52;
-
   const newWidth = logoWidthStart - (logoWidthStart - logoWidthEnd) * progress;
   const newHeight = logoHeightStart - (logoHeightStart - logoHeightEnd) * progress;
+  logo.style.width = `${newWidth}px`;
+  logo.style.height = `${newHeight}px`;
 
-  logoLarge.style.width = `${newWidth}px`;
-  logoLarge.style.height = `${newHeight}px`;
+  // 文字往左移動，最大移動 150px
+  const maxTranslateX = 150;
+  const translateX = maxTranslateX * progress;
+  intro.style.transform = `translateX(-${translateX}px)`;
+});
 
-  // intro-container gap 從 72px 到 20px
-  const gapStart = 72;
-  const gapEnd = 20;
-  const newGap = gapStart - (gapStart - gapEnd) * progress;
-  introContainer.style.gap = `${newGap}px`;
-
-  // intro-text 水平位移，從 0 到 -100px
-  const translateStart = 0;
-  const translateEnd = -100;
-  const translateX = translateStart + (translateEnd - translateStart) * progress;
-  introText.style.transform = `translateX(${translateX}px)`;
-
-  // intro-container padding-left 從 0 到 60px
-  const paddingLeftStart = 0;
-  const paddingLeftEnd = 60;
-  const paddingLeft = paddingLeftStart + (paddingLeftEnd - paddingLeftStart) * progress;
-  introContainer.style.paddingLeft = `${paddingLeft}px`;
-
-  // 控制小 logo 顯示（scroll > 100 顯示，否則隱藏）
-  if (scrollY > 100) {
-    logoSmall.classList.add('visible');
-  } else {
-    logoSmall.classList.remove('visible');
-  }
-
-  // *** 移除 navbar 縮小 class 操作 ***
-  // 不要動 navbar，保持固定大小及位置
-
+// back to top 按鈕動作
+backToTopBtn.addEventListener('click', () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 });
