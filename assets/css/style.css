@@ -3,10 +3,12 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 body {
   font-family: 'Roboto', sans-serif;
   color: #000;
 }
+
 .container {
   padding: 0 60px;
 }
@@ -21,91 +23,106 @@ body {
   background: transparent;
   display: flex;
   align-items: center;
-  padding: 0 60px;
   justify-content: space-between;
-  border-bottom: none;
+  padding: 0 60px;
   z-index: 1000;
+  pointer-events: none;
 }
-.nav-logo {
+
+.navbar .nav-left,
+.navbar .nav-links {
+  display: flex;
+  align-items: center;
+  pointer-events: auto;
+}
+
+.logo-small {
   width: 48px;
   height: 52px;
   opacity: 0;
   transition: opacity 0.3s ease;
 }
-.nav-logo.visible {
-  opacity: 1;
-}
-.hamburger {
-  display: none;
-  font-size: 22px;
-  background: none;
-  border: none;
-  margin-right: auto;
-  cursor: pointer;
-}
-.nav-links {
-  display: flex;
-  gap: 20px;
-}
+
 .nav-link {
   text-decoration: none;
   font-size: 14px;
   text-transform: uppercase;
+  margin-left: 20px;
 }
+
 .work {
   font-weight: 700;
   color: #008CFF;
 }
+
 .about {
   font-weight: 300;
   color: #000;
 }
 
-/* Intro Section */
-.intro-section {
+.hamburger {
+  display: none;
+  font-size: 22px;
+  background: none;
+  border: none;
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+/* Intro */
+.intro {
+  margin-top: 140px;
+}
+
+.logo-intro-wrapper {
   display: flex;
   align-items: center;
   gap: 72px;
-  margin-top: 200px;
-  margin-bottom: 120px;
-  will-change: transform;
 }
-.intro-logo {
+
+.logo-animated {
   width: 240px;
   height: 260px;
-  transform-origin: top left;
+  transition: transform 0.5s ease, width 0.5s ease, height 0.5s ease;
   position: relative;
-  transition: transform 0.2s ease;
-  will-change: transform;
+  z-index: 10;
 }
+
 .intro-text {
-  transition: transform 0.2s ease;
-  will-change: transform;
+  max-width: 600px;
+  transition: transform 0.5s ease;
 }
+
 .intro-text h1 {
   font-size: 30px;
   font-weight: 700;
+  margin-bottom: 12px;
 }
+
 .intro-text p {
   font-size: 22px;
   font-weight: 400;
-  margin-top: 10px;
+  margin-top: 8px;
 }
 
 /* Work Cards */
+.work-section {
+  margin-top: 120px;
+}
+
 .work-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 40px;
 }
+
 .card {
-  width: 100%;
   max-width: 650px;
   height: 360px;
-  background: #eee;
   border-radius: 10px;
   overflow: hidden;
 }
+
 .card img {
   width: 100%;
   height: 100%;
@@ -137,7 +154,7 @@ body {
   cursor: pointer;
 }
 
-/* RWD */
+/* Responsive */
 @media (max-width: 768px) {
   .nav-links {
     display: none;
@@ -145,13 +162,13 @@ body {
   .hamburger {
     display: block;
   }
-  .intro-section {
+  .logo-intro-wrapper {
     flex-direction: column;
     align-items: center;
-    text-align: center;
+    gap: 24px;
   }
   .intro-text {
-    align-items: center;
+    text-align: center;
   }
   .work-grid {
     grid-template-columns: 1fr;
