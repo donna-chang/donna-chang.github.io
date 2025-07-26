@@ -1,34 +1,36 @@
-const logo = document.querySelector('.intro-logo');
-const navLogo = document.querySelector('.nav-logo');
+const logo = document.querySelector('.logo-animated');
+const logoSmall = document.querySelector('.logo-small');
 const introText = document.querySelector('.intro-text');
-const introSection = document.querySelector('.intro-section');
 const scrollToTopBtn = document.querySelector('.scroll-to-top');
 
 window.addEventListener('scroll', () => {
   const scrollY = window.scrollY;
-  const maxScroll = introSection.offsetHeight;
+  const triggerPoint = 300;
 
-  // logo animation
-  const scale = Math.max(0.2, 1 - scrollY / maxScroll);
-  const translateY = Math.min(120, scrollY * 0.4);
-  const translateX = Math.min(72, scrollY * 0.3);
-  logo.style.transform = `translate(${translateX}px, -${translateY}px) scale(${scale})`;
-
-  // text move left
-  introText.style.transform = `translateX(-${Math.min(translateX, 60)}px)`;
-
-  // when fully scrolled past, show navbar logo
-  if (scrollY > maxScroll - 100) {
-    navLogo.classList.add('visible');
+  // Animate logo shrink + position
+  if (scrollY < triggerPoint) {
+    const progress = scrollY / triggerPoint;
+    const size = 240 - (192 * progress); // from 240 to 48
+    const height = 260 - (208 * progress); // from 260 to 52
+    logo.style.width = `${size}px`;
+    logo.style.height = `${height}px`;
+    introText.style.transform = `translateX(${-72 * progress}px)`;
+    logoSmall.style.opacity = 0;
   } else {
-    navLogo.classList.remove('visible');
+    logo.style.width = `48px`;
+    logo.style.height = `52px`;
+    introText.style.transform = `translateX(-72px)`;
+    logoSmall.style.opacity = 1;
   }
 
-  // show scroll to top
-  scrollToTopBtn.style.display = scrollY > 400 ? 'block' : 'none';
+  // Scroll-to-top button visibility
+  if (scrollY > 400) {
+    scrollToTopBtn.style.display = 'block';
+  } else {
+    scrollToTopBtn.style.display = 'none';
+  }
 });
 
-// Scroll to top
 scrollToTopBtn.addEventListener('click', () => {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 });
