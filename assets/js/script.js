@@ -1,31 +1,50 @@
+document.addEventListener('DOMContentLoaded', () => {
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+    const scrollTopBtn = document.querySelector('.scroll-top');
+    const introLogo = document.querySelector('.intro-logo');
+    const introSection = document.querySelector('.intro');
 
-window.addEventListener("scroll", function () {
-  const logo = document.querySelector(".logo-animated");
-  const intro = document.querySelector(".intro-section");
-  const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    // Hamburger menu toggle
+    hamburger.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+        hamburger.classList.toggle('active');
+    });
 
-  const introHeight = intro.offsetHeight;
-  const maxScroll = introHeight;
+    // Scroll to top button
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 200) {
+            scrollTopBtn.style.display = 'flex';
+        } else {
+            scrollTopBtn.style.display = 'none';
+        }
 
-  const progress = Math.min(scrollTop / maxScroll, 1);
+        // Logo animation
+        const introRect = introSection.getBoundingClientRect();
+        const scrollProgress = Math.min(Math.max(-introRect.top / introRect.height, 0), 1);
 
-  const startWidth = 240;
-  const startHeight = 260;
-  const endWidth = 48;
-  const endHeight = 52;
+        const startWidth = 240;
+        const endWidth = 48;
+        const startHeight = 260;
+        const endHeight = 52;
+        const startMarginLeft = 0;
+        const endMarginLeft = 60; // Align with container padding
 
-  const scaleW = startWidth + (endWidth - startWidth) * progress;
-  const scaleH = startHeight + (endHeight - startHeight) * progress;
+        const newWidth = startWidth + (endWidth - startWidth) * scrollProgress;
+        const newHeight = startHeight + (endHeight - startHeight) * scrollProgress;
+        const newMarginLeft = startMarginLeft + (endMarginLeft - startMarginLeft) * scrollProgress;
 
-  const translateX = 0 + (0 - 60) * progress;
-  const translateY = 0 + (0 - 30) * progress;
+        introLogo.style.width = `${newWidth}px`;
+        introLogo.style.height = `${newHeight}px`;
+        introLogo.style.marginLeft = `${newMarginLeft}px`;
 
-  logo.style.transform = `translate(${translateX}px, ${translateY}px) scale(${scaleW / startWidth}, ${scaleH / startHeight})`;
+        // Move intro text
+        const introText = document.querySelector('.intro-text');
+        const maxTranslateX = -newMarginLeft;
+        introText.style.transform = `translateX(${maxTranslateX * scrollProgress}px)`;
+    });
 
-  const scrollBtn = document.querySelector(".scroll-to-top");
-  scrollBtn.style.display = scrollTop > 200 ? "block" : "none";
+    scrollTopBtn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
 });
-
-function scrollToTop() {
-  window.scrollTo({ top: 0, behavior: "smooth" });
-}
