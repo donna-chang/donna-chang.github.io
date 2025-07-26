@@ -9,28 +9,22 @@ window.addEventListener('scroll', () => {
   const progress = Math.min(scrollY / maxScroll, 1);
 
   // 初始位置與大小
-  const startLeft = 72;
-  const startTop = window.innerHeight * 0.5 - 130; // centered - half of height 260px
-  const startWidth = 240;
-  const startHeight = 260;
+  const startX = 72;
+  const startY = window.innerHeight * 0.5 - 130; // 260/2
 
-  // 最終位置與大小
-  const endLeft = 60; // navbar padding
-  const endTop = 12; // navbar vertical center alignment
-  const endWidth = 48;
-  const endHeight = 52;
+  // 最終位置與大小（垂直置中）
+  const endX = 60;
+  const navbarHeight = navbar.offsetHeight;
+  const endY = navbarHeight / 2 - 26; // 52/2
 
-  // 線性內插
-  const currentLeft = startLeft + (endLeft - startLeft) * progress;
-  const currentTop = startTop + (endTop - startTop) * progress;
-  const currentWidth = startWidth + (endWidth - startWidth) * progress;
-  const currentHeight = startHeight + (endHeight - startHeight) * progress;
+  const startScale = 1;
+  const endScale = 48 / 240; // 0.2
 
-  logoWrapper.style.position = 'absolute';
-  logoWrapper.style.left = `${currentLeft}px`;
-  logoWrapper.style.top = `${currentTop}px`;
-  logoWrapper.style.width = `${currentWidth}px`;
-  logoWrapper.style.height = `${currentHeight}px`;
+  const currentX = startX + (endX - startX) * progress;
+  const currentY = startY + (endY - startY) * progress;
+  const currentScale = startScale + (endScale - startScale) * progress;
+
+  logoWrapper.style.transform = `translate(${currentX}px, ${currentY}px) scale(${currentScale})`;
 
   // intro 文字也向左推 72px，避免重疊
   introText.style.transform = `translateX(${-progress * 72}px)`;
