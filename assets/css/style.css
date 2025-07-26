@@ -1,15 +1,24 @@
-/* Reset 與基礎設定 */
+/* Reset 與基礎 */
 * {
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
   font-family: 'Roboto', sans-serif;
 }
 
 body {
   background: white;
-  color: #000;
-  padding-top: 30px; /* navbar 高度 */
+  color: #000000;
+  /* 預留 navbar 高度 */
+  padding-top: 100px;
+}
+
+/* container 統一左右間距 */
+.container {
+  padding-left: 60px;
+  padding-right: 60px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 /* Navbar 固定頂部 */
@@ -19,23 +28,16 @@ body {
   left: 0;
   width: 100%;
   background: white;
-  border-bottom: none; /* 取消底線 */
-  z-index: 1000;
-  padding: 20px 60px;
+  z-index: 10000;
+  border-bottom: none;
+  box-shadow: none;
+  transition: all 0.3s ease;
+  height: 100px;
   display: flex;
   align-items: center;
-  /* 移除縮小時 padding 變化 */
-  /* transition: padding 0.3s ease; */
 }
 
-/* 移除 navbar.shrunk 樣式，navbar 不會縮小 */
-/*
-.navbar.shrunk {
-  padding: 10px 40px;
-}
-*/
-
-/* navbar 內部容器 */
+/* nav-container 內部彈性排版 */
 .nav-container {
   display: flex;
   justify-content: space-between;
@@ -43,126 +45,113 @@ body {
   width: 100%;
 }
 
-/* 左側區塊（漢堡+logo） */
-.nav-left {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  position: relative;
-}
-
-/* 漢堡選單 */
-.hamburger {
-  display: none;
-  font-size: 20px;
-  background: none;
-  border: none;
-  margin-right: 20px;
-  cursor: pointer;
-}
-
-/* 大 logo 預設隱藏，scroll 時由 JS 控制 style 顯示與大小 */
-.logo-large {
-  display: none;
+/* logo 大小初始 240x260 */
+.logo {
   width: 240px;
   height: 260px;
   object-fit: contain;
   transition: width 0.3s ease, height 0.3s ease;
 }
 
-/* 小 logo 預設隱藏，scroll 超過指定距離由 JS 控制顯示 */
-.logo-small {
-  position: absolute;
-  left: 0;
-  height: 52px; /* 縮小 logo 高度 */
-  width: 48px;  /* 縮小 logo 寬度 */
-  display: none;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  pointer-events: none; /* 不影響點擊 */
-}
-.logo-small.visible {
-  display: block;
-  opacity: 1;
-  pointer-events: auto;
-}
-
-/* 導航連結 */
-#nav-links {
+/* 導航選單 */
+.nav-links {
   display: flex;
-  gap: 20px;
+  gap: 40px;
+  align-items: center;
 }
 
+/* 連結樣式 */
 .nav-link {
   text-decoration: none;
   font-size: 14px;
   text-transform: uppercase;
-  color: #000000;
-  font-weight: 300;
+  cursor: pointer;
   transition: color 0.3s ease, font-weight 0.3s ease;
 }
 
+/* WORK */
 .nav-link.active {
-  font-weight: 700;
   color: #008CFF;
+  font-weight: 700;
 }
 
-/* Intro section 文字與大 Logo 包裹容器 */
-/* 改成左右 padding 60px，並靠左，不要 margin auto */
-.intro-container {
+/* ABOUT */
+.nav-link:not(.active) {
+  color: #000000;
+  font-weight: 300;
+}
+
+/* 漢堡選單預設隱藏 */
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 28px;
+  cursor: pointer;
+  user-select: none;
+  color: #000000;
+}
+
+/* Intro 區 */
+.intro {
+  margin-top: 60px;
   display: flex;
   align-items: center;
-  gap: 72px; /* 初始 logo 與文字距離 */
-  max-width: 1200px;
-  padding-left: 60px;
-  /* margin: 0 auto;  移除靠中 */
-  transition: gap 0.3s ease, padding-left 0.3s ease;
+  gap: 72px;
+  color: #000000;
 }
 
-/* 文字區塊 */
-.intro h1 {
+/* intro 文字容器 */
+.intro-text h1 {
   font-size: 30px;
   font-weight: 700;
-  margin-bottom: 15px;
+  margin-bottom: 8px;
 }
 
-.subheading {
+.intro-text .subheading {
   font-size: 22px;
-  font-weight: 300;
-  margin-bottom: 15px;
+  font-weight: 400;
+  margin-bottom: 8px;
 }
 
-.description {
-  font-size: 22px;
-  font-weight: 300;
+.intro-text .description {
+  font-size: 28px;
+  font-weight: 400;
 }
 
-/* 作品區塊 */
+/* 作品區 */
 .work-cards {
-  padding: 120px 60px 100px;
+  margin-top: 120px;
 }
 
 .card-row {
   display: flex;
+  gap: auto;
   justify-content: space-between;
   margin-bottom: 30px;
-  gap: 20px; /* 卡片間距 */
 }
 
-.card img {
+.card {
   width: 650px;
   height: 360px;
   border-radius: 10px;
+  overflow: hidden;
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
 }
 
 /* footer */
-.footer {
+footer {
+  margin-top: 100px;
+  padding-bottom: 60px;
   text-align: center;
   font-size: 12px;
   font-weight: 300;
   color: #B7B7B7;
-  padding-bottom: 60px;
 }
 
 /* back to top 按鈕 */
@@ -170,61 +159,67 @@ body {
   position: fixed;
   bottom: 30px;
   right: 30px;
+  width: 40px;
+  height: 40px;
   background: #008CFF;
   color: white;
   border: none;
   border-radius: 50%;
-  width: 40px;
-  height: 40px;
   font-size: 18px;
-  display: none;
   cursor: pointer;
+  display: none;
   align-items: center;
   justify-content: center;
   transition: opacity 0.3s ease;
 }
 
+/* 顯示 back to top 按鈕 */
 .back-to-top.show {
   display: flex;
   opacity: 1;
 }
 
-/* RWD 手機版 */
+/* RWD */
 @media (max-width: 768px) {
+  /* 漢堡顯示 */
   .hamburger {
-    display: inline;
+    display: block;
   }
-  #nav-links {
+  /* 導航連結隱藏 */
+  .nav-links {
     display: none;
-    flex-direction: column;
-    background: white;
     position: absolute;
-    top: 60px;
+    top: 100px;
     left: 0;
     right: 0;
-    padding: 10px 60px;
-    z-index: 100;
+    background: white;
+    flex-direction: column;
+    gap: 24px;
+    padding: 20px 60px;
+    box-shadow: 0 0 10px rgb(0 0 0 / 0.1);
+    z-index: 9999;
   }
-  #nav-links.show {
+  .nav-links.show {
     display: flex;
   }
+  /* logo 縮小 */
+  .logo {
+    width: 48px !important;
+    height: 52px !important;
+    transition: none !important;
+  }
+  /* Intro 區改成垂直堆疊 */
+  .intro {
+    flex-direction: column;
+    gap: 20px;
+  }
+  /* card 一列一張 */
   .card-row {
     flex-direction: column;
-    align-items: center;
     gap: 30px;
   }
-  .card img {
+  .card {
     width: 100%;
-    height: auto;
-  }
-  /* intro-container 手機改為垂直堆疊 */
-  .intro-container {
-    flex-direction: column;
-    gap: 30px;
-    padding-left: 60px; /* 保持左右 padding 一致 */
-  }
-  /* 手機隱藏小 logo */
-  .logo-small {
-    display: none !important;
+    max-width: 650px;
   }
 }
