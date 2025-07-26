@@ -1,0 +1,140 @@
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+}
+body {
+  background: white;
+  color: #000;
+  padding-top: 60px;
+}
+.navbar {
+  position: sticky;
+  top: 0;
+  background: white;
+  border-bottom: 1px solid #ccc;
+  z-index: 1000;
+  padding: 15px 60px;
+}
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav-left {
+  display: flex;
+  align-items: center;
+}
+.hamburger {
+  display: none;
+  font-size: 20px;
+  background: none;
+  border: none;
+  margin-right: 20px;
+}
+.logo {
+  height: 30px;
+}
+#nav-links {
+  display: flex;
+  gap: 20px;
+}
+.nav-link {
+  text-decoration: none;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+.nav-link.active {
+  font-weight: 700;
+  color: #008CFF;
+}
+.nav-link:not(.active) {
+  font-weight: 300;
+  color: #000000;
+}
+
+.intro {
+  padding: 60px;
+}
+.intro h1 {
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+.subheading {
+  font-size: 22px;
+  font-weight: 400;
+  margin-bottom: 15px;
+}
+.description {
+  font-size: 28px;
+  font-weight: 400;
+}
+
+.work-cards {
+  padding: 120px 60px 100px;
+}
+.card-row {
+  display: flex;
+  gap: auto;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+.card img {
+  width: 650px;
+  height: 360px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.footer {
+  text-align: center;
+  font-size: 12px;
+  font-weight: 300;
+  color: #B7B7B7;
+  padding-bottom: 60px;
+}
+
+.back-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: #008CFF;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 18px;
+  display: none;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: inline;
+  }
+  #nav-links {
+    display: none;
+    flex-direction: column;
+    background: white;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    padding: 10px 60px;
+  }
+  #nav-links.show {
+    display: flex;
+  }
+  .card-row {
+    flex-direction: column;
+    align-items: center;
+  }
+  .card img {
+    width: 100%;
+    height: auto;
+  }
+}
