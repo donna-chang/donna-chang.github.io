@@ -18,7 +18,7 @@ body {
   background: white;
   border-bottom: none;
   z-index: 1000;
-  padding: 15px 60px;
+  padding: 20px 60px;
 }
 .nav-container {
   display: flex;
