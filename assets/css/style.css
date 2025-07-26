@@ -1,89 +1,164 @@
-
+/* Reset 與基礎設定 */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
   font-family: 'Roboto', sans-serif;
 }
+
 body {
   background: white;
   color: #000;
   padding-top: 30px;
 }
+
+/* Navbar 固定頂部 */
 .navbar {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   background: white;
-  border-bottom: none;
+  border-bottom: none; /* 取消底線 */
   z-index: 1000;
   padding: 20px 60px;
+  display: flex;
+  align-items: center;
+  transition: padding 0.3s ease; /* scroll 動態縮小時過渡 */
 }
+
+/* navbar 變小時的 padding 調整 */
+.navbar.shrunk {
+  padding: 10px 40px;
+}
+
+/* navbar 內部容器 */
 .nav-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
 }
+
+/* 左側區塊（漢堡+logo） */
 .nav-left {
   display: flex;
   align-items: center;
+  gap: 20px;
+  position: relative;
 }
+
+/* 漢堡選單 */
 .hamburger {
   display: none;
   font-size: 20px;
   background: none;
   border: none;
   margin-right: 20px;
+  cursor: pointer;
 }
+
+/* navbar 大 logo 預設顯示 */
 .logo {
   height: 30px;
+  transition: opacity 0.3s ease;
 }
+
+/* navbar 縮小時顯示的小 logo，預設隱藏 */
+.logo-small {
+  position: absolute;
+  left: 0;
+  height: 52px; /* 縮小 logo 高度 */
+  width: 48px;  /* 縮小 logo 寬度 */
+  display: none;
+  transition: opacity 0.3s ease;
+}
+
+/* 縮小時顯示小 logo，隱藏大 logo */
+.navbar.shrunk .logo {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.navbar.shrunk .logo-small {
+  display: block;
+  opacity: 1;
+}
+
+/* 導航連結 */
 #nav-links {
   display: flex;
   gap: 20px;
 }
+
 .nav-link {
   text-decoration: none;
   font-size: 14px;
   text-transform: uppercase;
+  color: #000000;
+  font-weight: 300;
+  transition: color 0.3s ease, font-weight 0.3s ease;
 }
+
 .nav-link.active {
   font-weight: 700;
   color: #008CFF;
 }
-.nav-link:not(.active) {
-  font-weight: 300;
-  color: #000000;
-}
 
+/* Intro section 文字與大 Logo 包裹容器 */
 .intro {
   padding: 60px;
+  overflow: visible;
 }
+
+/* 新增 intro-container 用 flex 置中且橫向排列 */
+.intro-container {
+  display: flex;
+  align-items: center;
+  gap: 72px; /* logo 與文字距離 */
+  max-width: 1200px; /* 可依需求調整最大寬度 */
+  margin: 0 auto; /* 靠中 */
+  transition: gap 0.3s ease;
+}
+
+/* intro 大 logo */
+.logo-large {
+  width: 240px;
+  height: 260px;
+  object-fit: contain;
+  transition: width 0.3s ease, height 0.3s ease;
+}
+
+/* 文字區塊 */
 .intro h1 {
   font-size: 30px;
   font-weight: 700;
   margin-bottom: 15px;
 }
+
 .subheading {
   font-size: 22px;
   font-weight: 300;
   margin-bottom: 15px;
 }
+
 .description {
   font-size: 22px;
   font-weight: 300;
 }
 
+/* 作品區塊 */
 .work-cards {
   padding: 120px 60px 100px;
 }
+
 .card-row {
   display: flex;
-  gap: auto;
   justify-content: space-between;
   margin-bottom: 30px;
+  gap: 20px; /* 卡片間距 */
 }
+
 .card img {
   width: 650px;
   height: 360px;
@@ -91,6 +166,7 @@ body {
   object-fit: cover;
 }
 
+/* footer */
 .footer {
   text-align: center;
   font-size: 12px;
@@ -99,6 +175,7 @@ body {
   padding-bottom: 60px;
 }
 
+/* back to top 按鈕 */
 .back-to-top {
   position: fixed;
   bottom: 30px;
@@ -112,6 +189,14 @@ body {
   font-size: 18px;
   display: none;
   cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.3s ease;
+}
+
+.back-to-top.show {
+  display: flex;
+  opacity: 1;
 }
 
 @media (max-width: 768px) {
@@ -127,6 +212,7 @@ body {
     left: 0;
     right: 0;
     padding: 10px 60px;
+    z-index: 100;
   }
   #nav-links.show {
     display: flex;
@@ -134,9 +220,19 @@ body {
   .card-row {
     flex-direction: column;
     align-items: center;
+    gap: 30px;
   }
   .card img {
     width: 100%;
     height: auto;
+  }
+  /* intro-container 手機改為垂直堆疊 */
+  .intro-container {
+    flex-direction: column;
+    gap: 30px;
+  }
+  /* 隱藏小 logo 手機改用 navbar logo */
+  .logo-small {
+    display: none !important;
   }
 }
