@@ -22,7 +22,7 @@ h1, h2, p, a {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #ffffff;
+  background: transparent;
   z-index: 1000;
   height: 60px;
 }
