@@ -1,76 +1,63 @@
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Donna Chang - Work</title>
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Donna Chang - Portfolio</title>
+  <!-- Google Fonts (Roboto) -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <nav class="navbar">
-        <div class="container">
-            <div class="nav-content">
-                <div class="logo-container"></div>
-                <div class="hamburger">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-                <ul class="nav-links">
-                    <li><a href="index.html" class="active">WORK</a></li>
-                    <li><a href="about.html">ABOUT</a></li>
-                </ul>
-            </div>
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="container nav-container">
+      <div class="nav-left">
+        <div class="hamburger">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
         </div>
-    </nav>
+        <img src="https://via.placeholder.com/48x52.png?text=Logo" alt="Logo" class="nav-logo">
+      </div>
+      <div class="nav-links">
+        <a href="#" class="nav-item work">WORK</a>
+        <a href="#" class="nav-item about">ABOUT</a>
+      </div>
+    </div>
+  </nav>
 
-    <section class="intro">
-        <div class="container intro-container">
-            <div class="intro-content">
-                <img src="assets/images/logo.png" alt="Donna Chang Logo" class="intro-logo">
-                <div class="intro-text">
-                    <h1>Hello, I’m Donna Chang 👋</h1>
-                    <p>I’m a product designer with user experience research background</p>
-                    <p>Delivering value to users and striving to make a positive impact are the goals of my work</p>
-                </div>
-            </div>
-        </div>
-    </section>
+  <!-- Intro Section -->
+  <section class="intro container">
+    <img src="https://via.placeholder.com/240x260.png?text=Logo" alt="Logo" class="intro-logo">
+    <div class="intro-text">
+      <h1>Hello, I’m Donna Chang 👋</h1>
+      <p>I’m a product designer with user experience research background</p>
+      <p>Delivering value to users and striving to make a positive impact are the goals of my work</p>
+    </div>
+  </section>
 
-    <section class="projects">
-        <div class="container">
-            <div class="project-grid">
-                <div class="project-card">
-                    <img src="assets/images/work1.png" alt="Project 1">
-                </div>
-                <div class="project-card">
-                    <img src="assets/images/work1.png" alt="Project 2">
-                </div>
-                <div class="project-card">
-                    <img src="assets/images/work1.png" alt="Project 3">
-                </div>
-                <div class="project-card">
-                    <img src="assets/images/work1.png" alt="Project 4">
-                </div>
-                <div class="project-card">
-                    <img src="assets/images/work1.png" alt="Project 5">
-                </div>
-                <div class="project-card">
-                    <img src="assets/images/work1.png" alt="Project 6">
-                </div>
-            </div>
-        </div>
-    </section>
+  <!-- Work Section -->
+  <section class="work container">
+    <div class="work-cards">
+      <div class="card">Work 1</div>
+      <div class="card">Work 2</div>
+      <div class="card">Work 3</div>
+      <div class="card">Work 4</div>
+      <div class="card">Work 5</div>
+      <div class="card">Work 6</div>
+    </div>
+  </section>
 
-    <footer>
-        <div class="container">
-            <p>© Copyright Donna Chang 2025. All rights reserved.</p>
-        </div>
-    </footer>
+  <!-- Footer -->
+  <footer class="footer">
+    <p>© Copyright Donna Chang 2025. All rights reserved.</p>
+  </footer>
 
-    <button class="scroll-top" aria-label="Scroll to top">↑</button>
+  <!-- Scroll to Top Button -->
+  <button class="scroll-top">↑</button>
 
-    <script src="assets/js/script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
