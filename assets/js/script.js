@@ -1,46 +1,37 @@
-// assets/js/script.js
+// JavaScript for scroll effects and scroll-to-top button
 
 document.addEventListener('DOMContentLoaded', function() {
-  const logo = document.getElementById('logo');
-  const introText = document.getElementById('introText');
-  const nav = document.querySelector('.navbar');
-  const scrollBtn = document.getElementById('scrollTopBtn');
-  
-  const intro = document.querySelector('.intro');
-  const introMargin = 60; // as defined in CSS
+    const logo = document.getElementById('logo');
+    const introText = document.getElementById('intro-text');
+    const scrollTopBtn = document.getElementById('scrollTopBtn');
 
-  function updateAnimation() {
-    const scrollY = window.scrollY;
-    const navHeight = nav.offsetHeight;
-    const introHeight = intro.offsetHeight;
-    const threshold = introHeight + introMargin;
-    const ratio = Math.min(Math.max(scrollY / threshold, 0), 1);
-    
-    // Logo scaling from 1 to 0.2
-    const scale = 1 - 0.8 * ratio;
-    // Initial and final top positions for logo
-    const initialLogoTop = navHeight + introMargin;
-    const finalLogoHeight = 52; // 260 * 0.2
-    const finalLogoTop = (navHeight - finalLogoHeight) / 2;
-    const translateY = finalLogoTop - initialLogoTop;
-    logo.style.transform = `translateY(${translateY * ratio}px) scale(${scale})`;
-    
-    // Text block moves left by 72px
-    const textTranslateX = -72 * ratio;
-    introText.style.transform = `translateX(${textTranslateX}px)`;
-    
-    // Show or hide scroll-to-top button
-    if (scrollY > 100) {
-      scrollBtn.style.display = 'flex';
-    } else {
-      scrollBtn.style.display = 'none';
+    // Function to handle scroll events
+    function onScroll() {
+        // Logo animation: when intro section is out of viewport
+        const introBottom = introText.getBoundingClientRect().bottom;
+        if (introBottom <= 0) {
+            logo.classList.add('logo-fixed');
+            introText.classList.add('text-shift');
+        } else {
+            logo.classList.remove('logo-fixed');
+            introText.classList.remove('text-shift');
+        }
+
+        // Show or hide scroll-to-top button
+        if (window.scrollY > 300) {
+            scrollTopBtn.style.display = 'block';
+        } else {
+            scrollTopBtn.style.display = 'none';
+        }
     }
-  }
-  
-  // Scroll to top on button click
-  scrollBtn.addEventListener('click', function() {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
-  
-  window.addEventListener('scroll', updateAnimation);
+
+    // Attach scroll event
+    window.addEventListener('scroll', onScroll);
+    // Initialize state on load
+    onScroll();
+
+    // Scroll to top behavior
+    scrollTopBtn.addEventListener('click', function() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
 });
