@@ -3,61 +3,54 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Donna Chang - Portfolio</title>
-  <!-- Google Fonts (Roboto) -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Donna Chang Portfolio</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
-  <!-- Navigation Bar -->
-  <nav class="navbar">
-    <div class="container nav-container">
-      <div class="nav-left">
-        <div class="hamburger">
-          <span class="bar"></span>
-          <span class="bar"></span>
-          <span class="bar"></span>
-        </div>
-        <img src="assets/images/logo.png" alt="Logo" class="nav-logo">
-      </div>
-      <div class="nav-links">
-        <a href="#" class="nav-item work">WORK</a>
-        <a href="#" class="nav-item about">ABOUT</a>
-      </div>
+  <nav class="navbar container">
+    <div class="nav-left">
+      <div class="hamburger">&#9776;</div>
+      <!-- Logo is in intro, not in nav initially -->
+    </div>
+    <div class="nav-right">
+      <a href="#" class="nav-link work-link">WORK</a>
+      <a href="#" class="nav-link about-link">ABOUT</a>
     </div>
   </nav>
 
-  <!-- Intro Section -->
   <section class="intro container">
-    <img src="assets/images/logo.png" alt="Logo" class="intro-logo">
-    <div class="intro-text">
-      <h1>Hello, I’m Donna Chang 👋</h1>
-      <p>I’m a product designer with user experience research background</p>
-      <p>Delivering value to users and striving to make a positive impact are the goals of my work</p>
+    <div class="intro-content">
+      <img id="logo" src="assets/images/logo.png" alt="Logo" class="intro-logo">
+      <div class="intro-text" id="introText">
+        <h1>Hello, I’m Donna Chang 👋</h1>
+        <p>I’m a product designer with user experience research background</p>
+        <p>Delivering value to users and striving to make a positive impact are the goals of my work</p>
+      </div>
     </div>
   </section>
 
-  <!-- Work Section -->
   <section class="work container">
-    <div class="work-cards">
-      <div class="card"><img src="assets/images/work1.png" alt="Work 1" /></div>
-      <div class="card"><img src="assets/images/work1.png" alt="Work 2" /></div>
-      <div class="card"><img src="assets/images/work1.png" alt="Work 3" /></div>
-      <div class="card"><img src="assets/images/work1.png" alt="Work 4" /></div>
-      <div class="card"><img src="assets/images/work1.png" alt="Work 5" /></div>
-      <div class="card"><img src="assets/images/work1.png" alt="Work 6" /></div>
+    <h2>Work</h2>
+    <div class="work-grid">
+      <div class="work-item"><img src="assets/images/work1.png" alt="Work 1"></div>
+      <div class="work-item"><img src="assets/images/work2.png" alt="Work 2"></div>
+      <div class="work-item"><img src="assets/images/work3.png" alt="Work 3"></div>
+      <div class="work-item"><img src="assets/images/work4.png" alt="Work 4"></div>
+      <div class="work-item"><img src="assets/images/work5.png" alt="Work 5"></div>
+      <div class="work-item"><img src="assets/images/work6.png" alt="Work 6"></div>
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer class="footer">
+  <footer class="footer container">
     <p>© Copyright Donna Chang 2025. All rights reserved.</p>
   </footer>
 
-  <!-- Scroll to Top Button -->
-  <button class="scroll-top">↑</button>
-
+  <button id="scrollTopBtn" title="Go to top">▲</button>
+  
   <script src="assets/js/script.js"></script>
 </body>
 </html>
