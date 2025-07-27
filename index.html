@@ -1,56 +1,52 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Donna Chang Portfolio</title>
-  <link rel="stylesheet" href="assets/css/style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donna Chang Portfolio</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- Roboto Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <nav class="navbar container">
-    <div class="nav-left">
-      <div class="hamburger">&#9776;</div>
-      <!-- Logo is in intro, not in nav initially -->
-    </div>
-    <div class="nav-right">
-      <a href="#" class="nav-link work-link">WORK</a>
-      <a href="#" class="nav-link about-link">ABOUT</a>
-    </div>
-  </nav>
+    <nav class="navbar">
+        <div class="container">
+            <div class="hamburger">&#9776;</div>
+            <div class="menu">
+                <a href="#">WORK</a>
+                <a href="#">ABOUT</a>
+            </div>
+        </div>
+    </nav>
 
-  <section class="intro container">
-    <div class="intro-content">
-      <img id="logo" src="assets/images/logo.png" alt="Logo" class="intro-logo">
-      <div class="intro-text" id="introText">
-        <h1>Hello, I’m Donna Chang 👋</h1>
-        <p>I’m a product designer with user experience research background</p>
-        <p>Delivering value to users and striving to make a positive impact are the goals of my work</p>
-      </div>
-    </div>
-  </section>
+    <section class="hero">
+        <div class="container hero-container">
+            <img id="logo" src="assets/images/logo.png" alt="Logo">
+            <div id="intro-text" class="intro-text">
+                <h1>Hello, I’m Donna Chang 👋</h1>
+                <p>I’m a product designer with user experience research background</p>
+                <p>Delivering value to users and striving to make a positive impact are the goals of my work</p>
+            </div>
+        </div>
+    </section>
 
-  <section class="work container">
-    <h2>Work</h2>
-    <div class="work-grid">
-      <div class="work-item"><img src="assets/images/work1.png" alt="Work 1"></div>
-      <div class="work-item"><img src="assets/images/work2.png" alt="Work 2"></div>
-      <div class="work-item"><img src="assets/images/work3.png" alt="Work 3"></div>
-      <div class="work-item"><img src="assets/images/work4.png" alt="Work 4"></div>
-      <div class="work-item"><img src="assets/images/work5.png" alt="Work 5"></div>
-      <div class="work-item"><img src="assets/images/work6.png" alt="Work 6"></div>
-    </div>
-  </section>
+    <section class="work">
+        <div class="container work-container">
+            <div class="work-card"><img src="assets/images/work1.png" alt="Work 1"></div>
+            <div class="work-card"><img src="assets/images/work2.png" alt="Work 2"></div>
+            <div class="work-card"><img src="assets/images/work3.png" alt="Work 3"></div>
+            <div class="work-card"><img src="assets/images/work4.png" alt="Work 4"></div>
+            <div class="work-card"><img src="assets/images/work5.png" alt="Work 5"></div>
+            <div class="work-card"><img src="assets/images/work6.png" alt="Work 6"></div>
+        </div>
+    </section>
 
-  <footer class="footer container">
-    <p>© Copyright Donna Chang 2025. All rights reserved.</p>
-  </footer>
+    <footer>
+        <p>© Copyright Donna Chang 2025. All rights reserved.</p>
+    </footer>
 
-  <button id="scrollTopBtn" title="Go to top">▲</button>
-  
-  <script src="assets/js/script.js"></script>
+    <button id="scrollTopBtn">&#8593;</button>
+
+    <script src="assets/js/script.js"></script>
 </body>
 </html>
