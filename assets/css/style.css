@@ -30,11 +30,20 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
 }
 
 .nav-left {
   display: flex;
   align-items: center;
+  margin-right: auto; 
+}
+
+.nav-links {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  margin-left: auto; /* ← 確保右邊靠右 */
 }
 
 /* hamburger 左側，logo 右側 20px */
