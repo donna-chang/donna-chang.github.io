@@ -1,52 +1,33 @@
+<!-- index.html -->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-Hant">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Donna Chang Portfolio</title>
-    <link rel="stylesheet" href="assets/css/style.css">
-    <!-- Roboto Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <title>Logo 滾動動畫範例</title>
+  <!-- 引入 Roboto 字體 -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-    <nav class="navbar">
-        <div class="container">
-            <div class="hamburger">&#9776;</div>
-            <div class="menu">
-                <a href="#">WORK</a>
-                <a href="#">ABOUT</a>
-            </div>
-        </div>
-    </nav>
+  <header class="navbar">
+    <div class="hamburger">
+      <div></div><div></div><div></div>
+    </div>
+  </header>
 
-    <section class="hero">
-        <div class="container hero-container">
-            <img id="logo" src="assets/images/logo.png" alt="Logo">
-            <div id="intro-text" class="intro-text">
-                <h1>Hello, I’m Donna Chang 👋</h1>
-                <p>I’m a product designer with user experience research background</p>
-                <p>Delivering value to users and striving to make a positive impact are the goals of my work</p>
-            </div>
-        </div>
-    </section>
+  <section class="intro">
+    <img src="assets/images/logo.png" class="logo" alt="Logo">
+    <div class="intro-text">
+      <h1>Hello, I'm Donna Chang 👋</h1>
+      <p>Welcome to my portfolio. I am a product designer with a background in UX research. I strive to create user-centered designs and solve real-world problems.</p>
+    </div>
+  </section>
 
-    <section class="work">
-        <div class="container work-container">
-            <div class="work-card"><img src="assets/images/work1.png" alt="Work 1"></div>
-            <div class="work-card"><img src="assets/images/work1.png" alt="Work 2"></div>
-            <div class="work-card"><img src="assets/images/work1.png" alt="Work 3"></div>
-            <div class="work-card"><img src="assets/images/work1.png" alt="Work 4"></div>
-            <div class="work-card"><img src="assets/images/work1.png" alt="Work 5"></div>
-            <div class="work-card"><img src="assets/images/work1.png" alt="Work 6"></div>
-        </div>
-    </section>
+  <main>
+    <p>Here is more content. Scroll down to see the logo shrink and move into the navbar.</p>
+    <!-- 更多內容，用於測試滾動 -->
+  </main>
 
-    <footer>
-        <p>© Copyright Donna Chang 2025. All rights reserved.</p>
-    </footer>
-
-    <button id="scrollTopBtn">&#8593;</button>
-
-    <script src="assets/js/script.js"></script>
+  <script src="assets/js/script.js"></script>
 </body>
 </html>
