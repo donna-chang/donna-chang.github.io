@@ -28,7 +28,8 @@ document.addEventListener('DOMContentLoaded', function () {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('fade-in');
-          observer.unobserve(entry.target); // 只觸發一次
+        } else {
+          entry.target.classList.remove('fade-in');
         }
       });
     },
@@ -38,7 +39,7 @@ document.addEventListener('DOMContentLoaded', function () {
   );
 
   cards.forEach(card => {
-    observer.observe(card);
+  observer.observe(card);
   });
 });
 
