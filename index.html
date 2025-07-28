@@ -1,52 +1,124 @@
-<!DOCTYPE html>
-<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Donna Chang Portfolio</title>
-    <link rel="stylesheet" href="assets/css/style.css">
-    <!-- Roboto Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+  <!-- 引入 Roboto 字體 -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      color: #000;
+    }
+    .container {
+      padding: 0 60px;
+    }
+  </style>
 </head>
-<body>
-    <nav class="navbar">
-        <div class="container">
-            <div class="hamburger">&#9776;</div>
-            <div class="menu">
-                <a href="#">WORK</a>
-                <a href="#">ABOUT</a>
-            </div>
-        </div>
-    </nav>
+<nav class="navbar">
+  <img src="assets/images/logo.png" alt="Logo" class="logo">
+  <ul class="nav-menu">
+    <li><a href="work.html" class="active">WORK</a></li>
+    <li><a href="about.html">ABOUT</a></li>
+  </ul>
+  <div class="hamburger">&#9776;</div>
+</nav>
 
-    <section class="hero">
-        <div class="container hero-container">
-            <img id="logo" src="assets/images/logo.png" alt="Logo">
-            <div id="intro-text" class="intro-text">
-                <h1>Hello, I’m Donna Chang 👋</h1>
-                <p>I’m a product designer with user experience research background</p>
-                <p>Delivering value to users and striving to make a positive impact are the goals of my work</p>
-            </div>
-        </div>
-    </section>
+<style>
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: rgba(255,255,255,0.8); /* 80% 不透明白背景 */ 
+  display: flex;
+  align-items: center;
+  z-index: 100;
+}
+.logo {
+  width: 48px;
+  height: 52px;
+  margin-left: 60px;
+}
+.nav-menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  margin-left: auto; /* push links to right */
+  margin-right: 60px;
+}
+.nav-menu li {
+  margin-left: 20px;
+}
+.nav-menu a {
+  text-decoration: none;
+  font-size: 14px;
+  text-transform: uppercase;
+  color: #000;
+}
+.nav-menu a.active {
+  color: #008CFF;
+  font-weight: 700; /* Roboto Bold */
+}
+.nav-menu a:not(.active) {
+  font-weight: 300; /* Roboto Light */
+}
+/* 手機版漢堡圖示預設隱藏 */
+.hamburger {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+  margin-left: 20px;
+  margin-right: 60px;
+}
+</style>
+<section class="intro container">
+  <h1>Hello, I’m Donna Chang 👋</h1>
+  <p>I'm a product designer with user experience research background</p>
+  <p>Delivering value to users and striving to make a positive impact are the goals of my work</p>
+</section>
 
-    <section class="work">
-        <div class="container work-container">
-            <div class="work-card"><img src="assets/images/work1.png" alt="Work 1"></div>
-            <div class="work-card"><img src="assets/images/work1.png" alt="Work 2"></div>
-            <div class="work-card"><img src="assets/images/work1.png" alt="Work 3"></div>
-            <div class="work-card"><img src="assets/images/work1.png" alt="Work 4"></div>
-            <div class="work-card"><img src="assets/images/work1.png" alt="Work 5"></div>
-            <div class="work-card"><img src="assets/images/work1.png" alt="Work 6"></div>
-        </div>
-    </section>
+<style>
+.intro {
+  margin-top: 60px; /* 頂部間距 */
+}
+.intro h1 {
+  font-size: 30px;
+  font-weight: 700; /* Roboto Bold */
+  margin: 0 0 20px 0;
+}
+.intro p {
+  font-size: 22px;
+  font-weight: 400; /* Roboto Regular */
+  margin: 5px 0;
+}
+</style>
+<div class="cards container">
+  <div class="card"><img src="path/to/project1.jpg" alt="Project 1"></div>
+  <div class="card"><img src="path/to/project2.jpg" alt="Project 2"></div>
+  <!-- 共6張，依此類推 -->
+</div>
 
-    <footer>
-        <p>© Copyright Donna Chang 2025. All rights reserved.</p>
-    </footer>
-
-    <button id="scrollTopBtn">&#8593;</button>
-
-    <script src="assets/js/script.js"></script>
-</body>
-</html>
+<style>
+.cards {
+  display: flex;
+  flex-wrap: wrap;       /* 允許換行:contentReference[oaicite:13]{index=13} */
+  justify-content: space-between;
+  margin-top: 120px;
+}
+.card {
+  width: 650px;
+  height: 360px;
+  margin-bottom: 20px;
+}
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+/* RWD：螢幕窄時改為單列 */
+@media (max-width: 768px) {
+  .card {
+    width: 100%;
+  }
+}
+</style>
+<button id="topBtn" title="Top">&#8593;</button>
