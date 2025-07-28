@@ -43,7 +43,7 @@ body {
 
 .nav-links {
   display: flex;
-  gap: 40px;
+  gap: 28px;
   align-items: center;
   margin-left: auto; /* ← 確保右邊靠右 */
 }
