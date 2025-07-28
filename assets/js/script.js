@@ -1,37 +1,35 @@
-// JavaScript for scroll effects and scroll-to-top button
-
+// assets/js/script.js
 document.addEventListener('DOMContentLoaded', function() {
-    const logo = document.getElementById('logo');
-    const introText = document.getElementById('intro-text');
-    const scrollTopBtn = document.getElementById('scrollTopBtn');
+  const logo = document.querySelector('.logo');
+  const intro = document.querySelector('.intro');
+  const introText = document.querySelector('.intro-text');
 
-    // Function to handle scroll events
-    function onScroll() {
-        // Logo animation: when intro section is out of viewport
-        const introBottom = introText.getBoundingClientRect().bottom;
-        if (introBottom <= 0) {
-            logo.classList.add('logo-fixed');
-            introText.classList.add('text-shift');
-        } else {
-            logo.classList.remove('logo-fixed');
-            introText.classList.remove('text-shift');
-        }
+  // 初始與最終狀態參數
+  const initialLeft = parseFloat(getComputedStyle(logo).left);    // 20px
+  const initialTop  = parseFloat(getComputedStyle(logo).top);     // 100px
+  const finalLeft = 20;   // 縮小後對齊左側 (可調整)
+  const finalTop  = 4;    // 縮小後距導覽列上邊約 4px
+  const deltaX = finalLeft - initialLeft;  // 水平位移總量
+  const deltaY = finalTop  - initialTop;   // 垂直位移總量
+  const initialScale = 1;
+  const finalScale = 0.2; // 48/240 = 0.2
 
-        // Show or hide scroll-to-top button
-        if (window.scrollY > 300) {
-            scrollTopBtn.style.display = 'block';
-        } else {
-            scrollTopBtn.style.display = 'none';
-        }
-    }
+  const introHeight = intro.offsetHeight;
 
-    // Attach scroll event
-    window.addEventListener('scroll', onScroll);
-    // Initialize state on load
-    onScroll();
+  window.addEventListener('scroll', function() {
+    // 計算動畫進度（0~1）
+    let scrollY = window.scrollY;
+    let progress = scrollY / introHeight;
+    progress = Math.max(0, Math.min(1, progress));
 
-    // Scroll to top behavior
-    scrollTopBtn.addEventListener('click', function() {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
+    // 計算並設置 Logo 的 transform
+    let translateX = deltaX * progress;
+    let translateY = deltaY * progress;
+    let scale = initialScale + (finalScale - initialScale) * progress;
+    logo.style.transform = `translate(${translateX}px, ${translateY}px) scale(${scale})`;
+
+    // 同步移動文字區塊向左（不縮放文字）
+    // 我們將文字塊向左移動原先間隔距離 (72px)
+    introText.style.transform = `translateX(${-72 * progress}px)`;
+  });
 });
