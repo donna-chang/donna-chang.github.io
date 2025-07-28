@@ -200,6 +200,8 @@ body {
     border: 1px solid #ddd;
     padding: 20px;
     z-index: 999;
+    gap: 12px;
+
   }
 
   .nav-links.active {
