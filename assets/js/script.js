@@ -18,3 +18,24 @@ window.addEventListener("scroll", function () {
 scrollTopBtn.addEventListener("click", function () {
   window.scrollTo({ top: 0, behavior: "smooth" });
 });
+
+// card effect
+const cards = document.querySelectorAll('.work-card');
+
+const observer = new IntersectionObserver(
+  entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('fade-in');
+        observer.unobserve(entry.target); // 只觸發一次
+      }
+    });
+  },
+  {
+    threshold: 0.1,
+  }
+);
+
+cards.forEach(card => {
+  observer.observe(card);
+});
