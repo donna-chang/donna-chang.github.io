@@ -55,7 +55,7 @@ body {
   background: none;
   border: none;
   cursor: pointer;
-  margin-right: 20px;
+  margin-left: clamp(20px, 5vw, 60px);
 }
 
 .logo {
