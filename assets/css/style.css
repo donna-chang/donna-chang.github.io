@@ -75,11 +75,11 @@ body {
 }
 
 .hamburger::before {
-  top: 4px;
+  top: 3.5px;
 }
 
 .hamburger::after {
-  bottom: 4px;
+  bottom: 4.5px;
 }
 
 .logo {
@@ -239,7 +239,7 @@ body {
     flex-direction: column;
     position: absolute;
     top: 72px;
-    left: 20px;
+    right: 20px;
     background-color: white;
     border: 1px solid #ddd;
     padding: 20px;
