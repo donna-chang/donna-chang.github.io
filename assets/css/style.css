@@ -75,11 +75,11 @@ body {
 }
 
 .hamburger::before {
-  top: 3.5px;
+  top: 2.5px;
 }
 
 .hamburger::after {
-  bottom: 4.5px;
+  bottom: 3.5px;
 }
 
 .logo {
