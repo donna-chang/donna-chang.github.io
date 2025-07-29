@@ -178,6 +178,10 @@ body {
   padding: 0;
 }
 
+#scrollTopBtn.visible {
+  display: flex;
+}
+
 /* 圖片大小設定（你可依需求調整） */
 #scrollTopBtn img {
   width: 20px;
