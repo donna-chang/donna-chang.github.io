@@ -10,9 +10,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
   window.addEventListener("scroll", function () {
     if (window.scrollY > 300) {
-      scrollTopBtn.style.display = "block";
+  scrollTopBtn.classList.add("visible");
     } else {
-      scrollTopBtn.style.display = "none";
+  scrollTopBtn.classList.remove("visible");
     }
   });
 
