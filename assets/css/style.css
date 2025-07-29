@@ -66,7 +66,8 @@ body {
 .hamburger::after {
   content: '';
   position: absolute;
-  width: 100%;
+  width: 70%;
+  left: 15%;  /* 從中間對齊（(100%-70%)/2） */
   height: 2px;
   background-color: #000;
   border-radius: 2px;
@@ -213,15 +214,15 @@ body {
 @media (max-width: 768px) {
   .hamburger {
     display: block;
-    position: absolute;
-    top: 20px;
-    right: 20px;
+    position: static;
+    margin-left: auto;
   }
 
   /* 讓 logo 靠左，hamburger 靠右 */
   .nav-left {
     flex-direction: row-reverse;
     align-items: center;
+    width: 100%; /* 讓 hamburger 能推到右邊 */
   }
 
   .nav-links {
