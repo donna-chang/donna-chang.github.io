@@ -66,8 +66,8 @@ body {
 .hamburger::after {
   content: '';
   position: absolute;
-  width: 70%;
-  left: 15%;  /* 從中間對齊（(100%-70%)/2） */
+  width: 18px;
+  left: 5px;  /* 從中間對齊（(100%-70%)/2） */
   height: 2px;
   background-color: #000;
   border-radius: 2px;
@@ -214,7 +214,7 @@ body {
 @media (max-width: 768px) {
   .hamburger {
     display: block;
-    position: static;
+    position: relative;
     margin-left: auto;
   }
 
