@@ -68,18 +68,18 @@ body {
   position: absolute;
   width: 18px;
   left: 5px;  /* 從中間對齊（(100%-70%)/2） */
-  height: 2px;
+  height: 1.5px;
   background-color: #000;
   border-radius: 2px;
   transition: all 0.3s ease;
 }
 
 .hamburger::before {
-  top: 2.5px;
+  top: 4px;
 }
 
 .hamburger::after {
-  bottom: 3.5px;
+  bottom: 5px;
 }
 
 .logo {
