@@ -1,8 +1,18 @@
 document.addEventListener('DOMContentLoaded', function () {
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('nav-links');
+
   // Toggle nav menu for mobile
-  document.getElementById('hamburger').addEventListener('click', function () {
-    const navLinks = document.getElementById('nav-links');
+  hamburger.addEventListener('click', function (event) {
+    event.stopPropagation(); // 防止點 hamburger 被當作點到外面
     navLinks.classList.toggle('active');
+  });
+
+  // 點擊畫面其他地方時，收起漢堡選單
+  document.addEventListener('click', function (event) {
+    if (!navLinks.contains(event.target) && !hamburger.contains(event.target)) {
+      navLinks.classList.remove('active');
+    }
   });
 
   // Scroll to top button
