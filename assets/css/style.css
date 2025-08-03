@@ -341,21 +341,20 @@ body {
 .banner-overlay {
   position: absolute;
   bottom: 0;
-  left: 0;
-  right: 0;
+  left: 50%;
+  transform: translate(-50%, 50px); /* 水平置中 + 垂直往上推 */
 
-  transform: translateY(50px); /* ✅ 整個往上推 50px */
+  width: 100%;
+  max-width: 1440px;
 
-  max-width: 1440px; /* ✅ 與 container 對齊寬度 */
-  padding-left: clamp(20px, 5vw, 60px); /* ✅ 與 container 對齊左右內距 */
+  padding-left: clamp(20px, 5vw, 60px);
   padding-right: clamp(20px, 5vw, 60px);
-  margin: 0 auto; /* ✅ 水平置中 */
+  padding-top: 26px;
+  padding-bottom: 26px;
 
   background: rgba(255, 255, 255, 0.7);
   backdrop-filter: blur(3px);
   border-radius: 20px;
-  padding-top: 26px;
-  padding-bottom: 26px;
 
   display: flex;
   flex-direction: column;
