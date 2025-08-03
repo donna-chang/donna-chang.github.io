@@ -343,16 +343,26 @@ body {
   bottom: 0;
   left: 0;
   right: 0;
-  margin: 0 20px; /* 基本 container padding */
+
+  transform: translateY(50px); /* ✅ 整個往上推 50px */
+
+  max-width: 1440px; /* ✅ 與 container 對齊寬度 */
+  padding-left: clamp(20px, 5vw, 60px); /* ✅ 與 container 對齊左右內距 */
+  padding-right: clamp(20px, 5vw, 60px);
+  margin: 0 auto; /* ✅ 水平置中 */
+
   background: rgba(255, 255, 255, 0.7);
   backdrop-filter: blur(3px);
   border-radius: 20px;
-  padding: 26px;
+  padding-top: 26px;
+  padding-bottom: 26px;
+
   display: flex;
   flex-direction: column;
   gap: 30px;
   box-sizing: border-box;
 }
+
 
 .banner-header {
   display: flex;
