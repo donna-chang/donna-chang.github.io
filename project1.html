@@ -53,8 +53,21 @@
     </div>
   </section>
 
+  <!-- 大綱快捷 TOC -->
+  <nav id="toc" class="toc">
+    <ul>
+      <li><a href="#background" data-target="background">Background</a></li>
+      <li><a href="#pain-points" data-target="pain-points">Pain points</a></li>
+      <li><a href="#user-study" data-target="user-study">User Study</a></li>
+      <li><a href="#hypothesis" data-target="hypothesis">Hypothesis</a></li>
+      <li><a href="#design" data-target="design">Design</a></li>
+      <li><a href="#usability-test" data-target="usability-test">Usability test</a></li>
+      <li><a href="#outcome" data-target="outcome">Outcome</a></li>
+    </ul>
+  </nav>
+
   <!-- ✅ 主要內容 -->
-  <section class="project-content container">
+  <section class="project-content container with-toc">
     <div class="content-block">
       <h2 class="content-title">About</h2>
       <p class="content-text">
@@ -75,14 +88,14 @@
 
     <!-- 新增內容區塊 -->
 
-    <div class="content-block">
+    <div id="background" class="content-block">
       <h2 class="section-title">Background</h2>
       <p class="content-text">
         As the PM proposed the initial requirements for the next-generation portable projector, I collaborated with the team to analyze the spec upgrades and conducted research to uncover design opportunities.
       </p>
     </div>
 
-    <div class="content-block">
+    <div id="pain-points" class="content-block">
       <h2 class="section-title">How's the previous model: Pain points review</h2>
       <p class="content-text">
         In the early phase of this project, we conducted heuristic evaluation and competitive analysis to identify the core problems of the previous generation portable projector and to further understand market trends.
@@ -94,7 +107,7 @@
       </p>
     </div>
 
-    <div class="content-block">
+    <div id="user-study" class="content-block">
       <h2 class="section-title">Solving pain points might not be enough to boost sales: User study</h2>
       <p class="content-text">
         After reviewing the known pain points, we wanted to assess whether we had truly fulfilled users’ needs for a portable projector and whether further design opportunities existed. To do so, we chose to conduct desk research within a tight development timeline, drawing primarily from a previous U.S. market survey, and complemented it with vibe coding using Python on discussions scraped from major forums in both markets. We then organized our research findings into a customer journey map to visualize the user experience across key touchpoints, and concretized the findings into personas to facilitate better communication throughout the development process.
@@ -117,7 +130,7 @@
       </p>
     </div>
 
-    <div class="content-block">
+    <div id="hypothesis" class="content-block">
       <h2 class="section-title">Value Proposition and Hypothesis</h2>
       <p class="content-text">
         Based on the STP framework, segmentation and targeting of the portable projector were clearly defined in previous research. Following this study, positioning was established, framing the product as "the most suitable projector for bedroom use" based on user needs. When we began brainstorming solutions, some ideas couldn’t be implemented due to project constraints—primarily the tight timeline and the limited flexibility of the Google TV framework. After extensive discussions with PM, TM, ID and OEM teams, we formulated three key hypotheses grounded in our findings:
@@ -130,7 +143,7 @@
       <p class="content-text">(海哥簡報截圖)</p>
     </div>
 
-    <div class="content-block">
+    <div id="design" class="content-block">
       <h2 class="section-title">Major Design Deliverables</h2>
 
       <h3 class="content-subtitle">1. Flexible hardware setup</h3>
@@ -147,7 +160,7 @@
       <p class="content-text">
         GV50 adopts the Google TV framework. While this choice introduces some design constraints, it effectively solves the problem of inconsistent UI structures, improves overall system stability, and—most importantly—delivers the full OTT service experience that users value most. Although customization is limited, we streamlined the system menu and brought frequently used functions to the forefront as much as possible.
       </p>
-      <p class="content-text">(google tv menu before / after)</p>
+      <p class="content-text">(google tv menu before /after)</p>
       <p class="content-text">
         Fine-tuning the projection is effortless with smart adjustments like rotation, screen fit, obstacle avoidance, zoom, and repositioning.
       </p>
@@ -161,15 +174,15 @@
       </p>
       <p class="content-text">(Business analyze form)</p>
       <p class="content-text">
-        From a business perspective, the app enables us to build a closer relationship with users. We are able to deepen understanding of user behaviors, offer comprehensive customer services and further support branding goals despite Google TV’s constraints.
+        From a business perspective, the app enables us to build a closer relationship with users. We are able to deepen understanding of user behaviors, offer comprehensive customer services and further support branding goals despite Google TV’s constraints.
       </p>
       <p class="content-text">(img of other series)</p>
-      <p class="content-text">
+      <p class="content-text">  
         Aside from the GV series, other BenQ product lines will gradually adopt the same Google TV framework, and therefore face similar design limitations. The development of these two software solutions opens up new design opportunities—allowing projectors to benefit from the strengths of Google TV while mitigating the drawbacks of limited customization.
       </p>
     </div>
 
-    <div class="content-block">
+    <div id="usability-test" class="content-block">
       <h2 class="section-title">EVT usability test</h2>
       <p class="content-text">
         To validate GV50 design, I led a usability test during the EVT phase. Due to differences in the development timeline, we first tested the projector itself, followed by a separate usability test for the apps.
@@ -205,7 +218,7 @@
       </p>
     </div>
 
-    <div class="content-block">
+    <div id="outcome" class="content-block">
       <h2 class="section-title">Outcome</h2>
       <p class="content-text">
         After the launch of the GV50, its first-year sales increased by 148% compared to the previous generation. The remote control app was downloaded approximately 1.1 times the number of projectors sold.
