@@ -499,3 +499,41 @@ body {
   width: max-content; 
 }
 
+/* 1. TOC 容器預設隱藏，scroll 到 Impact 以下才顯示 */
+.toc {
+  position: fixed;
+  top: calc(60px + 80px);     /* navbar 60px + 80px 下方 */
+  left: clamp(20px, 5vw, 60px);/* 和 container 左邊一樣 */
+  display: none;               /* Scroll 到 Impact 以下，JS 會加 .visible */
+  z-index: 900;
+  font-size: 14px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.toc.visible {
+  display: block;
+}
+
+/* 2. TOC 向右推內文 80px */
+.project-content.container {
+  transition: padding-left .3s;
+}
+.toc.visible ~ .project-content.container {
+  padding-left: calc(clamp(20px,5vw,60px) + 80px);
+}
+
+/* 3. TOC 連結樣式：未在 viewport / 在 viewport */
+.toc ul li {
+  margin-bottom: 12px;
+}
+.toc ul li a {
+  text-decoration: none;
+  color: rgba(0,0,0,0.4); /* light, 40% */
+  font-weight: 300;
+}
+.toc ul li a.active {
+  color: rgba(0,0,0,1);   /* 正在 viewport，regular */
+  font-weight: 400;
+}
