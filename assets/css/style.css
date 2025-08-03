@@ -550,11 +550,16 @@ body {
 #toc li {
   margin-bottom: 8px;
 }
+
+
 #toc li::before {
   content: "-";
   display: inline-block;
-  width: 1em;        /* 保留空間讓「-」對齊 */
-  margin-right: 4px;
-  color: inherit;    /* 跟文字同色 */
+  width: 1em;
+  margin-right: 5px;
+  color: inherit;
+  font-weight: 300;    /* 變細 */
+  font-size: 18px;     /* 可調整大小，看起來更細 */
+  line-height: 1;      /* 避免垂直間距多 */
 }
 
