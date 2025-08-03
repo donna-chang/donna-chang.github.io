@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Toggle nav menu for mobile
   hamburger.addEventListener('click', function (event) {
-    event.stopPropagation(); // 防止點 hamburger 被當作點到外面
+    event.stopPropagation();
     navLinks.classList.toggle('active');
   });
 
@@ -17,39 +17,74 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Scroll to top button
   const scrollTopBtn = document.getElementById("scrollTopBtn");
-
   window.addEventListener("scroll", function () {
     if (window.scrollY > 300) {
-  scrollTopBtn.classList.add("visible");
+      scrollTopBtn.classList.add("visible");
     } else {
-  scrollTopBtn.classList.remove("visible");
+      scrollTopBtn.classList.remove("visible");
     }
   });
-
   scrollTopBtn.addEventListener("click", function () {
     window.scrollTo({ top: 0, behavior: "smooth" });
   });
 
   // card effect
   const cards = document.querySelectorAll('.work-card');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('fade-in');
+      } else {
+        entry.target.classList.remove('fade-in');
+      }
+    });
+  }, { threshold: 0.1 });
+  cards.forEach(card => observer.observe(card));
 
-  const observer = new IntersectionObserver(
-    entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('fade-in');
-        } else {
-          entry.target.classList.remove('fade-in');
-        }
-      });
-    },
-    {
-      threshold: 0.1,
-    }
+  // ======= TOC（大綱快捷）功能 =======
+  const toc     = document.getElementById('toc');
+  const impact  = document.querySelector('.project-content .content-block:nth-child(2)'); // Impact 區塊
+  const links   = toc ? toc.querySelectorAll('a') : [];
+  const sections = Array.from(links).map(a =>
+    document.getElementById(a.dataset.target)
   );
 
-  cards.forEach(card => {
-  observer.observe(card);
-  });
+  if (toc && impact && links.length) {
+    // 1) 顯示／隱藏 TOC
+    const impactBottom = impact.getBoundingClientRect().top + window.scrollY + impact.offsetHeight;
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > impactBottom) {
+        toc.classList.add('visible');
+      } else {
+        toc.classList.remove('visible');
+      }
+    });
+
+    // 2) Scroll-spy：監測各 section 是否處於 viewport 中心
+    const spy = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        const id = entry.target.id;
+        const link = toc.querySelector(`a[data-target="${id}"]`);
+        if (entry.isIntersecting) {
+          links.forEach(a => a.classList.remove('active'));
+          link?.classList.add('active');
+        }
+      });
+    }, {
+      rootMargin: '-50% 0px -50% 0px',
+      threshold: 0
+    });
+    sections.forEach(sec => sec && spy.observe(sec));
+
+    // 3) 點 TOC 滑動到對應段落
+    links.forEach(a => {
+      a.addEventListener('click', e => {
+        e.preventDefault();
+        const target = document.getElementById(a.dataset.target);
+        if (!target) return;
+        window.scrollTo({ top: target.offsetTop - 60, behavior: 'smooth' });
+      });
+    });
+  }
 });
 
