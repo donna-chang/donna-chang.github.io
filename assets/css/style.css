@@ -482,6 +482,7 @@ body {
   padding: 10px 20px;                      /* 上下 10px、左右 20px 內距 */
   margin-bottom: 26px;                     /* 與內容間距 */
   display: block;                          /* 改成塊級元素，強制換行 */
+  width: max-content; 
 }
 
 /* 只針對「Impact」以下的所有小副標題 */
@@ -495,5 +496,6 @@ body {
   margin-top: 26px;                        /* 與上方段落間距 */
   margin-bottom: 12px;                     /* 與下方內容間距 */
   display: block;                          /* 改成塊級元素，強制換行 */
+  width: max-content; 
 }
 
