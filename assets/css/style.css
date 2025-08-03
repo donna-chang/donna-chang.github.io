@@ -333,24 +333,28 @@ body {
 .banner {
   position: relative;
   width: 100%;
-  height: 400px; /* 桌機高度 */
-  overflow: hidden;
 }
 
 .banner-image {
   width: 100%;
-  height: 100%;
-  object-fit: cover;        /* 核心：讓圖片裁切而不是等比例縮放 */
-  object-position: center;  /* 裁切時保持中間對齊 */
+  height: auto;              /* 依照圖片原始比例縮放 */
+  display: block;
 }
 
-/* ✅ 手機時縮小高度，但還是保留足夠給 overlay */
+/* ✅ 手機：裁切圖片，固定高度讓 overlay 有空間 */
 @media (max-width: 768px) {
   .banner {
     height: 320px;
+    overflow: hidden;
+  }
+
+  .banner-image {
+    width: 100%;
+    height: 100%;             /* 強制填滿容器高度 */
+    object-fit: cover;        /* 核心：裁切圖片上下而非整張縮小 */
+    object-position: center;
   }
 }
-
 
 .banner-overlay {
   position: absolute;
