@@ -336,25 +336,27 @@ body {
 .banner {
   position: relative;
   width: 100%;
+  height: 719px;        /* 固定高度，和圖片原始高度一致 */
   overflow: hidden;
 }
 
-/* 桌面和手機通用：保留高度、裁左右 */
+/* 圖片強制填滿容器，裁切左右 */
 .banner-image {
-  width: 100vw;               /* ✅ 滿版寬度，允許裁切左右 */
-  height: auto;               /* ✅ 保留圖片原始高度 */
-  object-fit: cover;          /* ✅ 裁切左右 */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   object-position: center;
   display: block;
-  max-width: none;            /* 防止被 container 限制寬度 */
+  max-width: none;
 }
 
-/* ✅ 手機：不設高度，讓圖片自動高度，確保 overlay 有空間 */
+/* 手機時也固定高度，不讓縮高 */
 @media (max-width: 768px) {
   .banner {
-    height: auto;             /* ✅ 讓圖片決定高度 */
+    height: 719px;       /* 固定高度，和桌面同高度 */
   }
 }
+
 
 
 .banner-overlay {
