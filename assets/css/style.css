@@ -326,3 +326,102 @@ body {
   transform: translateY(0);
 }
 
+/* Project 1 */
+.banner {
+  position: relative;
+  width: 100%;
+}
+
+.banner-image {
+  width: 100%;
+  display: block;
+  height: auto;
+}
+
+.banner-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0 20px; /* 基本 container padding */
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(8px);
+  border-radius: 20px;
+  padding: 26px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  box-sizing: border-box;
+}
+
+.banner-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.project-title {
+  font-size: 36px;
+  font-weight: 700;
+  color: #000;
+  margin: 0;
+}
+
+.project-date {
+  font-size: 22px;
+  font-weight: 300;
+  color: #595959;
+}
+
+.meta-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.meta-title {
+  font-size: 24px;
+  font-weight: 500;
+  color: #434343;
+  margin: 0;
+}
+
+.meta-text {
+  font-size: 22px;
+  font-weight: 400;
+  color: #595959;
+  margin: 0;
+}
+
+/* Main content starts 55px after banner */
+.project-content {
+  margin-top: 55px;
+  padding-left: calc(60px + 26px);  /* container base + 26px inner */
+  padding-right: calc(60px + 26px);
+  box-sizing: border-box;
+}
+
+.content-block {
+  margin-bottom: 38px;
+}
+
+.content-title {
+  font-size: 28px;
+  font-weight: 500;
+  color: #000;
+  margin-bottom: 16px;
+}
+
+.content-text {
+  font-size: 22px;
+  font-weight: 400;
+  color: #595959;
+  margin: 0;
+}
+
+.bottom-line {
+  margin-top: 38px;
+  border: none;
+  border-top: 1px solid #B7B7B7;
+}
+
