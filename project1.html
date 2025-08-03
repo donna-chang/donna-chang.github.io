@@ -56,49 +56,14 @@
   <!-- ✅ 主要內容 -->
   <section class="project-content container">
     <div class="content-block">
-      <h2 class="content-title">Background</h2>
+      <h2 class="content-title">About</h2>
       <p class="content-text">
-        BenQ is a world-leading projector manufacturer. In order to gain market share in the competitive portable projector category, we aimed to design a new generation model for release in 2024.
+        To drive sales of portable projectors, we conducted user research and testing, ultimately launching a projector that targets these users' needs, featuring a flexible base design that offers users the freedom to project from any desired angle while relaxing comfortably in bed. The first-year sales grew by 148%, and the accompanying app solution was downloaded at a rate 1.1 times the number of projectors sold.
       </p>
     </div>
 
     <div class="content-block">
-      <h2 class="content-title">How's the previous model: Pain points review</h2>
-      <p class="content-text">
-        We conducted internal usability testing and observed pain points with the previous model. The angle adjustment design was inconvenient and required repositioning the whole machine. The UI also confused users by showing the wrong boot-up source.
-      </p>
-    </div>
-
-    <div class="content-block">
-      <h2 class="content-title">Solving pain points might not be enough to boost sales: User study</h2>
-      <p class="content-text">
-        We conducted in-depth interviews with 6 US users to understand the usage context of portable projectors. Most users projected from their beds, prioritizing comfort and ambience. The findings helped define our value proposition and hypothesis.
-      </p>
-    </div>
-
-    <div class="content-block">
-      <h2 class="content-title">Value Proposition and Hypothesis</h2>
-      <p class="content-text">
-        Our hypothesis was that designing for a comfortable and effortless experience in bed would differentiate our product and increase sales. The industrial designer proposed a flexible base design to freely adjust angles without moving the machine.
-      </p>
-    </div>
-
-    <div class="content-block">
-      <h2 class="content-title">Major Design Deliverables</h2>
-      <p class="content-text">
-        I was responsible for the UI flow, visual design, and visual collaboration with ID. We simplified the source interface, added startup animations and customized icons to deliver a friendlier experience.
-      </p>
-    </div>
-
-    <div class="content-block">
-      <h2 class="content-title">EVT usability test</h2>
-      <p class="content-text">
-        We tested the EVT version with internal employees to validate comfort, angle adjustability, and UI clarity. The test showed significant improvements over the previous model, and feedback confirmed our hypothesis.
-      </p>
-    </div>
-
-    <div class="content-block">
-      <h2 class="content-title">Outcome</h2>
+      <h2 class="content-title">Impact</h2>
       <ol class="content-text">
         <li>Received the 2024 Good Design Award and 2025 Taiwan Excellence Award</li>
         <li>Boosted portable projector sales by 148%</li>
@@ -107,6 +72,146 @@
       </ol>
       <hr class="bottom-line" />
     </div>
+
+    <!-- 新增內容區塊 -->
+
+    <div class="content-block">
+      <h2 class="content-title">Background</h2>
+      <p class="content-text">
+        As the PM proposed the initial requirements for the next-generation portable projector, I collaborated with the team to analyze the spec upgrades and conducted research to uncover design opportunities.
+      </p>
+    </div>
+
+    <div class="content-block">
+      <h2 class="content-title">How's the previous model: Pain points review</h2>
+      <p class="content-text">
+        In the early phase of this project, we conducted heuristic evaluation and competitive analysis to identify the core problems of the previous generation portable projector and to further understand market trends.
+        (competitive analysis form)
+      </p>
+      <p class="content-text">
+        Beyond the issue of hardware specs falling short compared to competitors, the low usability of the software UI and lack of comprehensive streaming services directly impacted the core user behavior—watching content—which emerged as the most significant pain points. However, these issues were mainly due to limitations inherent in an Android TV–based development approach.
+        (two menus img)
+      </p>
+    </div>
+
+    <div class="content-block">
+      <h2 class="content-title">Solving pain points might not be enough to boost sales: User study</h2>
+      <p class="content-text">
+        After reviewing the known pain points, we wanted to assess whether we had truly fulfilled users’ needs for a portable projector and whether further design opportunities existed. To do so, we chose to conduct desk research within a tight development timeline, drawing primarily from a previous U.S. market survey, and complemented it with vibe coding using Python on discussions scraped from major forums in both markets. We then organized our research findings into a customer journey map to visualize the user experience across key touchpoints, and concretized the findings into personas to facilitate better communication throughout the development process.
+        (CJM、Persona)
+      </p>
+
+      <h3 class="content-subtitle">Key insights 1</h3>
+      <p class="content-text">
+        We found that user behaviors and needs in both the U.S. and Taiwan are largely consistent within this market segment. Users in the States reported mostly using projectors in the bedroom; some would occasionally place them in the living room or outdoors, such as in a garage. On the other hand, users in Taiwan also primarily use projectors in the bedroom. Regardless of location, many users frequently need to move the projector. In Taiwan, for example, limited space often requires users to store the device away after each use, and the repetitive setup process before every viewing can be frustrating.
+      </p>
+
+      <h3 class="content-subtitle">Key insights 2</h3>
+      <p class="content-text">
+        In addition, we found enthusiastic discussions about ceiling projection in this study. Users often want to project onto the ceiling due to reasons such as feeling more comfortable or experiencing physical discomfort, like neck or hip pain from sitting for long periods. However, issues such as limited projection angles and noisy fans make them uncertain about which projector to purchase. Through our previous competitive analysis, we also found that few projectors on the market are specifically designed for the bedroom viewing experience.
+      </p>
+
+      <h3 class="content-subtitle">Key insights 3</h3>
+      <p class="content-text">
+        We found that this group of users embraces a lifestyle shaped by technology. While their experience goals vary—some prioritize portability and versatility, others value spending cozy time watching shows with family, and some seek a moment to unwind alone after work—they share a common desire for technology that enhances and enriches their daily lives. The users were buying not just a projector, but the moments and atmosphere it could create.
+      </p>
+    </div>
+
+    <div class="content-block">
+      <h2 class="content-title">Value Proposition and Hypothesis</h2>
+      <p class="content-text">
+        Based on the STP framework, segmentation and targeting of the portable projector were clearly defined in previous research. Following this study, positioning was established, framing the product as "the most suitable projector for bedroom use" based on user needs. When we began brainstorming solutions, some ideas couldn’t be implemented due to project constraints—primarily the tight timeline and the limited flexibility of the Google TV framework. After extensive discussions with PM, TM, ID and OEM teams, we formulated three key hypotheses grounded in our findings:
+      </p>
+      <ol class="content-text">
+        <li>A flexible hardware setup would allow users to assemble the device more quickly.</li>
+        <li>An intuitive software design would make fine-tuning easier for users.</li>
+        <li>Support from apps would fulfill users’ expectations and imagination of a smart lifestyle.</li>
+      </ol>
+      <p class="content-text">(海哥簡報截圖)</p>
+    </div>
+
+    <div class="content-block">
+      <h2 class="content-title">Major Design Deliverables</h2>
+
+      <h3 class="content-subtitle">1. Flexible hardware setup</h3>
+      <p class="content-text">
+        Considering the diverse bedroom configurations in the target market, the GV50 offers users flexible and easy setup options. Its convenient integrated tripod and 135° vertical adjustment design enable users to quickly project onto their desired location.
+      </p>
+      <p class="content-text">(拿墊東西在他牌的 image 加小圖示: You might’ve experienced something similar) (GV50 stand gif，加小圖示：Tissue free!)</p>
+      <p class="content-text">
+        As we found that some users prefer setting up the projector manually rather than using the software at the beginning, the GV50 features a joystick and zoom lever to make the process quicker and more effortless.
+      </p>
+      <p class="content-text">(GV31 to GV50 btn img) (加個小圖示: A sleep timer was added to round out the bedroom viewing experience)</p>
+
+      <h3 class="content-subtitle">2. Intuitive software design</h3>
+      <p class="content-text">
+        GV50 adopts the Google TV framework. While this choice introduces some design constraints, it effectively solves the problem of inconsistent UI structures, improves overall system stability, and—most importantly—delivers the full OTT service experience that users value most. Although customization is limited, we streamlined the system menu and brought frequently used functions to the forefront as much as possible.
+      </p>
+      <p class="content-text">(google tv menu before / after)</p>
+      <p class="content-text">
+        Fine-tuning the projection is effortless with smart adjustments like rotation, screen fit, obstacle avoidance, zoom, and repositioning.
+      </p>
+      <p class="content-text">(Function gif)</p>
+
+      <h3 class="content-subtitle">3. Two apps were developed primarily to compensate for the design limitations of Google TV: a remote control app and a built-in app on the projector.</h3>
+      <p class="content-text">(smart remote intro) (assistant app intro)</p>
+      <p class="content-text">(link: Explore more about the Smart Remote app project)</p>
+      <p class="content-text">
+        For users, the app not only offers quick access to key functions—like streaming and screen adjustment—but also brings added features that enrich the smart living experience.
+      </p>
+      <p class="content-text">(Business analyze form)</p>
+      <p class="content-text">
+        From a business perspective, the app enables us to build a closer relationship with users. We are able to deepen understanding of user behaviors, offer comprehensive customer services and further support branding goals despite Google TV’s constraints.
+      </p>
+      <p class="content-text">(img of other series)</p>
+      <p class="content-text">
+        Aside from the GV series, other BenQ product lines will gradually adopt the same Google TV framework, and therefore face similar design limitations. The development of these two software solutions opens up new design opportunities—allowing projectors to benefit from the strengths of Google TV while mitigating the drawbacks of limited customization.
+      </p>
+    </div>
+
+    <div class="content-block">
+      <h2 class="content-title">EVT usability test</h2>
+      <p class="content-text">
+        To validate GV50 design, I led a usability test during the EVT phase. Due to differences in the development timeline, we first tested the projector itself, followed by a separate usability test for the apps.
+      </p>
+      <p class="content-text">
+        With the aim of increasing the precision of our testing, we simulated real-world user conditions by guiding participants into a scenario where they had just received their newly purchased projector. Task design was based on the most frequent user behaviors and the core features of the GV50.
+      </p>
+      <p class="content-text">(test img) (test flow) (participants background)</p>
+      <p class="content-text">Following are three key findings:</p>
+
+      <h3 class="content-subtitle">1. Quick setup stood out as the most liked and memorable part of the experience for participants. However, projecting onto the ceiling often led to frustration.</h3>
+      <p class="content-text">
+        “It's hard to read the menu when the image hasn't been corrected on the ceiling yet”
+      </p>
+      <p class="content-text">
+        On average, participants spent about 6 minutes manually adjusting the projection on the ceiling, yet most still reported feeling frustrated. We observed that when projecting onto ceilings with more constraints, the process of finding functions and making adjustments felt overly complex to users—particularly when the image was not yet properly aligned, which could make the UI difficult to read. As a result, we recommend implementing a toast notification when an obstacle is detected in the projection area—prompting users to enable the obstacle avoidance feature. This would shorten adjustment time and improve readability during ceiling projection. We also suggest that when users manually fine-tune the projection, the system should not immediately trigger auto-correction upon detecting device movement. Instead, it should request user confirmation to prevent the adjusted image from resetting unexpectedly. Lastly, since users tend to project in the same place, adding the ability to save and recall adjustment settings could be a valuable long-term improvement.
+      </p>
+
+      <h3 class="content-subtitle">2. Users still found it time-consuming to find the target functions in the menu</h3>
+      <p class="content-text">
+        “I'm lying down far from the projector—using the remote is more convenient.”
+      </p>
+      <p class="content-text">
+        We found that in certain scenarios, users preferred using the remote control. However, features like sleep timer and bluetooth speaker were located in three or more layers in the menu, making them feel neither quick nor intuitive to access. Given the constraints of Google TV, we documented these findings with PM for the future development. In the short term, we enhanced the functionality of the remote control app, allowing users to access commonly used features more quickly and conveniently.
+      </p>
+
+      <h3 class="content-subtitle">3. Users enjoy a smart lifestyle with projector</h3>
+      <p class="content-text">
+        Through interviews, we preliminarily validated users’ expectations for using the projector. They enjoy relaxing moments playing soft music in the morning, like having fun with their children by projecting entertaining content, and also value the time spent watching movies with family. The atmosphere and convenient experiences that the GV50 can create have captured their interest.
+      </p>
+      <p class="content-text">
+        In addition, our findings include issues with the readability of the quick start guide, setup wizard, and menu wording. Also, to refine the overall experience, we revised interaction details—for instance, by shortening the duration that the zoom in/out UI remains visible.
+      </p>
+    </div>
+
+    <div class="content-block">
+      <h2 class="content-title">Outcome</h2>
+      <p class="content-text">
+        After the launch of the GV50, its first-year sales increased by 148% compared to the previous generation. The remote control app was downloaded approximately 1.1 times the number of projectors sold.
+      </p>
+    </div>
+
   </section>
 
   <!-- ✅ Scroll to Top 按鈕 -->
