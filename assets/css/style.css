@@ -521,9 +521,6 @@ body {
 .project-content.container {
   transition: padding-left .3s;
 }
-.toc.visible ~ .project-content.container {
-  padding-left: calc(clamp(20px,5vw,60px) + 80px);
-}
 
 /* 3. TOC 連結樣式：未在 viewport / 在 viewport */
 .toc ul li {
