@@ -359,13 +359,13 @@ body {
 
 .banner-overlay {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  bottom: 0;
   
   width: calc(100% - clamp(20px, 5vw, 60px) * 2);
   max-width: 1440px;
   
+  left: clamp(20px, 5vw, 60px);
+
   padding: 30px;
   
   background: rgba(255, 255, 255, 0.6);
@@ -376,6 +376,8 @@ body {
   flex-direction: column;
   gap: 30px;
   box-sizing: border-box;
+
+  transform: translateY(-80px);
 }
 
 
