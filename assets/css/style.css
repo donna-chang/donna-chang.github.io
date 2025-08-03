@@ -538,3 +538,26 @@ body {
   color: rgba(0,0,0,1);   /* 正在 viewport，regular */
   font-weight: 400;
 }
+
+/* 1. 永遠把 Impact 以下（含 Impact）的內容往右推 */
+.project-content .content-block:nth-child(n+2) {
+  margin-left: 120px;
+}
+
+/* 2. 大綱快捷（#toc）改用「-」取代圓點 */
+#toc ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+#toc li {
+  margin-bottom: 8px;
+}
+#toc li::before {
+  content: "-";
+  display: inline-block;
+  width: 1em;        /* 保留空間讓「-」對齊 */
+  margin-right: 4px;
+  color: inherit;    /* 跟文字同色 */
+}
+
