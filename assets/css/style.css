@@ -433,10 +433,19 @@ body {
 /* Main content starts 55px after banner */
 .project-content {
   margin-top: 55px;
-  padding-left: calc(60px + 30px);  /* container base + 26px inner */
-  padding-right: calc(60px + 30px);
+  padding-left: clamp(20px, 5vw, 60px);
+  padding-right: clamp(20px, 5vw, 60px);
   box-sizing: border-box;
 }
+
+/* 桌機加額外內推 */
+@media (min-width: 1200px) {
+  .project-content {
+    padding-left: calc(clamp(20px, 5vw, 60px) + 30px);
+    padding-right: calc(clamp(20px, 5vw, 60px) + 30px);
+  }
+}
+
 
 .content-block {
   margin-bottom: 38px;
