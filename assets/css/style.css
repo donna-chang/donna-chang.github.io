@@ -365,7 +365,7 @@ body {
   
   left: clamp(20px, 5vw, 60px);
 
-  padding: 26px;
+  padding: 30px;
   
   background: rgba(255, 255, 255, 0.6);
   backdrop-filter: blur(3px);
@@ -410,7 +410,7 @@ body {
 .banner-meta {
   display: flex;
   flex-direction: column;
-  gap: 30px; /* 每组之间间距 30px */
+  gap: 22px; /* 每组之间间距 */
 }
 
 .meta-title {
@@ -430,8 +430,8 @@ body {
 /* Main content starts 55px after banner */
 .project-content {
   margin-top: 55px;
-  padding-left: calc(60px + 26px);  /* container base + 26px inner */
-  padding-right: calc(60px + 26px);
+  padding-left: calc(60px + 30px);  /* container base + 26px inner */
+  padding-right: calc(60px + 30px);
   box-sizing: border-box;
 }
 
