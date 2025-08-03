@@ -345,7 +345,7 @@ body {
   right: 0;
   margin: 0 20px; /* 基本 container padding */
   background: rgba(255, 255, 255, 0.7);
-  backdrop-filter: blur(8px);
+  backdrop-filter: blur(3px);
   border-radius: 20px;
   padding: 26px;
   display: flex;
@@ -361,14 +361,14 @@ body {
 }
 
 .project-title {
-  font-size: 36px;
+  font-size: 22px;
   font-weight: 700;
   color: #000;
   margin: 0;
 }
 
 .project-date {
-  font-size: 22px;
+  font-size: 16px;
   font-weight: 300;
   color: #595959;
 }
@@ -380,14 +380,14 @@ body {
 }
 
 .meta-title {
-  font-size: 24px;
+  font-size: 22px;
   font-weight: 500;
   color: #434343;
   margin: 0;
 }
 
 .meta-text {
-  font-size: 22px;
+  font-size: 18px;
   font-weight: 400;
   color: #595959;
   margin: 0;
@@ -406,14 +406,14 @@ body {
 }
 
 .content-title {
-  font-size: 28px;
+  font-size: 24px;
   font-weight: 500;
   color: #000;
   margin-bottom: 16px;
 }
 
 .content-text {
-  font-size: 22px;
+  font-size: 20px;
   font-weight: 400;
   color: #595959;
   margin: 0;
