@@ -536,8 +536,8 @@ body {
   font-weight: 400;
 }
 
-/* 1. 永遠把 Impact 以下（含 Impact）的內容往右推 */
-.project-content .content-block:nth-child(n+2) {
+/* 1. 永遠把 Impact 以下的內容往右推 */
+.project-content.with-toc .content-block:nth-of-type(n+3) {
   margin-left: 120px;
 }
 
