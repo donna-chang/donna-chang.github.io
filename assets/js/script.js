@@ -41,24 +41,24 @@ document.addEventListener('DOMContentLoaded', function () {
   }, { threshold: 0.1 });
   cards.forEach(card => observer.observe(card));
 
-  // ======= TOC（大綱快捷）功能 =======
-  const toc     = document.getElementById('toc');
-  const impact  = document.querySelector('.project-content .content-block:nth-child(2)'); // Impact 區塊
-  const links   = toc ? toc.querySelectorAll('a') : [];
-  const sections = Array.from(links).map(a =>
-    document.getElementById(a.dataset.target)
-  );
+   // ======= TOC（大綱快捷）功能 =======
+  const toc = document.getElementById('toc');
+  const background = document.getElementById('background');  // 改成 Background 區塊
+  const links = toc ? toc.querySelectorAll('a') : [];
+  const sections = Array.from(links).map(a => document.getElementById(a.dataset.target));
 
-  if (toc && impact && links.length) {
-    // 1) 顯示／隱藏 TOC
-    const impactBottom = impact.getBoundingClientRect().top + window.scrollY + impact.offsetHeight;
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > impactBottom) {
-        toc.classList.add('visible');
-      } else {
-        toc.classList.remove('visible');
-      }
-    });
+  if (toc && background && links.length) {
+    // 1) 用 IntersectionObserver 監聽 Background 是否在 viewport，決定 TOC 顯示/隱藏
+    const tocVisibilityObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          toc.classList.add('visible');
+        } else {
+          toc.classList.remove('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+    tocVisibilityObserver.observe(background);
 
     // 2) Scroll-spy：監測各 section 是否處於 viewport 中心
     const spy = new IntersectionObserver(entries => {
