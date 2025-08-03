@@ -480,7 +480,7 @@ body {
   background-color: rgba(0, 140, 255, 0.1);/* #008CFF 10% 透明度底色 */
   border-radius: 10px;                     /* 10px 圓角 */
   padding: 10px 20px;                      /* 上下 10px、左右 20px 內距 */
-  margin-bottom: 16px;                     /* 與內容間距 */
+  margin-bottom: 26px;                     /* 與內容間距 */
   display: block;                          /* 改成塊級元素，強制換行 */
 }
 
@@ -492,7 +492,7 @@ body {
   background-color: rgba(89, 89, 89, 0.1); /* #595959 10% 透明度底色 */
   border-radius: 10px;                     /* 10px 圓角 */
   padding: 10px 20px;                      /* 上下 10px、左右 20px 內距 */
-  margin-top: 20px;                        /* 與上方段落間距 */
+  margin-top: 26px;                        /* 與上方段落間距 */
   margin-bottom: 12px;                     /* 與下方內容間距 */
   display: block;                          /* 改成塊級元素，強制換行 */
 }
