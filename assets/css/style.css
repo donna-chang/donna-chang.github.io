@@ -389,6 +389,12 @@ body {
   gap: 8px;
 }
 
+.banner-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 30px; /* 每组之间间距 30px */
+}
+
 .meta-title {
   font-size: 18px;
   font-weight: 400;
