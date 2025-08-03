@@ -1,43 +1,83 @@
-<section class="banner">
-  <img src="assets/images/GV50/banner.png" alt="GV50 Banner" class="banner-image" />
-  <div class="banner-overlay">
-    <div class="banner-header">
-      <h1 class="project-title">GV50: Beyond Projector</h1>
-      <span class="project-date">2023 Sep - 2024 Jul</span>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GV50: Beyond Projector</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/project1.css" />
+  <script src="assets/js/script.js" defer></script>
+</head>
+<body>
+
+  <!-- ✅ Navbar -->
+  <header class="navbar">
+    <div class="container nav-inner">
+      <div class="nav-left">
+        <button class="hamburger" id="hamburger">&#9776;</button>
+        <a href="index.html">
+          <img src="assets/images/logo.png" alt="Logo" class="logo" />
+        </a>
+      </div>
+      <nav class="nav-links" id="nav-links">
+        <a href="index.html" class="nav-link work">WORK</a>
+        <a href="about.html" class="nav-link about">ABOUT</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ✅ Banner 區塊 -->
+  <section class="banner">
+    <img src="assets/images/GV50/banner.png" alt="GV50 Banner" class="banner-image" />
+    <div class="banner-overlay">
+      <div class="banner-header">
+        <h1 class="project-title">GV50: Beyond Projector</h1>
+        <span class="project-date">2023 Sep - 2024 Jul</span>
+      </div>
+
+      <div class="banner-meta">
+        <div class="meta-group">
+          <h3 class="meta-title">Target market</h3>
+          <p class="meta-text">The primary target markets are the United States and Taiwan</p>
+        </div>
+        <div class="meta-group">
+          <h3 class="meta-title">Team</h3>
+          <p class="meta-text">2 UI UX designers, industrial designer, Projector PM, Technical Manager, QA, OEM developer</p>
+        </div>
+        <div class="meta-group">
+          <h3 class="meta-title">My role</h3>
+          <p class="meta-text">In this project, I worked closely with the other designers, PM, TM and the OEM. I was responsible for the end to end UX and UI design, from defining the problem to delivering the final visual artifact</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ✅ 主要內容 -->
+  <section class="project-content container">
+    <div class="content-block">
+      <h2 class="content-title">About</h2>
+      <p class="content-text">
+        To drive sales of portable projectors, we conducted user research and testing, ultimately launching a projector that targets these users' needs, featuring a flexible base design that offers users the freedom to project from any desired angle while relaxing comfortably in bed. The first-year sales grew by 148%, and the accompanying app solution was downloaded at a rate 1.1 times the number of projectors sold.
+      </p>
     </div>
 
-    <div class="banner-meta">
-      <div class="meta-group">
-        <h3 class="meta-title">Target market</h3>
-        <p class="meta-text">The primary target markets are the United States and Taiwan</p>
-      </div>
-      <div class="meta-group">
-        <h3 class="meta-title">Team</h3>
-        <p class="meta-text">2 UI UX designers, industrial designer, Projector PM, Technical Manager, QA, OEM developer</p>
-      </div>
-      <div class="meta-group">
-        <h3 class="meta-title">My role</h3>
-        <p class="meta-text">In this project, I worked closely with the other designers, PM, TM and the OEM. I was responsible for the end to end UX and UI design, from defining the problem to delivering the final visual artifact</p>
-      </div>
+    <div class="content-block">
+      <h2 class="content-title">Impact</h2>
+      <ol class="content-text">
+        <li>Received the 2024 Good Design Award and 2025 Taiwan Excellence Award</li>
+        <li>Boosted portable projector sales by 148%</li>
+        <li>Established and led a structured usability testing workflow</li>
+        <li>Developed smart remote app for projectors, now compatible across all future Google TV models</li>
+      </ol>
+      <hr class="bottom-line" />
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="project-content container">
-  <div class="content-block">
-    <h2 class="content-title">About</h2>
-    <p class="content-text">To drive sales of portable projectors, we conducted user research and testing, ultimately launching a projector that targets these users' needs... (你的內文)</p>
-  </div>
+  <!-- ✅ Scroll to Top 按鈕 -->
+  <button id="scrollTopBtn" title="Go to top" aria-label="Scroll to top">
+    <img src="assets/images/scroll-up.svg" alt="Scroll to top" />
+  </button>
 
-  <div class="content-block">
-    <h2 class="content-title">Impact</h2>
-    <ol class="content-text">
-      <li>Received the 2024 Good Design Award and 2025 Taiwan Excellence Award</li>
-      <li>Boosted portable projector sales by 148%</li>
-      <li>Established and led a structured usability testing workflow</li>
-      <li>Developed smart remote app for projectors, now compatible across all future Google TV models</li>
-    </ol>
-    <hr class="bottom-line" />
-  </div>
-</section>
+</body>
+</html>
 
