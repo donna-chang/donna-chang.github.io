@@ -42,25 +42,32 @@ document.addEventListener('DOMContentLoaded', function () {
   cards.forEach(card => observer.observe(card));
 
   // ======= TOC（大綱快捷）功能 =======
+ document.addEventListener('DOMContentLoaded', function () {
   const toc = document.getElementById('toc');
-  const background = document.getElementById('background');  // 改成 Background 區塊
+  const painPoints = document.getElementById('pain-points');
   const links = toc ? toc.querySelectorAll('a') : [];
   const sections = Array.from(links).map(a => document.getElementById(a.dataset.target));
 
-  if (toc && background && links.length) {
-    // 1) 用 IntersectionObserver 監聽 Background 是否在 viewport，決定 TOC 顯示/隱藏
+  if (toc && painPoints && links.length) {
+    // 淡入 / 淡出設定
+    toc.style.transition = 'opacity 0.3s ease';
+
+    // TOC 顯示邏輯
+    let tocTriggered = false;
     const tocVisibilityObserver = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           toc.classList.add('visible');
-        } else {
+          tocTriggered = true;
+        } else if (tocTriggered && entry.boundingClientRect.top > 0) {
           toc.classList.remove('visible');
+          tocTriggered = false;
         }
       });
     }, { threshold: 0.1 });
-    tocVisibilityObserver.observe(background);
+    tocVisibilityObserver.observe(painPoints);
 
-    // 2) Scroll-spy：監測各 section 是否處於 viewport 中心
+    // Scroll spy
     const spy = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         const id = entry.target.id;
@@ -76,7 +83,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
     sections.forEach(sec => sec && spy.observe(sec));
 
-    // 3) 點 TOC 滑動到對應段落
+    // 點擊 TOC 滾動
     links.forEach(a => {
       a.addEventListener('click', e => {
         e.preventDefault();
@@ -87,3 +94,4 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 });
+
