@@ -57,23 +57,19 @@ document.addEventListener('DOMContentLoaded', function () {
   if (toc && tocWrapper && tocTriggerSection && tocSections.length) {
     tocWrapper.style.transition = 'opacity 0.3s ease';
 
-    // TOC 顯示邏輯
+     // TOC 顯示邏輯
     let tocTriggered = false;
     const tocVisibilityObserver = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      tocWrapper.classList.add('visible');
-      tocTriggered = true;
-    } else if (tocTriggered && entry.boundingClientRect.top > 0) {
-      tocWrapper.classList.remove('visible');
-      tocTriggered = false;
-    }
-    });
-    }, {
-      rootMargin: '-40% 0px -40% 0px',  // 中間 20% 才算進入
-      threshold: 0
-    });
-
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          tocWrapper.classList.add('visible');
+          tocTriggered = true;
+        } else if (tocTriggered && entry.boundingClientRect.top > 0) {
+          tocWrapper.classList.remove('visible');
+          tocTriggered = false;
+        }
+      });
+    }, { threshold: 0.1 });
 
     tocVisibilityObserver.observe(tocTriggerSection);
 
