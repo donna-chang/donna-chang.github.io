@@ -506,7 +506,12 @@ body {
 
 /* 1. TOC 容器預設隱藏，scroll 到 Impact 以下才顯示 */
 
-/* 預設隱藏整個 TOC 包裹 */
+/* 出現時整組 flex 顯示，並讓 TOC 能操作 */
+.toc-wrapper.visible {
+  display: flex;
+}
+
+/* ✅ 修改 TOC wrapper：鋪滿畫面沒問題 */
 .toc-wrapper {
   display: none;
   position: fixed;
@@ -515,23 +520,18 @@ body {
   right: 0;
   z-index: 900;
   justify-content: flex-start;
-  pointer-events: none; /* 不影響互動 */
-  max-width: 100%;
+  pointer-events: none;
+  width: 100%;
 }
 
-/* 出現時整組 flex 顯示，並讓 TOC 能操作 */
-.toc-wrapper.visible {
-  display: flex;
-}
-
+/* ✅ 重點：讓 toc 的 padding + max-width 與 .container 一致 */
 .toc {
   pointer-events: auto;
   width: 240px;
   font-size: 14px;
-  list-style: none;
-  padding: 0;
-  margin: 0;
   padding-left: clamp(20px, 5vw, 60px);
+  margin-left: auto;
+  margin-right: auto;
   max-width: 1440px;
   box-sizing: border-box;
 }
