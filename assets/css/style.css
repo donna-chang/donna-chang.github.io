@@ -474,13 +474,17 @@ body {
 
 .project-content .section-title,
 .project-content .content-subtitle {
-  display: block;                          /* 塊級元素，強制換行 */
-  box-sizing: border-box;                 /* 讓 padding 不超出容器寬度 */
-  word-break: break-word;                 /* 文字長時強制換行 */
+  display: inline-block;                     /* 包覆文字寬度，並能換行 */
+  max-width: 100%;                           /* 避免超出 container */
+  box-sizing: border-box;
+  word-break: break-word;                    /* 長字強制換行 */
+  line-height: 1.4;                          /* 多行行距舒適 */
 
-  padding: 10px 20px;
+  padding: 10px 20px;                        /* 上下 10px、左右 20px */
   border-radius: 10px;
+  margin-left: 0;                            /* 保持與 container 左側對齊 */
 }
+
 
 /* 大標題樣式 */
 .project-content .section-title {
@@ -488,8 +492,8 @@ body {
   font-weight: 500;
   color: #000000;
   background-color: rgba(0, 140, 255, 0.1);
-  margin-bottom: 26px;
   margin-top: 50px;
+  margin-bottom: 26px;
 }
 
 /* 小副標題樣式 */
