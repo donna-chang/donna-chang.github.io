@@ -362,14 +362,15 @@ body {
 .banner-overlay {
   position: absolute;
   bottom: 0;
-  
+
   width: calc(100% - clamp(20px, 5vw, 60px) * 2);
   max-width: 1440px;
-  
-  left: clamp(20px, 5vw, 60px);
+
+  left: 50%;
+  transform: translate(-50%, -80px); /* 水平置中，並往上移 80px */
 
   padding: 30px;
-  
+
   background: rgba(255, 255, 255, 0.6);
   backdrop-filter: blur(3px);
   border-radius: 20px;
@@ -378,9 +379,8 @@ body {
   flex-direction: column;
   gap: 30px;
   box-sizing: border-box;
-
-  transform: translateY(-80px);
 }
+
 
 
 
