@@ -505,13 +505,6 @@ body {
 }
 
 /* 1. TOC 容器預設隱藏，scroll 到 Impact 以下才顯示 */
-
-/* 出現時整組 flex 顯示，並讓 TOC 能操作 */
-.toc-wrapper.visible {
-  display: flex;
-}
-
-/* ✅ TOC wrapper 只負責置中 TOC */
 .toc-wrapper {
   display: none;
   position: fixed;
@@ -519,9 +512,13 @@ body {
   left: 0;
   right: 0;
   z-index: 900;
-  display: flex;
   justify-content: center;    /* ✅ 重點：置中 TOC */
   pointer-events: none;
+}
+
+/* 出現時整組 flex 顯示，並讓 TOC 能操作 */
+.toc-wrapper.visible {
+  display: flex;
 }
 
 /* ✅ TOC 本體靠 container 左對齊 */
