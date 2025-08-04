@@ -40,54 +40,55 @@ document.addEventListener('DOMContentLoaded', function () {
   }, { threshold: 0.1 });
   cards.forEach(card => observer.observe(card));
 
-  // === TOC 快捷目錄 ===
-  const toc = document.getElementById('toc');
-  const painPoints = document.getElementById('user-study');
-  const links = toc ? toc.querySelectorAll('a') : [];
-  const sections = Array.from(links).map(a => document.getElementById(a.dataset.target));
+ // === TOC 快捷目錄 ===
+const toc = document.getElementById('toc');
+const tocTriggerSection = document.getElementById('user-study'); 
+const links = toc ? toc.querySelectorAll('a') : [];
+const sections = Array.from(links).map(a => document.getElementById(a.dataset.target));
 
-  if (toc && painPoints && links.length) {
-    toc.style.transition = 'opacity 0.3s ease';
+if (toc && tocTriggerSection && links.length) {
+  toc.style.transition = 'opacity 0.3s ease';
 
-    // 顯示邏輯
-    let tocTriggered = false;
-    const tocVisibilityObserver = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          toc.classList.add('visible');
-          tocTriggered = true;
-        } else if (tocTriggered && entry.boundingClientRect.top > 0) {
-          toc.classList.remove('visible');
-          tocTriggered = false;
-        }
-      });
-    }, { threshold: 0.1 });
-    tocVisibilityObserver.observe(painPoints);
-
-    // Scroll spy
-    const spy = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        const id = entry.target.id;
-        const link = toc.querySelector(`a[data-target="${id}"]`);
-        if (entry.isIntersecting) {
-          links.forEach(a => a.classList.remove('active'));
-          link?.classList.add('active');
-        }
-      });
-    }, {
-      rootMargin: '-50% 0px -50% 0px',
-      threshold: 0
+  // 顯示邏輯
+  let tocTriggered = false;
+  const tocVisibilityObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        toc.classList.add('visible');
+        tocTriggered = true;
+      } else if (tocTriggered && entry.boundingClientRect.top > 0) {
+        toc.classList.remove('visible');
+        tocTriggered = false;
+      }
     });
-    sections.forEach(sec => sec && spy.observe(sec));
+  }, { threshold: 0.1 });
 
-    // 點擊滑動
-    links.forEach(a => {
-      a.addEventListener('click', e => {
-        e.preventDefault();
-        const target = document.getElementById(a.dataset.target);
-        if (!target) return;
-        window.scrollTo({ top: target.offsetTop - 60, behavior: 'smooth' });
-      });
+  tocVisibilityObserver.observe(tocTriggerSection); // ✅ 用新的語意變數
+
+  // Scroll spy
+  const spy = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      const id = entry.target.id;
+      const link = toc.querySelector(`a[data-target="${id}"]`);
+      if (entry.isIntersecting) {
+        links.forEach(a => a.classList.remove('active'));
+        link?.classList.add('active');
+      }
     });
-  }
-});
+  }, {
+    rootMargin: '-50% 0px -50% 0px',
+    threshold: 0
+  });
+
+  sections.forEach(sec => sec && spy.observe(sec));
+
+  // 點擊滑動
+  links.forEach(a => {
+    a.addEventListener('click', e => {
+      e.preventDefault();
+      const target = document.getElementById(a.dataset.target);
+      if (!target) return;
+      window.scrollTo({ top: target.offsetTop - 60, behavior: 'smooth' });
+    });
+  });
+}
