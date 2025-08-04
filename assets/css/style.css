@@ -506,19 +506,24 @@ body {
 /* 1. TOC 容器預設隱藏，scroll 到 Impact 以下才顯示 */
 .toc {
   position: fixed;
-  top: calc(60px + 80px);     /* navbar 60px + 80px 下方 */
-  left: clamp(20px, 5vw, 60px);/* 和 container 左邊一樣 */
-  display: none;               /* Scroll 到 Impact 以下，JS 會加 .visible */
+  top: calc(60px + 80px); /* navbar 60px + 80px 下方 */
+  left: 0;
+  width: 100%;
+  max-width: 1440px;
+  padding-left: clamp(20px, 5vw, 60px);
+
+  display: none; /* 預設隱藏，滑到 pain-points 區塊才顯示 */
   z-index: 900;
   font-size: 14px;
   list-style: none;
-  padding: 0;
   margin: 0;
+  box-sizing: border-box;
 }
 
 .toc.visible {
   display: block;
 }
+
 
 /* 2. TOC 向右推內文 80px */
 .project-content.container {
