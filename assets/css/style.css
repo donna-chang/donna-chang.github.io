@@ -474,14 +474,14 @@ body {
 
 .project-content .section-title,
 .project-content .content-subtitle {
-  display: inline;                   /* 重點：讓 padding 只包覆文字 */
-  padding: 10px 20px;               /* 底色包住上下左右文字區塊 */
+  display: inline-block;             /* ✅ 只包文字大小，會換行 */
+  max-width: 100%;                   /* ✅ RWD 不超出 container */
+  padding: 10px 20px;                /* ✅ 上下 10px，左右 20px */
   border-radius: 10px;
   box-sizing: border-box;
   word-break: break-word;
   line-height: 1.4;
-  background-clip: padding-box;     /* 保證背景跟著 padding 不溢出 */
-  max-width: 100%;                  /* 避免超出 container */
+  margin-left: 0;
 }
 
 /* 大標題樣式 */
@@ -489,23 +489,21 @@ body {
   font-size: 22px;
   font-weight: 500;
   color: #000000;
-  background-color: rgba(0, 140, 255, 0.1);
-  display: inline;
+  background-color: rgba(0, 140, 255, 0.1);  /* 淺藍底色 */
   margin-top: 50px;
-  margin-bottom: 16px;
+  margin-bottom: 26px;
 }
-
 
 /* 小副標題樣式 */
 .project-content .content-subtitle {
   font-size: 18px;
   font-weight: 400;
   color: #595959;
-  background-color: rgba(89, 89, 89, 0.1);
-  display: inline;
+  background-color: rgba(89, 89, 89, 0.1);   /* 淺灰底色 */
   margin-top: 26px;
   margin-bottom: 12px;
 }
+
 
 /* 1. TOC 容器預設隱藏，scroll 到 Impact 以下才顯示 */
 
