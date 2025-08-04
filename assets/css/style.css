@@ -474,17 +474,15 @@ body {
 
 .project-content .section-title,
 .project-content .content-subtitle {
-  display: inline-block;                     /* 包覆文字寬度，並能換行 */
-  max-width: 100%;                           /* 避免超出 container */
-  box-sizing: border-box;
-  word-break: break-word;                    /* 長字強制換行 */
-  line-height: 1.4;                          /* 多行行距舒適 */
-
-  padding: 10px 20px;                        /* 上下 10px、左右 20px */
+  display: inline-block;             /* 只包覆文字大小（會自動換行） */
+  max-width: 100%;                   /* 避免超出 container */
+  padding: 10px 20px;
   border-radius: 10px;
-  margin-left: 0;                            /* 保持與 container 左側對齊 */
+  box-sizing: border-box;
+  word-break: break-word;
+  line-height: 1.4;
+  margin-left: 0;
 }
-
 
 /* 大標題樣式 */
 .project-content .section-title {
