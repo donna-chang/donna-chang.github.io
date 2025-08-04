@@ -508,22 +508,18 @@ body {
 
 .toc {
   position: fixed;
-  top: calc(60px + 100px);
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100%;
-  max-width: 1440px;
-
-  padding-left: clamp(20px, 5vw, 60px);
-  padding-right: clamp(20px, 5vw, 60px);
+  top: calc(60px + 100px);                /* navbar 高度 + offset */
+  left: clamp(20px, 5vw, 60px);           /* ✅ 跟 container 左對齊 */
+  width: 240px;                           /* ✅ 固定寬度，避免整欄太寬 */
 
   display: none;
   z-index: 900;
   font-size: 14px;
   list-style: none;
+  padding: 0;
+  margin: 0;
   box-sizing: border-box;
 }
-
 
 .toc.visible {
   display: block;
