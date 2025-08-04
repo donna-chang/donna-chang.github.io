@@ -44,34 +44,37 @@ document.addEventListener('DOMContentLoaded', function () {
   cards.forEach(card => cardObserver.observe(card));
 
   // === TOC 快捷目錄 ===
+  // === TOC 快捷目錄 ===
   const toc = document.getElementById('toc');
+  const tocWrapper = document.getElementById('toc-wrapper'); // ⬅️ 新增 wrapper 取得
   const tocTriggerSection = document.getElementById('user-study');
   const tocLinks = toc ? toc.querySelectorAll('a') : [];
-
+  
   // ✅ 過濾掉無效 section
   const tocSections = Array.from(tocLinks)
     .map(a => document.getElementById(a.dataset.target))
     .filter(Boolean);
-
-  if (toc && tocTriggerSection && tocSections.length) {
-    toc.style.transition = 'opacity 0.3s ease';
-
-    // TOC 顯示邏輯
+  
+  // ✅ 改為判斷 tocWrapper 存在（其實 toc 一定在裡面）
+  if (toc && tocWrapper && tocTriggerSection && tocSections.length) {
+    tocWrapper.style.transition = 'opacity 0.3s ease';
+  
+    // TOC 顯示邏輯：由 wrapper 控制 .visible class
     let tocTriggered = false;
     const tocVisibilityObserver = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          toc.classList.add('visible');
+          tocWrapper.classList.add('visible'); // ⬅️ 改這裡
           tocTriggered = true;
         } else if (tocTriggered && entry.boundingClientRect.top > 0) {
-          toc.classList.remove('visible');
+          tocWrapper.classList.remove('visible'); // ⬅️ 改這裡
           tocTriggered = false;
         }
       });
     }, { threshold: 0.1 });
-
+  
     tocVisibilityObserver.observe(tocTriggerSection);
-
+  
     // Scroll Spy 高亮功能
     const spy = new IntersectionObserver(entries => {
       entries.forEach(entry => {
@@ -86,9 +89,9 @@ document.addEventListener('DOMContentLoaded', function () {
       rootMargin: '-50% 0px -50% 0px',
       threshold: 0
     });
-
+  
     tocSections.forEach(sec => spy.observe(sec));
-
+  
     // 點擊滑動功能
     tocLinks.forEach(a => {
       a.addEventListener('click', e => {
@@ -99,4 +102,3 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     });
   }
-});
