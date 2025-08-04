@@ -509,20 +509,20 @@ body {
 
 .toc {
   position: fixed;
-  top: calc(60px + 100px); /* navbar 60px + 100px 下方 */
-  left: 0;
-  right: 0;
-  margin: 0 auto;
-
+  top: calc(60px + 100px);
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
   max-width: 1440px;
+
   padding-left: clamp(20px, 5vw, 60px);
   padding-right: clamp(20px, 5vw, 60px);
-  box-sizing: border-box;
 
   display: none;
   z-index: 900;
   font-size: 14px;
   list-style: none;
+  box-sizing: border-box;
 }
 
 
@@ -571,7 +571,7 @@ body {
   display: inline-block;
   width: 1em;
   margin-right: 5px;
-  color: inherit;
+  color: rgba(0,0,0,0.4);
   font-weight: 300;    /* 變細 */
   font-size: 18px;     /* 可調整大小，看起來更細 */
   line-height: 1;      /* 避免垂直間距多 */
