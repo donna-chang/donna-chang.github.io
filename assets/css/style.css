@@ -472,33 +472,36 @@ body {
   border-top: 1px solid #B6B6B6;
 }
 
-/* 只針對「Impact」以下的其他大標題 */
-.project-content .section-title {
-  font-size: 22px;                         /* 跟 About/Impact 一樣的字體大小 */
-  font-weight: 500;                        /* 跟 About/Impact 一樣的字重 */
-  color: #000000;                          /* 跟 About/Impact 一樣的文字顏色 */
-  background-color: rgba(0, 140, 255, 0.1);/* #008CFF 10% 透明度底色 */
-  border-radius: 10px;                     /* 10px 圓角 */
-  padding: 10px 20px;                      /* 上下 10px、左右 20px 內距 */
-  margin-bottom: 26px;                     /* 與內容間距 */
-  margin-top: 50px; 
-  display: block;                          /* 改成塊級元素，強制換行 */
-  width: max-content; 
+.project-content .section-title,
+.project-content .content-subtitle {
+  display: block;                          /* 塊級元素，強制換行 */
+  box-sizing: border-box;                 /* 讓 padding 不超出容器寬度 */
+  word-break: break-word;                 /* 文字長時強制換行 */
+
+  padding: 10px 20px;
+  border-radius: 10px;
 }
 
-/* 只針對「Impact」以下的所有小副標題 */
-.project-content .content-subtitle {
-  font-size: 18px;                         /* 小副標題字體大小 */
-  font-weight: 400;                        /* 小副標題字重 */
-  color: #595959;                          /* #595959 文字顏色 */
-  background-color: rgba(89, 89, 89, 0.1); /* #595959 10% 透明度底色 */
-  border-radius: 10px;                     /* 10px 圓角 */
-  padding: 10px 20px;                      /* 上下 10px、左右 20px 內距 */
-  margin-top: 26px;                        /* 與上方段落間距 */
-  margin-bottom: 12px;                     /* 與下方內容間距 */
-  display: block;                          /* 改成塊級元素，強制換行 */
-  width: max-content; 
+/* 大標題樣式 */
+.project-content .section-title {
+  font-size: 22px;
+  font-weight: 500;
+  color: #000000;
+  background-color: rgba(0, 140, 255, 0.1);
+  margin-bottom: 26px;
+  margin-top: 50px;
 }
+
+/* 小副標題樣式 */
+.project-content .content-subtitle {
+  font-size: 18px;
+  font-weight: 400;
+  color: #595959;
+  background-color: rgba(89, 89, 89, 0.1);
+  margin-top: 26px;
+  margin-bottom: 12px;
+}
+
 
 /* 1. TOC 容器預設隱藏，scroll 到 Impact 以下才顯示 */
 .toc {
