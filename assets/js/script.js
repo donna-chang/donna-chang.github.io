@@ -44,42 +44,40 @@ document.addEventListener('DOMContentLoaded', function () {
   cards.forEach(card => cardObserver.observe(card));
 
   // === TOC 快捷目錄 ===
-  // === TOC 快捷目錄 ===
   const toc = document.getElementById('toc');
-  const tocWrapper = document.getElementById('toc-wrapper'); // ⬅️ 新增 wrapper 取得
+  const tocWrapper = document.getElementById('toc-wrapper');
   const tocTriggerSection = document.getElementById('user-study');
   const tocLinks = toc ? toc.querySelectorAll('a') : [];
-  
-  // ✅ 過濾掉無效 section
+
+  // ✅ 改為使用 data-id，過濾有效 section
   const tocSections = Array.from(tocLinks)
-    .map(a => document.getElementById(a.dataset.target))
+    .map(a => document.getElementById(a.dataset.id))
     .filter(Boolean);
-  
-  // ✅ 改為判斷 tocWrapper 存在（其實 toc 一定在裡面）
+
   if (toc && tocWrapper && tocTriggerSection && tocSections.length) {
     tocWrapper.style.transition = 'opacity 0.3s ease';
-  
-    // TOC 顯示邏輯：由 wrapper 控制 .visible class
+
+    // TOC 顯示邏輯
     let tocTriggered = false;
     const tocVisibilityObserver = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          tocWrapper.classList.add('visible'); // ⬅️ 改這裡
+          tocWrapper.classList.add('visible');
           tocTriggered = true;
         } else if (tocTriggered && entry.boundingClientRect.top > 0) {
-          tocWrapper.classList.remove('visible'); // ⬅️ 改這裡
+          tocWrapper.classList.remove('visible');
           tocTriggered = false;
         }
       });
     }, { threshold: 0.1 });
-  
+
     tocVisibilityObserver.observe(tocTriggerSection);
-  
+
     // Scroll Spy 高亮功能
     const spy = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         const id = entry.target.id;
-        const link = toc.querySelector(`a[data-target="${id}"]`);
+        const link = toc.querySelector(`a[data-id="${id}"]`);
         if (entry.isIntersecting) {
           tocLinks.forEach(a => a.classList.remove('active'));
           link?.classList.add('active');
@@ -89,16 +87,17 @@ document.addEventListener('DOMContentLoaded', function () {
       rootMargin: '-50% 0px -50% 0px',
       threshold: 0
     });
-  
+
     tocSections.forEach(sec => spy.observe(sec));
-  
+
     // 點擊滑動功能
     tocLinks.forEach(a => {
       a.addEventListener('click', e => {
         e.preventDefault();
-        const target = document.getElementById(a.dataset.target);
+        const target = document.getElementById(a.dataset.id);
         if (!target) return;
         window.scrollTo({ top: target.offsetTop - 60, behavior: 'smooth' });
       });
     });
   }
+});
