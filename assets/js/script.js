@@ -1,34 +1,33 @@
 document.addEventListener('DOMContentLoaded', function () {
+  // === 漢堡選單 ===
   const hamburger = document.getElementById('hamburger');
   const navLinks = document.getElementById('nav-links');
 
-  // Toggle nav menu for mobile
-  hamburger.addEventListener('click', function (event) {
+  hamburger?.addEventListener('click', function (event) {
     event.stopPropagation();
-    navLinks.classList.toggle('active');
+    navLinks?.classList.toggle('active');
   });
 
-  // 點擊畫面其他地方時，收起漢堡選單
   document.addEventListener('click', function (event) {
-    if (!navLinks.contains(event.target) && !hamburger.contains(event.target)) {
-      navLinks.classList.remove('active');
+    if (!navLinks?.contains(event.target) && !hamburger?.contains(event.target)) {
+      navLinks?.classList.remove('active');
     }
   });
 
-  // Scroll to top button
+  // === Scroll to Top 按鈕 ===
   const scrollTopBtn = document.getElementById("scrollTopBtn");
   window.addEventListener("scroll", function () {
     if (window.scrollY > 300) {
-      scrollTopBtn.classList.add("visible");
+      scrollTopBtn?.classList.add("visible");
     } else {
-      scrollTopBtn.classList.remove("visible");
+      scrollTopBtn?.classList.remove("visible");
     }
   });
-  scrollTopBtn.addEventListener("click", function () {
+  scrollTopBtn?.addEventListener("click", function () {
     window.scrollTo({ top: 0, behavior: "smooth" });
   });
 
-  // card effect
+  // === 卡片淡入效果 ===
   const cards = document.querySelectorAll('.work-card');
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
@@ -41,18 +40,16 @@ document.addEventListener('DOMContentLoaded', function () {
   }, { threshold: 0.1 });
   cards.forEach(card => observer.observe(card));
 
-  // ======= TOC（大綱快捷）功能 =======
- document.addEventListener('DOMContentLoaded', function () {
+  // === TOC 快捷目錄 ===
   const toc = document.getElementById('toc');
   const painPoints = document.getElementById('pain-points');
   const links = toc ? toc.querySelectorAll('a') : [];
   const sections = Array.from(links).map(a => document.getElementById(a.dataset.target));
 
   if (toc && painPoints && links.length) {
-    // 淡入 / 淡出設定
     toc.style.transition = 'opacity 0.3s ease';
 
-    // TOC 顯示邏輯
+    // 顯示邏輯
     let tocTriggered = false;
     const tocVisibilityObserver = new IntersectionObserver(entries => {
       entries.forEach(entry => {
@@ -83,7 +80,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
     sections.forEach(sec => sec && spy.observe(sec));
 
-    // 點擊 TOC 滾動
+    // 點擊滑動
     links.forEach(a => {
       a.addEventListener('click', e => {
         e.preventDefault();
@@ -94,4 +91,3 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 });
-
