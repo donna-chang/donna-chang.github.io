@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // === TOC 快捷目錄 ===
   const toc = document.getElementById('toc');
-  const painPoints = document.getElementById('pain-points');
+  const painPoints = document.getElementById('user-study');
   const links = toc ? toc.querySelectorAll('a') : [];
   const sections = Array.from(links).map(a => document.getElementById(a.dataset.target));
 
