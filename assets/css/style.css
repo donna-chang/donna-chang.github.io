@@ -510,19 +510,19 @@ body {
 .toc {
   position: fixed;
   top: calc(60px + 100px); /* navbar 60px + 100px 下方 */
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100%;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+
   max-width: 1440px;
   padding-left: clamp(20px, 5vw, 60px);
   padding-right: clamp(20px, 5vw, 60px);
+  box-sizing: border-box;
 
-  display: none; /* 預設隱藏，滑到 pain-points 區塊才顯示 */
+  display: none;
   z-index: 900;
   font-size: 14px;
   list-style: none;
-  margin: 0;
-  box-sizing: border-box;
 }
 
 
