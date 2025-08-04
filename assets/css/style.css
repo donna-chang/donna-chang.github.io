@@ -563,3 +563,13 @@ body {
   line-height: 1;      /* 避免垂直間距多 */
 }
 
+/* 🔽 新增：在手機畫面時隱藏 TOC 且取消 margin-left */
+@media (max-width: 768px) {
+  .toc {
+    display: none !important;  /* 強制隱藏 TOC */
+  }
+
+  .project-content.with-toc .content-block:nth-of-type(n+3) {
+    margin-left: 0 !important; /* 回復內文原位 */
+  }
+}
