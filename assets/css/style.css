@@ -425,7 +425,7 @@ body {
 
 .meta-text {
   font-size: 16px;
-  font-weight: 400;
+  font-weight: 300;
   color: #595959;
   margin: 0;
 }
@@ -460,7 +460,7 @@ body {
 
 .content-text {
   font-size: 16px;
-  font-weight: 300;
+  font-weight: 350;
   color: #595959;
   margin: 0;
   line-height: 1.5; 
