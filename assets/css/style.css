@@ -598,7 +598,7 @@ body {
 /* 內文圖片 */
 .responsive-img {
   width: 100%;       /* 預設先佔滿可用寬度 */
-  max-width: 600px;  /* 限制最大寬度為 600px */
+  max-width: 650px;  /* 限制最大寬度 */
   height: auto;      /* 高度依比例縮放 */
   display: block;    /* 確保獨占一行 */
   margin-top: 16px;  /* 與文字的間距，可調 */
