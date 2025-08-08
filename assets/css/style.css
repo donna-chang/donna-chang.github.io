@@ -594,3 +594,12 @@ body {
     margin-left: 0 !important; /* 回復內文原位 */
   }
 }
+
+/* 內文圖片 */
+.responsive-img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin-top: 16px; /* 與文字留點距離 */
+  margin-bottom: 16px;
+}
