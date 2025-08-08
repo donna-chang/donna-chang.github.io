@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', function () {
   // === TOC 快捷目錄 ===
   const toc = document.getElementById('toc');
   const tocWrapper = document.getElementById('toc-wrapper');
-  const tocTriggerSection = document.getElementById('user-study');
+  const tocTriggerSection = document.getElementById('pain-points');
   const tocLinks = toc ? toc.querySelectorAll('a') : [];
 
   // ✅ 改為使用 data-id，過濾有效 section
