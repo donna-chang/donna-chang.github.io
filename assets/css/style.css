@@ -601,8 +601,8 @@ body {
   max-width: 650px;  /* 限制最大寬度 */
   height: auto;      /* 高度依比例縮放 */
   display: block;    /* 確保獨占一行 */
-  margin-top: 16px;  /* 與文字的間距，可調 */
-  margin-bottom: 16px;
+  margin-top: 22px;  /* 與文字的間距，可調 */
+  margin-bottom: 22px;
 }
 
 .original-size-img {
@@ -610,6 +610,6 @@ body {
   max-width: 100%;   /* 當螢幕窄時，自動縮小不超出容器 */
   height: auto;      /* 高度維持比例 */
   display: block;
-  margin-top: 16px;
-  margin-bottom: 16px;
+  margin-top: 22px;
+  margin-bottom: 22px;
 }
