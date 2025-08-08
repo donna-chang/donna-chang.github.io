@@ -604,3 +604,12 @@ body {
   margin-top: 16px;  /* 與文字的間距，可調 */
   margin-bottom: 16px;
 }
+
+.original-size-img {
+  width: auto;       /* 以圖片原始寬度呈現 */
+  max-width: 100%;   /* 當螢幕窄時，自動縮小不超出容器 */
+  height: auto;      /* 高度維持比例 */
+  display: block;
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
