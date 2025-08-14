@@ -102,14 +102,14 @@ body {
   font-size: 14px;
 }
 
-.nav-link.work {
-  color: #008CFF;
-  font-weight: 700;
+.about-page .nav-link.work {
+  color: #000;
+  font-weight: 300;
 }
 
-.nav-link.about {
-  color: #000000;
-  font-weight: 300;
+.about-page .nav-link.about {
+  color: #008CFF;
+  font-weight: 700;
 }
 
 /* Intro Section */
@@ -644,6 +644,15 @@ body {
 .about-section {
   padding-top: 40px;
   margin-top: 40px;
+  position: relative;
+}
+
+.about-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: clamp(20px, 5vw, 60px); /* 與 container 內縮一致 */
+  right: clamp(20px, 5vw, 60px);
   border-top: 1px solid #B6B6B6;
 }
 
