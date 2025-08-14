@@ -613,3 +613,85 @@ body {
   margin-top: 22px;
   margin-bottom: 22px;
 }
+
+/* ===== About Page Styles ===== */
+.about-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 40px;
+  margin-top: 80px;
+}
+
+.about-photo {
+  flex: 0 0 300px;
+  max-width: 300px;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  object-fit: cover;
+  width: 100%;
+  height: auto;
+}
+
+.about-intro {
+  flex: 1;
+  font-size: 16px;
+  font-weight: 350;
+  color: #000000;
+  line-height: 1.8;
+}
+
+.about-section {
+  padding-top: 40px;
+  margin-top: 40px;
+  border-top: 1px solid #B6B6B6;
+}
+
+.about-section h2 {
+  font-size: 22px;
+  font-weight: 500;
+  color: #000;
+  margin-bottom: 16px;
+}
+
+.about-section p {
+  font-size: 16px;
+  font-weight: 350;
+  color: #595959;
+  line-height: 1.8;
+  margin: 0;
+}
+
+.about-buttons {
+  margin-top: 30px;
+  display: flex;
+  gap: 20px;
+}
+
+.about-buttons a {
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  color: #fff;
+  background-color: #008CFF;
+  transition: background-color 0.3s ease;
+}
+
+.about-buttons a:hover {
+  background-color: #006fcc;
+}
+
+@media (max-width: 768px) {
+  .about-header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .about-intro {
+    text-align: left;
+  }
+}
+
