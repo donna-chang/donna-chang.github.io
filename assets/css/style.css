@@ -152,7 +152,6 @@ body {
   transition: transform 0.3s ease;
 }
 
-/* Hover 時疊一層白色透明 */
 .work-card::after {
   content: '';
   position: absolute;
@@ -161,10 +160,17 @@ body {
   opacity: 0;
   transition: opacity 0.3s ease;
   pointer-events: none;
+  z-index: 0; /* 放到最底層 */
 }
 
 .work-card:hover::after {
   opacity: 1;
+}
+
+/* 讓卡片內容保持在上層 */
+.work-card > * {
+  position: relative;
+  z-index: 1;
 }
 
 .card-header {
