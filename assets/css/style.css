@@ -102,12 +102,14 @@ body {
   font-size: 14px;
 }
 
-.about-page .nav-link.work {
-  color: #000;
-  font-weight: 300;
+.work-page .nav-link.work,
+.work-page .nav-link.work:visited {
+  color: #008CFF;
+  font-weight: 700;
 }
 
-.about-page .nav-link.about {
+.about-page .nav-link.about,
+.about-page .nav-link.about:visited {
   color: #008CFF;
   font-weight: 700;
 }
