@@ -114,6 +114,18 @@ body {
   font-weight: 700;
 }
 
+.work-page .nav-link.about,
+.work-page .nav-link.about:visited {
+  color: #000;
+  font-weight: 300;
+}
+
+.about-page .nav-link.work,
+.about-page .nav-link.work:visited {
+  color: #000;
+  font-weight: 300;
+}
+
 /* Intro Section */
 .intro {
   margin-top: 80px;
