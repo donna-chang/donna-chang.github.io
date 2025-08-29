@@ -637,7 +637,7 @@ body {
 /* ===== About Page Styles ===== */
 .about-header {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   align-items: flex-start;
   gap: 40px;
   margin-top: 80px;
@@ -659,6 +659,10 @@ body {
   margin-bottom: 20px;    /* 與下一段空行 */
   line-height: 1.2;
   color: #000;
+}
+
+.about-intro {
+  flex: 1; /* 填滿剩餘空間 */
 }
 
 .about-intro p {
@@ -724,6 +728,7 @@ body {
 @media (max-width: 768px) {
   .about-header {
     flex-direction: column;
+    flex-wrap: wrap; /* 手機版可換行 */
     align-items: center;
     text-align: center;
   }
