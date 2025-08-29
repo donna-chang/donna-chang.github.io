@@ -730,7 +730,6 @@ body {
   grid-template-columns: 1fr;   /* 手機時 1 欄 */
   gap: 20px;
   justify-content: flex-start;
-  padding: 0px;
 }
 
 @media (min-width: 768px) {
@@ -751,6 +750,7 @@ body {
   background-color: #f6f6f6;
   border: 1px solid #ffffff;
   border-radius: 8px;
+  box-sizing: border-box;
 }
 
 .language-name {
