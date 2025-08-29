@@ -730,17 +730,18 @@ body {
   grid-template-columns: 1fr;   /* 手機時 1 欄 */
   gap: 20px;
   justify-content: flex-start;
+  padding: 0px;
 }
 
 @media (min-width: 768px) {
   .language-container {
-    grid-template-columns: repeat(2, 1fr); /* 平板以上 2 欄 */
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (min-width: 1200px) {
   .language-container {
-    grid-template-columns: repeat(3, 1fr); /* 桌機以上 3 欄 */
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
