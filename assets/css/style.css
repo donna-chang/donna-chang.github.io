@@ -654,8 +654,8 @@ body {
 }
 
 .intro-title {
-  font-size: 2.5em;       /* 第一行字體較大 */
-  font-weight: 700;
+  font-size: 18px;       /* 第一行字體較大 */
+  font-weight: 400;
   margin-bottom: 20px;    /* 與下一段空行 */
   line-height: 1.2;
   color: #000;
