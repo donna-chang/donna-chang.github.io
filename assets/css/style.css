@@ -726,13 +726,26 @@ body {
 
 /* langauge section */
 .language-container {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr;   /* 手機時 1 欄 */
   gap: 20px;
   justify-content: flex-start;
 }
 
+@media (min-width: 768px) {
+  .language-container {
+    grid-template-columns: repeat(2, 1fr); /* 平板以上 2 欄 */
+  }
+}
+
+@media (min-width: 1200px) {
+  .language-container {
+    grid-template-columns: repeat(3, 1fr); /* 桌機以上 3 欄 */
+  }
+}
+
 .language-card {
-  width: 250px;
+  width: 100%;
   padding: 20px;
   background-color: #f6f6f6;
   border: 1px solid #ffffff;
