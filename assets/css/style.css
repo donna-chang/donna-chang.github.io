@@ -653,12 +653,21 @@ body {
   height: auto;
 }
 
-.about-intro {
-  flex: 1;
+.intro-title {
+  font-size: 2.5em;       /* 第一行字體較大 */
+  font-weight: 700;
+  margin-bottom: 20px;    /* 與下一段空行 */
+  line-height: 1.2;
+  color: #000;
+}
+
+.about-intro p {
+  margin-top: 16px;       /* 段落間距 */
+  margin-bottom: 16px;
   font-size: 16px;
   font-weight: 350;
-  color: #000000;
   line-height: 1.8;
+  color: #000000;
 }
 
 .about-section {
