@@ -686,7 +686,7 @@ body {
   top: 0;
   left: clamp(20px, 5vw, 60px); /* 與 container 內縮一致 */
   right: clamp(20px, 5vw, 60px);
-  border-top: 1px solid #B6B6B6;
+  border-top: 1px solid #DBDBDB;
 }
 
 .about-section h2 {
