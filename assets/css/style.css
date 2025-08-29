@@ -777,9 +777,9 @@ body {
   margin-bottom: 5px;
 }
 
-.language-fluency {
-  font-size: 12px !important;
-  font-weight: 300;
+.about-section .language-fluency {
+  font-size: 14px;
+  font-weight: 350;
   color: #595959;
   margin: 0;
 }
