@@ -724,3 +724,40 @@ body {
   }
 }
 
+/* langauge section */
+.language-container {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  padding: 20px;
+}
+
+.language-card {
+  width: 250px;
+  padding: 20px;
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.language-name {
+  font-size: 16px;
+  font-weight: 400;
+  color: #000000;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 5px;
+}
+
+.language-fluency {
+  font-size: 14px;
+  font-weight: 350;
+  color: #595959;
+  margin: 0;
+}
+
+.flag {
+  font-size: 20px; /* Adjust flag size if needed */
+}
