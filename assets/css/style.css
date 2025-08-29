@@ -778,7 +778,7 @@ body {
 }
 
 .language-fluency {
-  font-size: 12px;
+  font-size: 12px !important;
   font-weight: 300;
   color: #595959;
   margin: 0;
