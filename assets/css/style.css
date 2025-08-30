@@ -792,28 +792,32 @@ body {
 .community-gallery {
   display: flex;
   flex-wrap: wrap; 
-  gap: 10px; /* 維持圖片間距 10px */
+  gap: 10px; 
   margin: 20px 0;
-  align-items: center; /* 讓不同寬度的圖片垂直居中對齊 */
 }
 
 .community-gallery img {
-  flex: 1 1 auto; /* 讓圖片能自動縮放以填滿容器 */
-  height: 250px; /* 統一設定一個固定的圖片高度，所有圖片等高 */
-  border-radius: 8px;
-  object-fit: contain; /* 確保圖片不被裁切 */
+  /* 讓圖片寬度自適應，但高度固定 */
+  height: 250px; 
+  width: auto;
+  
+  /* 關鍵！讓圖片能根據自己的寬度比例來分配空間 */
+  flex-grow: 1;
+  
+  /* 保持圖片完整不被裁切 */
+  object-fit: contain; 
 }
 
 /* 平板 (兩張一排) */
 @media (max-width: 992px) {
   .community-gallery img {
-    height: 200px; /* 在平板上調整高度 */
+    height: 200px; 
   }
 }
 
 /* 手機 (一張一排) */
 @media (max-width: 576px) {
   .community-gallery img {
-    height: 150px; /* 在手機上調整高度 */
+    height: 150px; 
   }
 }
