@@ -802,7 +802,8 @@ body {
   flex-wrap: wrap;        /* 小螢幕自動換行 */
   gap: 10px;              /* 圖片間距 */
   margin: 20px 0;
-  /* 移除：justify-content: space-between; */
+  /* 移除此行，flex-grow 和 gap 會自動處理排版 */
+  /* justify-content: space-between; */
 }
 
 .community-gallery img {
@@ -815,21 +816,20 @@ body {
 
 /* 平板 (兩張一排) */
 @media (max-width: 992px) {
- .community-gallery img {
+  .community-gallery img {
     height: 200px;
   }
 }
 
 /* 手機 (一張一排) */
 @media (max-width: 576px) {
- .community-gallery {
+  .community-gallery {
     flex-direction: column; /* 單列 */
     gap: 10px;
   }
 
- .community-gallery img {
+  .community-gallery img {
     height: 150px;
     width: 100%;            /* 滿寬 */
   }
 }
-
