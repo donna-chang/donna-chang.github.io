@@ -798,38 +798,39 @@ body {
 
 /* community section */
 .community-gallery {
-  display: flex;
-  flex-wrap: wrap;        /* 小螢幕自動換行 */
-  gap: 10px;              /* 圖片間距 */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 桌機：三張一排 */
+  gap: 10px;                              /* 圖片間距固定 10px */
   margin: 20px 0;
-  /* 移除此行，flex-grow 和 gap 會自動處理排版 */
-  /* justify-content: space-between; */
 }
 
 .community-gallery img {
-  height: 250px;          /* 固定高度 */
-  width: auto;            /* 寬度依比例縮放 */
-  flex: 1 1 auto;         /* 依比例自適應寬度 */
-  object-fit: contain;    /* 保持完整圖片 */
+  width: 100%;         /* 滿寬格子 */
+  height: 250px;       /* 固定高度保持等高 */
+  object-fit: contain; /* 保持完整圖片 */
   border-radius: 8px;
+  display: block;
 }
 
-/* 平板 (兩張一排) */
+/* 平板 (992px 以下，兩張一排) */
 @media (max-width: 992px) {
+  .community-gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   .community-gallery img {
     height: 200px;
   }
 }
 
-/* 手機 (一張一排) */
+/* 手機 (576px 以下，一張一排) */
 @media (max-width: 576px) {
   .community-gallery {
-    flex-direction: column; /* 單列 */
-    gap: 10px;
+    grid-template-columns: 1fr;
   }
 
   .community-gallery img {
     height: 150px;
-    width: 100%;            /* 滿寬 */
   }
 }
+
