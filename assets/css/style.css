@@ -799,15 +799,15 @@ body {
 /* community section */
 .community-gallery {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 桌機：三張一排 */
-  gap: 10px;                              /* 圖片間距固定 10px */
+  grid-template-columns: repeat(3, 1fr); /* 桌機三張一排 */
+  gap: 10px;                              /* 圖片間距 */
   margin: 20px 0;
 }
 
 .community-gallery img {
-  width: 100%;             /* 滿寬格子 */
-  aspect-ratio: auto 4 / 3; /* 根據原始比例自動縮放，也可改為 16/9 視圖片比例 */
-  object-fit: contain;      /* 保持完整圖片 */
+  width: 100%;            /* 填滿格子寬度 */
+  height: auto;           /* 高度隨寬度等比例縮放 */
+  object-fit: contain;    /* 保持完整圖片 */
   border-radius: 8px;
   display: block;
 }
