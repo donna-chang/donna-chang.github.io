@@ -708,6 +708,7 @@ body {
   margin-top: 30px;
   display: flex;
   gap: 20px;
+  justify-content: center; /* ✅ 水平置中按鈕 */
 }
 
 .about-buttons a {
