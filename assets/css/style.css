@@ -805,11 +805,16 @@ body {
 }
 
 .community-gallery img {
-  width: 100%;            /* 填滿格子寬度 */
-  height: auto;           /* 高度隨寬度等比例縮放 */
-  object-fit: contain;    /* 保持完整圖片 */
+  width: 100%;             /* 填滿格子寬度 */
+  height: 100%;            /* 讓 grid 行高跟圖片高度一致 */
+  object-fit: contain;     /* 保持完整圖片 */
   border-radius: 8px;
   display: block;
+}
+
+/* 讓 grid 行自動調整高度以符合圖片比例 */
+.community-gallery {
+  grid-auto-rows: 1fr;
 }
 
 /* 平板 (992px 以下，兩張一排) */
@@ -825,4 +830,5 @@ body {
     grid-template-columns: 1fr;
   }
 }
+
 
