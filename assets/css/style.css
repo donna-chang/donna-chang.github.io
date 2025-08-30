@@ -800,9 +800,9 @@ body {
   flex: 1 1 calc(33.333% - 10px); /* ✅ 預設三張並排 */
   max-width: calc(33.333% - 10px);
   width: 100%;
-  height: auto;
+  height: auto; /* ✅ 保持原始比例 */
   border-radius: 8px;
-  object-fit: cover;
+  object-fit: contain; /* ✅ 確保完整顯示，不裁切 */
 }
 
 /* 平板 (兩張一排) */
@@ -820,4 +820,3 @@ body {
     max-width: 100%;
   }
 }
-
