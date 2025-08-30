@@ -799,16 +799,16 @@ body {
 /* community section */
 .community-gallery {
   display: flex;
-  flex-wrap: wrap;        /* 小螢幕自動換行 */
-  gap: 10px;              /* 圖片間距 */
+  flex-wrap: wrap;
+  gap: 10px;             /* 固定間距 */
   margin: 20px 0;
 }
 
 .community-gallery img {
-  height: 250px;          /* 固定高度，等高 */
-  width: auto;            /* 寬度自適應 */
-  flex: 1 1 calc((100% - 20px) / 3); /* 3張並排，間距 10px*2 */
-  object-fit: contain;    /* 不裁切圖片 */
+  height: 250px;                                /* 固定高度，等高 */
+  flex: 0 1 calc((100% - 20px) / 3);           /* 3張並排，總gap 10px*2 */
+  width: auto;                                  /* 寬度依比例縮放 */
+  object-fit: contain;                          /* 不裁切圖片 */
   border-radius: 8px;
 }
 
@@ -816,22 +816,21 @@ body {
 @media (max-width: 992px) {
   .community-gallery img {
     height: 200px;
-    flex: 1 1 calc((100% - 10px) / 2); /* 2張並排，間距 10px */
+    flex: 0 1 calc((100% - 10px) / 2);         /* 2張並排，總gap 10px */
   }
 }
 
 /* 手機 (一張一排) */
 @media (max-width: 576px) {
   .community-gallery {
-    flex-direction: column; /* 單列 */
+    flex-direction: column;
     gap: 10px;
   }
 
   .community-gallery img {
     height: 150px;
-    width: 100%;            /* 滿寬 */
-    flex: 1 1 100%;
+    width: 100%;                                 /* 滿寬 */
+    flex: 0 1 100%;
   }
 }
-
 
