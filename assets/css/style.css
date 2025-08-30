@@ -805,9 +805,9 @@ body {
 }
 
 .community-gallery img {
-  width: 100%;         /* 滿寬格子 */
-  height: 250px;       /* 固定高度保持等高 */
-  object-fit: contain; /* 保持完整圖片 */
+  width: 100%;             /* 滿寬格子 */
+  aspect-ratio: auto 4 / 3; /* 根據原始比例自動縮放，也可改為 16/9 視圖片比例 */
+  object-fit: contain;      /* 保持完整圖片 */
   border-radius: 8px;
   display: block;
 }
@@ -817,20 +817,12 @@ body {
   .community-gallery {
     grid-template-columns: repeat(2, 1fr);
   }
-
-  .community-gallery img {
-    height: 200px;
-  }
 }
 
 /* 手機 (576px 以下，一張一排) */
 @media (max-width: 576px) {
   .community-gallery {
     grid-template-columns: 1fr;
-  }
-
-  .community-gallery img {
-    height: 150px;
   }
 }
 
