@@ -787,3 +787,18 @@ body {
 .flag {
   font-size: 20px; /* Adjust flag size if needed */
 }
+
+/* community section */
+.community-gallery {
+  display: flex;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.community-gallery img {
+  flex: 1;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+}
