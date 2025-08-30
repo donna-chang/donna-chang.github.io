@@ -797,22 +797,17 @@ body {
 }
 
 /* community section */
+/* Community 圖片填滿 container，自動等比例縮放 */
 .community-gallery {
-  position: relative;
-  width: 100%;
-  padding-bottom: 56.25%; /* 保持 16:9 的長寬比 */
-  background-image: url('assets/about/community.png');
-  background-size: cover; /* 圖片自動填滿容器 */
-  background-position: center; /* 圖片置中 */
-  background-repeat: no-repeat;
-  border-radius: 20px;
-  overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-  margin-bottom: 30px;
+  width: 100%;       /* 填滿 container 寬度 */
+  display: flex;     /* 方便置中圖片 */
+  justify-content: center;
 }
 
-/* 隱藏 HTML 中的 img 標籤 */
 .community-gallery img {
-  display: none;
+  width: 100%;       /* 自動填滿容器寬度 */
+  height: auto;      /* 高度依比例縮放 */
+  display: block;    /* 確保獨占一行 */
+  border-radius: 20px; /* 可選：圓角保持風格一致 */
+  object-fit: contain; /* 保持比例，不裁切 */
 }
-
