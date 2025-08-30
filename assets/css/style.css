@@ -792,29 +792,28 @@ body {
 .community-gallery {
   display: flex;
   flex-wrap: wrap; 
-  gap: 10px; 
+  gap: 10px; /* 維持圖片間距 10px */
   margin: 20px 0;
-  align-items: center; /* ✅ 新增：讓圖片在容器中垂直置中對齊 */
+  align-items: center; /* 讓不同寬度的圖片垂直居中對齊 */
 }
 
 .community-gallery img {
-  height: 300px; /* ✅ 新增：設定一個固定的高度 */
-  width: auto; /* ✅ 新增：寬度自動調整 */
-  flex: 1; /* ✅ 新增：讓所有圖片等比放大或縮小，以填滿容器 */
+  flex: 1 1 auto; /* 讓圖片能自動縮放以填滿容器 */
+  height: 250px; /* 統一設定一個固定的圖片高度，所有圖片等高 */
   border-radius: 8px;
-  object-fit: contain; /* ✅ 關鍵：避免圖片被裁切，保持完整比例 */
+  object-fit: contain; /* 確保圖片不被裁切 */
 }
 
 /* 平板 (兩張一排) */
 @media (max-width: 992px) {
   .community-gallery img {
-    height: 200px; /* ✅ 可根據需求調整高度 */
+    height: 200px; /* 在平板上調整高度 */
   }
 }
 
 /* 手機 (一張一排) */
 @media (max-width: 576px) {
   .community-gallery img {
-    height: 150px; /* ✅ 可根據需求調整高度 */
+    height: 150px; /* 在手機上調整高度 */
   }
 }
