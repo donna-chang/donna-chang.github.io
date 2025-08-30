@@ -711,18 +711,19 @@ body {
 }
 
 .about-buttons a {
-  padding: 10px 20px;
+  padding: 20px 30px;
   border-radius: 8px;
   text-decoration: none;
   font-size: 14px;
-  font-weight: 500;
-  color: #fff;
+  font-weight: 400;
+  color: #ffffff;
   background-color: #008CFF;
+  border: 1px solid #008CFF;
   transition: background-color 0.3s ease;
 }
 
 .about-buttons a:hover {
-  background-color: #006fcc;
+  background-color: #1997FF;
 }
 
 @media (max-width: 768px) {
