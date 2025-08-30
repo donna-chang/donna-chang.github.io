@@ -705,7 +705,7 @@ body {
 }
 
 .about-buttons {
-  margin-top: 30px;
+  margin-top: 50px;
   display: flex;
   gap: 20px;
   justify-content: center; /* ✅ 水平置中按鈕 */
