@@ -812,3 +812,8 @@ body {
   display: block;    /* 確保獨占一行 */
   object-fit: contain; /* 保持比例，不裁切 */
 }
+
+.text-emphasis {
+  color: #0066CC;   /* 比 #008CFF 深一點 */
+  font-weight: 700;
+}
