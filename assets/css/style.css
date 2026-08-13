@@ -817,3 +817,8 @@ body {
   color: #0066CC;   /* 比 #008CFF 深一點 */
   font-weight: 700;
 }
+
+.text-bold {
+  color: #000000;
+  font-weight: 700;
+}
