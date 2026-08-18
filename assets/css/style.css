@@ -580,6 +580,7 @@ body {
 /* 1. 永遠把 Impact 以下的內容往右推 */
 .project-content.with-toc .content-block:nth-of-type(n+3) {
   margin-left: 120px;
+  max-width: 900px;
 }
 
 /* 2. 大綱快捷（#toc）改用「-」取代圓點 */
