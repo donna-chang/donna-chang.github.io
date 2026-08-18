@@ -1,7 +1,7 @@
 /* Global */
 
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Inter', sans-serif;
   margin: 0;
   padding: 0;
   padding-top: 60px; /* 🚩 騰出空間給 fixed navbar */
@@ -192,7 +192,7 @@ body {
 }
 
 .card-title {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-weight: 300;
   font-size: 20px;
   color: #7D7D7D;
