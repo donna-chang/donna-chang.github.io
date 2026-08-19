@@ -579,7 +579,7 @@ body {
 
 /* 1. 永遠把 Impact 以下的內容往右推 */
 .project-content.with-toc .content-block:nth-of-type(n+3) {
-  margin-left: 120px;
+  margin-left: 180px;
   max-width: 900px;
 }
 
