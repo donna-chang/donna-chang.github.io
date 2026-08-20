@@ -29,9 +29,9 @@ body {
   align-items: center;
 
   /* 乾淨的玻璃霧化 */
-  background: rgba(255, 255, 255, 0.04);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
 
   border: 0.8px solid rgba(255, 255, 255, 0.75);
   border-radius: 27px;
