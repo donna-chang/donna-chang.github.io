@@ -2043,9 +2043,17 @@
           float edge = edgeFactor(p_px, b_px, u_radius);
           float min_dimension = min(u_resolution.x, u_resolution.y);
           float offsetAmt = (edge * u_refraction + pow(edge, 10.0) * u_bevelDepth);
-          float centreBlend = smoothstep(0.15, 0.45, length(p));
-          vec2 refractDir = cornerNormal(p_px, b_px, u_radius, normalize(p));
-          vec2 offset = refractDir * offsetAmt * centreBlend;
+          /* WhatSub-style vertical refraction */
+          float verticalPos = abs(p_px.y) / max(b_px.y, 1.0);
+          
+          /* 中央弱、越靠上下邊緣越強 */
+          float verticalEdge = smoothstep(0.25, 1.0, verticalPos);
+          
+          /* 只往上 / 下折射，不往左右斜拉 */
+          float verticalDir = p_px.y < 0.0 ? -1.0 : 1.0;
+          vec2 refractDir = vec2(0.0, verticalDir);
+          
+          vec2 offset = refractDir * offsetAmt * verticalEdge;
 
           float tiltRefractionScale = 0.05;
           vec2 tiltOffset = vec2(tan(radians(u_tiltY)), -tan(radians(u_tiltX))) * tiltRefractionScale;
