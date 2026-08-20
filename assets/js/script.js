@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // === Liquid Glass Navbar ===
   if (typeof liquidGL === 'function') {
-  liquidGL({
+    liquidGL({
       snapshot: "body",
       target: ".navbar-glass",
   
