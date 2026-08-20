@@ -3,24 +3,24 @@ document.addEventListener('DOMContentLoaded', function () {
   // === Liquid Glass Navbar ===
   if (typeof liquidGL === 'function') {
   liquidGL({
-    snapshot: "body",
-    target: ".navbar-glass",
-
-    resolution: 1.5,
-    refraction: 0,
-    aberration: 0.06,
-    bevelDepth: 0.06,
-    bevelWidth: 0.18,
-    frost: 1.2,
-
-    shadow: false,
-    specular: false,
-
-    reveal: "none",
-    tilt: false,
-    magnify: 1
-  });
-}
+      snapshot: "body",
+      target: ".navbar-glass",
+  
+      resolution: 1.5,
+      refraction: 0,
+      aberration: 0.06,
+      bevelDepth: 0.06,
+      bevelWidth: 0.18,
+      frost: 1.2,
+  
+      shadow: false,
+      specular: false,
+  
+      reveal: "none",
+      tilt: false,
+      magnify: 1
+    });
+  }
 
   // === 漢堡選單 ===
   const hamburger = document.getElementById('hamburger');
