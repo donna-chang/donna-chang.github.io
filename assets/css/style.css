@@ -17,16 +17,18 @@ body {
   margin: 0 auto;
 }
 
-/* Navbar */
 .navbar {
   position: fixed;
   top: 0;
   width: 100%;
-  background-color: rgba(255, 255, 255, 0.5);
-  backdrop-filter: blur(3px); /* 背景模糊效果 */
-  -webkit-backdrop-filter: blur(3px); /* Safari 支援 */
+  background-color: rgba(255, 255, 255, 0.28);
+
+  backdrop-filter: blur(18px) saturate(160%);
+  -webkit-backdrop-filter: blur(18px) saturate(160%);
+
   z-index: 999;
-  border-bottom: transparent;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.35);
+
   height: 60px;
   display: flex;
   align-items: center;
