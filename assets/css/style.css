@@ -28,8 +28,10 @@ body {
   display: flex;
   align-items: center;
 
-  /* Navbar 本身只負責互動，不負責折射 */
-  background: transparent;
+  /* 乾淨的玻璃霧化 */
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
 
   border: 0.8px solid rgba(255, 255, 255, 0.75);
   border-radius: 27px;
