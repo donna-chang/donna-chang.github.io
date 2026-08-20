@@ -29,19 +29,16 @@ body {
   display: flex;
   align-items: center;
 
-  /* fallback glass */
   background: rgba(255, 255, 255, 0.08);
 
   backdrop-filter:
-    url(#liquid-glass-filter)
-    blur(1px)
-    saturate(130%)
+    blur(6px)
+    saturate(140%)
     brightness(105%);
 
   -webkit-backdrop-filter:
-    url(#liquid-glass-filter)
-    blur(1px)
-    saturate(130%)
+    blur(6px)
+    saturate(140%)
     brightness(105%);
 
   border: 1px solid rgba(255, 255, 255, 0.75);
