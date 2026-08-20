@@ -551,8 +551,8 @@ body {
   top: calc(60px + 100px);
   left: 0;
   right: 0;
-  z-index: 900;
-  justify-content: center;    /* ✅ 重點：置中 TOC */
+  z-index: 1001;
+  justify-content: center;
   pointer-events: none;
 }
 
