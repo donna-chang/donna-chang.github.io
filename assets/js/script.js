@@ -7,9 +7,9 @@ document.addEventListener('DOMContentLoaded', function () {
       target: ".navbar-glass",
     
       resolution: 1.5,
-      refraction: 0.035,
+      refraction: 0,
       aberration: 0.025,
-      bevelDepth: 0.08,
+      bevelDepth: 0,
       bevelWidth: 0.18,
       frost: 1,
     
