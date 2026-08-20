@@ -1,4 +1,29 @@
 document.addEventListener('DOMContentLoaded', function () {
+
+  // === Liquid Glass Navbar ===
+  liquidGL({
+    target: ".navbar",
+    snapshot: "body",
+
+    resolution: 2,
+
+    refraction: 0.018,
+    aberration: 0.035,
+
+    bevelDepth: 0.11,
+    bevelWidth: 0.18,
+
+    frost: 0.5,
+
+    shadow: true,
+    specular: true,
+
+    reveal: "none",
+
+    tilt: false,
+    magnify: 1
+  });
+
   // === 漢堡選單 ===
   const hamburger = document.getElementById('hamburger');
   const navLinks = document.getElementById('nav-links');
