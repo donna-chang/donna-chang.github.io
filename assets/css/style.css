@@ -549,7 +549,7 @@ body {
   width: 240px;
 
   font-size: 14px;
-  padding-left: clamp(20px, 5vw, 60px);  /* ✅ 左內縮與 container 一致 */
+  padding-left: calc(clamp(20px, 5vw, 60px) + 30px);
   box-sizing: border-box;
 
   max-width: 1440px;
