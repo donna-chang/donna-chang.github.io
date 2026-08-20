@@ -2056,9 +2056,7 @@
           float verticalDir = p_px.y < 0.0 ? -1.0 : 1.0;
           vec2 refractDir = vec2(0.0, verticalDir);
           
-          float maxOffset = u_bounds.w * 0.1;
-          float limitedOffset = min(offsetAmt * verticalEdge, maxOffset);
-          vec2 offset = refractDir * limitedOffset;
+          vec2 offset = refractDir * offsetAmt * verticalEdge;
 
           float tiltRefractionScale = 0.05;
           vec2 tiltOffset = vec2(tan(radians(u_tiltY)), -tan(radians(u_tiltX))) * tiltRefractionScale;
