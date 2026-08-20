@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
       aberration: 0.025,
       bevelDepth: 0.08,
       bevelWidth: 0.22,
-      frost: 0.9,
+      frost: 1.2,
     
       shadow: false,
       specular: false,
