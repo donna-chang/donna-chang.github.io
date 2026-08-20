@@ -2056,7 +2056,7 @@
           float verticalDir = p_px.y < 0.0 ? -1.0 : 1.0;
           vec2 refractDir = vec2(0.0, verticalDir);
           
-          float maxOffset = u_bounds.w * 0.18;
+          float maxOffset = u_bounds.w * 0.1;
           float limitedOffset = min(offsetAmt * verticalEdge, maxOffset);
           vec2 offset = refractDir * limitedOffset;
 
