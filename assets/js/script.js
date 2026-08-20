@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
       refraction: 0.035,
       aberration: 0.025,
       bevelDepth: 0.08,
-      bevelWidth: 0.22,
+      bevelWidth: 0.18,
       frost: 3,
     
       shadow: false,
