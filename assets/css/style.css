@@ -33,7 +33,7 @@ body {
   background: transparent;
 
   border: 1px solid rgba(255, 255, 255, 0.75);
-  border-radius: 30px;
+  border-radius: 27px;
 
   box-shadow:
     0 4px 20px rgba(0, 0, 0, 0.04),
@@ -56,7 +56,7 @@ body {
   width: auto;
   height: 54px;
 
-  border-radius: 30px;
+  border-radius: 27px;
 
   /* WebGL 不支援時的 fallback */
   background: rgba(255, 255, 255, 0.08);
