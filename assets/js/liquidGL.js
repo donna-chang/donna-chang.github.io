@@ -2043,6 +2043,9 @@
           float edge = edgeFactor(p_px, b_px, u_radius);
           float min_dimension = min(u_resolution.x, u_resolution.y);
           float offsetAmt = (edge * u_refraction + pow(edge, 10.0) * u_bevelDepth);
+         /* 保留原本 shader 後續會使用的 centreBlend */
+          float centreBlend = smoothstep(0.15, 0.45, length(p));
+          
           /* WhatSub-style vertical refraction */
           float verticalPos = abs(p_px.y) / max(b_px.y, 1.0);
           
