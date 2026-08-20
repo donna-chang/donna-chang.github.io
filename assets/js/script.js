@@ -2,28 +2,36 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // === Liquid Glass Navbar ===
   liquidGL({
-    target: ".navbar",
-    snapshot: "body",
+  target: ".navbar",
+  snapshot: "body",
 
-    resolution: 2,
+  resolution: 2,
 
-    refraction: 0.018,
-    aberration: 0.035,
+  /* 中央保持相對清楚 */
+  refraction: 0.008,
 
-    bevelDepth: 0.11,
-    bevelWidth: 0.18,
+  /* RGB 色散 */
+  aberration: 0.06,
 
-    frost: 0.5,
+  /* 主要折射集中在玻璃邊緣 */
+  bevelDepth: 0.16,
+  bevelWidth: 0.14,
 
-    shadow: true,
-    specular: true,
+  /* 不要毛玻璃 */
+  frost: 0,
 
-    reveal: "none",
+  shadow: true,
+  specular: true,
 
-    tilt: false,
-    magnify: 1
-  });
+  reveal: "none",
 
+  tilt: false,
+
+  /* 很輕微的 lens 放大 */
+  magnify: 1.015
+});
+
+  
   // === 漢堡選單 ===
   const hamburger = document.getElementById('hamburger');
   const navLinks = document.getElementById('nav-links');
