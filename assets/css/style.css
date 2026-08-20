@@ -4,7 +4,6 @@ body {
   font-family: 'Inter', sans-serif;
   margin: 0;
   padding: 0;
-  padding-top: 60px; /* 🚩 騰出空間給 fixed navbar */
   color: #000000;
   background-color: #ececec;
 }
