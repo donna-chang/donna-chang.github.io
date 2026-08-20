@@ -46,6 +46,29 @@ body {
   overflow: visible;
 }
 
+.navbar-glass {
+  position: fixed;
+
+  /* 完全跟 navbar 疊在相同位置 */
+  top: 8px;
+  left: 20px;
+  right: 20px;
+  width: auto;
+  height: 60px;
+
+  border-radius: 30px;
+
+  /* WebGL 不支援時的 fallback */
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+
+  /* 絕對不能擋 WORK / ABOUT / hamburger */
+  pointer-events: none;
+
+  z-index: 998;
+}
+
 .nav-inner {
   display: flex;
   justify-content: space-between;
