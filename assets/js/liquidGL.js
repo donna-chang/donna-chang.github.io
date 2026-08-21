@@ -2111,10 +2111,7 @@
           float antiHalo = (1.0 - centreBlend) * diff;
 
           vec4 final    = refrCol;
-        
-          /* Very subtle white glass tint */
-          final.rgb = mix(final.rgb, vec3(1.0), 0.035);
-
+    
           float dmask = udRoundBox(p_px, b_px, u_radius);
           float inShape = 1.0 - smoothstep(-0.5, 0.5, dmask);
 
