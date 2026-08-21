@@ -2098,8 +2098,9 @@
 
           if (u_aberration > 0.0) {
               vec2 chroma = offset * u_aberration;
-              refrCol.r = texture2D(u_tex, sampleUV - chroma).r;
-              refrCol.b = texture2D(u_tex, sampleUV + chroma).b;
+          
+              refrCol.r = mix(refrCol.r, texture2D(u_tex, sampleUV - chroma).r, 0.8);
+              refrCol.b = mix(refrCol.b, texture2D(u_tex, sampleUV + chroma).b, 0.8);
           }
 
           if (refrCol.a < 0.1) {
