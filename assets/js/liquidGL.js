@@ -2129,7 +2129,7 @@
                * split changes with position/scroll instead of forming a
                * uniform outline around every glyph.
                */
-              float dispersion = clamp(u_aberration * 9.0, 0.0, 0.24);
+              float dispersion = clamp(u_aberration * 12.0, 0.0, 0.30);
 
               vec2 rWarp = vec2(
                 0.0,
