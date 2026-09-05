@@ -1,0 +1,222 @@
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GV50: Beyond Streaming</title>
+  <link rel="icon" href="assets/images/favicon.png" type="image/x-icon" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap" rel="stylesheet" />
+  <script src="assets/js/liquidGL.js" defer></script>
+  <script src="assets/js/script.js" defer></script>
+</head>
+<body class="work-page">
+
+  <!-- ✅ Navbar -->
+  <header class="navbar">
+
+    <!-- Liquid Glass 背景層 -->
+    <div class="navbar-glass" aria-hidden="true"></div>
+
+    <div class="container nav-inner">
+      <div class="nav-left">
+        <button class="hamburger" id="hamburger">&#9776;</button>
+        <a href="index.html">
+          <img src="assets/images/logo.png" alt="Logo" class="logo" />
+        </a>
+      </div>
+      <nav class="nav-links" id="nav-links">
+        <a href="index.html" class="nav-link work">WORK</a>
+        <a href="about.html" class="nav-link about">ABOUT</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ✅ Banner 區塊 -->
+  <section class="banner">
+    <img src="assets/images/GV50/banner.png" alt="GV50 Banner" class="banner-image" />
+    <div class="banner-overlay">
+      <div class="banner-header">
+        <h1 class="project-title">GV50: Beyond Streaming</h1>
+        <span class="project-date">2023 Sep - 2024 Jul</span>
+      </div>
+
+      <div class="banner-meta">
+        <div class="meta-group">
+          <h3 class="meta-title">Team</h3>
+          <p class="meta-text">1 UI UX designer, 1 UI designer, industrial designer, Projector PM, Technical Manager, QA, OEM developer</p>
+        </div>
+        <div class="meta-group">
+          <h3 class="meta-title">My role</h3>
+          <p class="meta-text">In this project, I worked closely with the other designers, PM, TM and the OEM. I was responsible for the end-to-end UX and UI design, from problem definition and user research to design development, usability testing, and final delivery.</p>
+        </div>
+        <div class="meta-group">
+          <h3 class="meta-title">Tool</h3>
+          <p class="meta-text">Figma / Colab</p>
+        </div>
+        <div class="meta-group">
+          <h3 class="meta-title">Target market</h3>
+          <p class="meta-text">USA, Taiwan</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 大綱快捷 TOC -->
+  <div id="toc-wrapper" class="toc-wrapper">
+    <nav id="toc" class="toc">
+      <ul>
+        <li><a href="#pain-points" data-id="pain-points">Pain points</a></li>
+        <li><a href="#design-opportunity" data-id="design-opportunity">User Study</a></li>
+        <li><a href="#design-implications" data-id="design-implications">Implications</a></li>
+        <li><a href="#design" data-id="design">Design</a></li>
+        <li><a href="#usability-test" data-id="usability-test">Usability test</a></li>
+        <li><a href="#outcome" data-id="outcome">Outcome</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <!-- ✅ 主要內容 -->
+  <section class="project-content container with-toc gv50-project">
+    <div class="content-block">
+      <h2 class="content-title">Overview</h2>
+      <p class="content-text">To drive sales of the portable projector series, we aimed to optimize the previous generation and uncover new opportunities. The insights informed an <strong>integrated product experience across hardware, software, and the mobile app</strong>, creating a more intuitive and effortless projection experience while extending the product beyond basic viewing into everyday bedroom routines. First-year sales grew by 148%, while the accompanying app was downloaded 1.1 times the number of projectors sold.</p>
+    </div>
+
+    <div class="content-block">
+      <h2 class="content-title">Impact</h2>
+      <ol class="content-text">
+        <li>Received the Good Design Award and Taiwan Excellence Award</li>
+        <li>Boosted portable projector sales by 148%</li>
+        <li>Established and led a structured usability testing workflow</li>
+        <li>Developed smart remote app for projectors, now compatible across all future Google TV models</li>
+      </ol>
+      <hr class="bottom-line" />
+    </div>
+
+    <div id="pain-points" class="content-block">
+      <h2 class="section-title">Setup challenges and feature gaps</h2>
+      <p class="content-text">In the early phase of this project, I conducted heuristic evaluation, competitive analysis, and customer feedback analysis to identify the core pain points of the previous-generation portable projector (GV31) and to further understand market trends.</p>
+      <img src="assets/images/GV50/competitive-analysis.png" alt="Competitive analysis of portable projectors" class="project-image">
+      <p class="content-text">We found that the GV31’s strength lies in its streaming experience. However, when it comes to the <span class="text-emphasis">setup process</span>, it falls short compared with competing products. We also identified issues with <strong>dongle installation</strong> and <strong>UI usability</strong>, adding further friction to the overall setup experience. Specifically, users consistently reported difficulties installing the dongle, with some unsure of how to install it and others finding the process challenging.</p>
+      <img src="assets/images/GV50/gv31-dongle.png" alt="GV31 dongle installation" class="project-image">
+      <p class="content-text">Meanwhile, limitations of the Android TV–based framework separated the OS menu from the OSD, making projection setup less intuitive and potentially confusing users.</p>
+      <img src="assets/images/GV50/gv31-menu-comparison.png" alt="GV31 OS and OSD menu comparison" class="project-image">
+      <p class="content-text">We also observed that competitors offered <span class="text-emphasis">distinctive features</span> that were not available on the GV31, including more convenient control options, such as remote control apps, and more diverse experiences.</p>
+    </div>
+
+    <div id="design-opportunity" class="content-block">
+      <h2 class="section-title">Bedroom experience emerged as the key design opportunity</h2>
+      <p class="content-text">To further define the distinctive features our target users might seek, I conducted desk research within a tight development timeline. I drew primarily on an existing U.S. market survey and complemented it with Python-based analysis of discussions collected through official APIs from major forums in both markets. I then synthesized the findings into a customer journey map to visualize the user experience across key touchpoints and developed personas based on these insights, helping align the team throughout the development process.</p>
+      <img src="assets/images/GV50/customer-journey-map.png" alt="GV50 customer journey map" class="project-image">
+      <h3 class="accent-subtitle">Key insights</h3>
+      <ul class="content-text insight-list">
+        <li>Users primarily use projectors in the <strong>bedroom</strong>, where frequent movement and storage make effortless setup especially important.</li>
+        <li><strong>Ceiling projection</strong> emerged as a strong user need for a more comfortable bedroom viewing experience, yet few existing products were designed to support it well.</li>
+        <li>
+          <img src="assets/images/GV50/persona.png" alt="GV50 target user persona" class="project-image insight-image">
+          Users shared a desire for technology that enhances and enriches their everyday lives. This suggested that they were looking for not just a projector, but <strong>the moments and atmosphere it could create</strong>.
+        </li>
+      </ul>
+    </div>
+
+    <div id="design-implications" class="content-block">
+      <h2 class="section-title">Research shaped two key design implications</h2>
+      <p class="content-text">Through a cross-functional workshop and ongoing discussions with PM, TM, ID, and OEM teams, we explored potential solutions and refined our ideas within project constraints. This led to two key design directions:</p>
+      <h3 class="numbered-subtitle">01 — Enable flexible and effortless bedroom setup</h3>
+      <p class="content-text">Portable projectors are valued for their mobility, yet users still rely on highly varied and often improvised setup methods. The design should better support different bedroom layouts and projection angles while reducing setup effort through more intuitive and intelligent assistance.</p>
+      <h3 class="numbered-subtitle">02 — Enrich the experience beyond projection</h3>
+      <p class="content-text">Beyond simply functioning as a display device, we explored how the projector could play a more active role in users’ everyday lives through intelligent, lifestyle-oriented experiences, enriching users’ digital lives while further increasing engagement and long-term product stickiness.</p>
+    </div>
+
+    <div id="design" class="content-block">
+      <h2 class="section-title">Major Design Deliverables</h2>
+      <h3 class="numbered-subtitle">1. Enable flexible initial setup</h3>
+      <p class="content-text">The GV50 features an <strong>integrated tripod</strong> with <strong>135° vertical rotation</strong>, allowing users to easily position the projection for both side and ceiling viewing.</p>
+      <img src="assets/images/GV50/gv50-tripod.gif" alt="GV50 integrated tripod rotation" class="project-image">
+      <p class="content-text">We also redesigned the <strong>top controls</strong>, adding a joystick and zoom lever to make adjustments quicker and more effortless.</p>
+      <img src="assets/images/GV50/top-controls-comparison.png" alt="GV31 and GV50 top controls comparison" class="project-image">
+
+      <h3 class="numbered-subtitle">2. Make fine-tuning intuitive</h3>
+      <p class="content-text">We adopted the <strong>Google TV</strong> framework, which resolved the issue of inconsistent UI structures, eliminated the need for a dongle, improved overall system stability, and delivered the full OTT experience users value.</p>
+      <img src="assets/images/GV50/android-tv-to-google-tv.png" alt="GV31 Android TV and GV50 Google TV comparison" class="project-image">
+      <p class="content-text">Within Google TV’s customization constraints, we streamlined the settings menu and surfaced frequently used functions as much as possible. <strong>Smart adjustments</strong>—including rotation, screen fit, obstacle avoidance, zoom, and repositioning—were added, making projection fine-tuning more effortless.</p>
+      <img src="assets/images/GV50/smart-adjustment-settings.png" alt="Google TV settings and Smart Adjustment page" class="project-image">
+      <p class="content-text">To further reduce the effort of navigating through the settings menu, we developed <strong>Smart Remote</strong> to provide quick access to key adjustment functions directly from users’ phones, making fine-tuning faster and more convenient even after users had settled into their viewing position.</p>
+      <img src="assets/images/GV50/smart-remote-controls.png" alt="Smart Remote landing and remote control pages" class="project-image">
+
+      <h3 class="numbered-subtitle">3. Enrich the bedroom experience</h3>
+      <p class="content-text">We extended the experience beyond basic viewing by designing features around how users actually spend time in the bedroom.</p>
+      <img src="assets/images/GV50/bedroom-routine-timeline.png" alt="Bedroom routine design timeline" class="project-image">
+      <p class="content-text">As part of this project, we developed an on-projector <strong>Assistant app</strong> that works as a bridge between Google TV and BenQ-specific functions, enabling richer functionality beyond the platform’s native customization capabilities.</p>
+      <img src="assets/images/GV50/assistant-app-integration.png" alt="Assistant app integration diagram" class="project-image">
+      <p class="content-text">Building on this integration, <strong>Smart Remote</strong> turns users’ phones into <strong>Bluetooth remote controls</strong>, allowing multiple users to control the projector without getting up or searching for the physical remote.</p>
+      <p class="content-text">Beyond convenient control, we introduced lifestyle-oriented features such as <strong>ambient projection with white noise</strong>, <strong>a voice assistant trained around projector-related use cases</strong>, and <strong>a sleep timer</strong>, offering more intelligent and versatile ways for the projector to fit into users’ everyday bedroom routines.</p>
+      <img src="assets/images/GV50/smart-remote-features.png" alt="Smart Remote lifestyle features" class="project-image">
+    </div>
+
+    <div id="usability-test" class="content-block">
+      <h2 class="section-title">Usability Testing during Engineering Validation (EVT)</h2>
+      <p class="content-text">To validate the GV50 design, I led usability testing during the EVT phase. Due to differences in the development timeline, the projector and apps were evaluated in separate studies.</p>
+
+      <h3 class="accent-subtitle">Simulating real-world use</h3>
+      <img src="assets/images/GV50/evt-participant-session.png" alt="Participant using the GV50 during usability testing" class="project-image">
+      <p class="content-text">Participants were guided through a scenario in which they had just received a newly purchased projector.</p>
+
+      <h3 class="accent-subtitle">Task flow</h3>
+      <img src="assets/images/GV50/evt-task-flow.png" alt="GV50 usability testing task flow" class="project-image">
+      <p class="content-text">Task design was based on the most frequent user behaviors and the core features of the GV50.</p>
+
+      <h3 class="accent-subtitle">Key findings</h3>
+      <h4 class="numbered-subtitle">01 — Quick setup worked, but ceiling projection remained challenging</h4>
+      <blockquote class="research-quote">“It's hard to read the menu when the image hasn't been corrected on the ceiling yet”</blockquote>
+      <p class="content-text">On average, participants spent about 6 minutes manually adjusting the projection on the ceiling, yet most still reported feeling frustrated. We observed that when projecting onto ceilings with more constraints, the process of finding functions and making adjustments felt overly complex to users—particularly when the image was not yet properly aligned, which could make the UI difficult to read.</p>
+      <div class="design-response">
+        <h4>Design response</h4>
+        <ul class="content-text">
+          <li>Show a toast notification when obstacles are detected, prompting users to enable obstacle avoidance and reducing adjustment effort</li>
+          <li>Ask for confirmation before triggering <strong>auto-correction</strong> after manual fine-tuning, preventing users’ adjustments from being reset unexpectedly</li>
+          <li>Allow users to <strong>save and recall projection settings</strong> for frequently used locations</li>
+        </ul>
+      </div>
+
+      <h4 class="numbered-subtitle">02 — Key functions were still too difficult to access</h4>
+      <p class="content-text">Frequently used functions such as the sleep timer were still not easy enough to access within Google TV’s constraints.</p>
+      <blockquote class="research-quote">“I'm lying down far from the projector—using the remote is more convenient.”</blockquote>
+      <p class="content-text">Additionally, while users found the top controls convenient, they still preferred the remote control in certain scenarios.</p>
+      <div class="design-response">
+        <h4>Design response</h4>
+        <ul class="content-text">
+          <li>In the short term, the findings reinforced the importance of the remote control app and confirmed the need to keep frequently used functions easily accessible within the app</li>
+          <li>In the long term, we recommended evaluating settings-menu customization flexibility when selecting the Google TV framework for the next product generation</li>
+        </ul>
+      </div>
+
+      <h4 class="numbered-subtitle">3. GV50 features resonated with users</h4>
+      <blockquote class="research-quote quote-placeholder">Participant quote to be added</blockquote>
+      <p class="content-text">Post-test interviews showed that participants especially valued the projector’s smart adjustment features.</p>
+      <blockquote class="research-quote quote-placeholder">Participant quote to be added</blockquote>
+      <p class="content-text">They also showed strong interest in features such as the sleep timer and ambient projection. Participants shared both their current projector habits and how they envisioned using the GV50 in everyday moments—such as playing soft music in the morning, entertaining children, or watching movies with family. These responses suggest that the convenience, atmosphere, and lifestyle-oriented experiences created by the GV50 resonated with users.</p>
+    </div>
+
+    <div id="outcome" class="content-block">
+      <h2 class="section-title">Outcome</h2>
+      <img src="assets/images/GV50/outcome-metrics.png" alt="First-year sales and Smart Remote download results" class="project-image">
+      <p class="content-text">From a business perspective, other projector product lines will adopt the same Google TV framework and therefore face similar design constraints. The software solutions developed in this project create a scalable foundation for future products, allowing them to benefit from Google TV while reducing the impact of limited flexibility.</p>
+      <img src="assets/images/GV50/future-projector-series.png" alt="Other projector series using the software solutions" class="project-image">
+      <p class="content-text">The apps also create an ongoing touchpoint with users, helping the team better understand user behavior, provide more comprehensive customer support, and strengthen long-term brand engagement.</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>Crafted with care © Donna Chang 2025</p>
+  </footer>
+
+  <!-- ✅ Scroll to Top 按鈕 -->
+  <button id="scrollTopBtn" title="Go to top" aria-label="Scroll to top">
+    <img src="assets/images/scroll-up.svg" alt="Scroll to top" />
+  </button>
+
+</body>
+</html>
