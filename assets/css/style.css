@@ -24,7 +24,7 @@ body {
   right: clamp(20px, 8.2vw, 112px);
   width: auto;
 
-  height: 72px;
+  height: 60px;
   display: flex;
   align-items: center;
 
@@ -32,7 +32,7 @@ body {
   background: rgba(255,255,255,0.4);
 
   border: 0.8px solid rgba(255, 255, 255, 0.75);
-  border-radius: 36px;
+  border-radius: 30px;
 
   box-shadow:
     0 4px 20px rgba(0, 0, 0, 0.04),
@@ -53,9 +53,9 @@ body {
   left: clamp(20px, 8.2vw, 112px);
   right: clamp(20px, 8.2vw, 112px);
   width: auto;
-  height: 72px;
+  height: 60px;
 
-  border-radius: 36px;
+  border-radius: 30px;
 
   /* WebGL 不支援時的 fallback */
   background: rgba(255, 255, 255, 0.08);
