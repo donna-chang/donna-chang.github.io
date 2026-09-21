@@ -426,7 +426,7 @@ body {
 .banner-overlay {
   position: absolute;
   z-index: 1;
-  bottom: 52px;
+  bottom: 96px;
   left: clamp(20px, 8.2vw, 112px);
   right: clamp(20px, 8.2vw, 112px);
 
@@ -448,8 +448,9 @@ body {
 }
 
 .project-title {
-  font-size: 22px;
+  font-size: 28px;
   font-weight: 700;
+  line-height: 1.4;
   color: #fff;
   margin: 0;
 }
@@ -464,12 +465,18 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.65);
   border-radius: 999px;
   color: #fff;
+  font-size: 12px;
+  font-weight: 300;
+  line-height: 1.8;
   padding: 8px 18px;
 }
 
 .project-intro {
-  max-width: 1120px;
+  max-width: 900px;
   color: #fff;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.8;
   margin: 0;
 }
 
@@ -495,12 +502,16 @@ body {
 .meta-text {
   font-size: 16px;
   font-weight: 300;
+  line-height: 1.8;
   color: #fff;
   margin: 0;
 }
 
 .meta-list {
   color: #fff;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.8;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -509,6 +520,8 @@ body {
 .team-list {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-rows: repeat(4, auto);
+  grid-auto-flow: column;
   column-gap: 36px;
 }
 
