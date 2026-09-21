@@ -419,7 +419,7 @@ body {
   .banner {
     height: auto;
     min-height: 719px;
-    padding: calc(clamp(8px, 1.4vw, 18px) + 86px) clamp(20px, 8.2vw, 112px) 48px;
+    padding: calc(clamp(8px, 1.4vw, 18px) + 86px) 0 48px;
     box-sizing: border-box;
   }
 
@@ -437,13 +437,30 @@ body {
   /* Header top position + 60px header height + 40px breathing room */
   top: calc(clamp(8px, 1.4vw, 18px) + 120px);
   bottom: auto;
-  left: clamp(20px, 8.2vw, 112px);
-  right: clamp(20px, 8.2vw, 112px);
+  left: 0;
+  right: 0;
+}
 
+/* Matches the project-content container and its table-of-contents offset. */
+.banner-layout {
+  width: 100%;
+  padding-inline: clamp(20px, 5vw, 60px);
+  box-sizing: border-box;
+}
+
+.banner-content {
   display: flex;
   flex-direction: column;
   gap: 42px;
-  box-sizing: border-box;
+  margin-left: 180px;
+}
+
+@media (min-width: 1200px) {
+  .banner-layout {
+    width: min(100%, 1620px);
+    margin-inline: auto;
+    padding-inline: 90px;
+  }
 }
 
 
@@ -539,7 +556,11 @@ body {
     right: auto;
     bottom: auto;
     left: auto;
+  }
+
+  .banner-content {
     gap: 28px;
+    margin-left: 0;
   }
 
   .banner-meta {
