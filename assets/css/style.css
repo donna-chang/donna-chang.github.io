@@ -19,12 +19,12 @@ body {
 .navbar {
   position: fixed;
 
-  top: 8px;
-  left: 20px;
-  right: 20px;
+  top: clamp(8px, 1.4vw, 18px);
+  left: clamp(20px, 8.2vw, 112px);
+  right: clamp(20px, 8.2vw, 112px);
   width: auto;
 
-  height: 54px;
+  height: 72px;
   display: flex;
   align-items: center;
 
@@ -32,7 +32,7 @@ body {
   background: rgba(255,255,255,0.4);
 
   border: 0.8px solid rgba(255, 255, 255, 0.75);
-  border-radius: 27px;
+  border-radius: 36px;
 
   box-shadow:
     0 4px 20px rgba(0, 0, 0, 0.04),
@@ -49,13 +49,13 @@ body {
   position: fixed;
 
   /* 完全跟 navbar 疊在相同位置 */
-  top: 8px;
-  left: 20px;
-  right: 20px;
+  top: clamp(8px, 1.4vw, 18px);
+  left: clamp(20px, 8.2vw, 112px);
+  right: clamp(20px, 8.2vw, 112px);
   width: auto;
-  height: 54px;
+  height: 72px;
 
-  border-radius: 27px;
+  border-radius: 36px;
 
   /* WebGL 不支援時的 fallback */
   background: rgba(255, 255, 255, 0.08);
@@ -396,6 +396,14 @@ body {
   overflow: hidden;
 }
 
+.banner::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.38);
+  pointer-events: none;
+}
+
 /* 圖片強制填滿容器，裁切左右 */
 .banner-image {
   width: 100%;
@@ -417,23 +425,14 @@ body {
 
 .banner-overlay {
   position: absolute;
-  bottom: 0;
-
-  width: calc(100% - clamp(20px, 5vw, 60px) * 2);
-  max-width: 1440px;
-
-  left: 50%;
-  transform: translate(-50%, -80px); /* 水平置中，並往上移 80px */
-
-  padding: 30px;
-
-  background: rgba(255, 255, 255, 0.6);
-  backdrop-filter: blur(3px);
-  border-radius: 20px;
+  z-index: 1;
+  bottom: 52px;
+  left: clamp(20px, 8.2vw, 112px);
+  right: clamp(20px, 8.2vw, 112px);
 
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 42px;
   box-sizing: border-box;
 }
 
@@ -443,21 +442,35 @@ body {
 
 .banner-header {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 18px;
 }
 
 .project-title {
   font-size: 22px;
   font-weight: 700;
-  color: #000;
+  color: #fff;
   margin: 0;
 }
 
-.project-date {
-  font-size: 14px;
-  font-weight: 300;
-  color: #595959;
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+}
+
+.project-tag {
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  border-radius: 999px;
+  color: #fff;
+  padding: 8px 18px;
+}
+
+.project-intro {
+  max-width: 1120px;
+  color: #fff;
+  margin: 0;
 }
 
 .meta-group {
@@ -467,23 +480,57 @@ body {
 }
 
 .banner-meta {
-  display: flex;
-  flex-direction: column;
-  gap: 22px; /* 每组之间间距 */
+  display: grid;
+  grid-template-columns: 1.55fr 1fr 0.55fr;
+  gap: 42px;
 }
 
 .meta-title {
   font-size: 18px;
   font-weight: 400;
-  color: #434343;
+  color: rgba(255, 255, 255, 0.68);
   margin: 0;
 }
 
 .meta-text {
   font-size: 16px;
   font-weight: 300;
-  color: #595959;
+  color: #fff;
   margin: 0;
+}
+
+.meta-list {
+  color: #fff;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.team-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 36px;
+}
+
+@media (max-width: 768px) {
+  .navbar,
+  .navbar-glass {
+    height: 54px;
+  }
+
+  .banner-overlay {
+    bottom: 32px;
+    gap: 28px;
+  }
+
+  .banner-meta {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .team-list {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* Main content starts 55px after banner */
