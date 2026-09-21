@@ -8,6 +8,11 @@ body {
   background-color: #F6F6F6;
 }
 
+.work-page {
+  --case-study-column-width: 900px;
+  --case-study-toc-offset: 180px;
+}
+
 
 .container {
   padding-left: clamp(20px, 5vw, 60px);
@@ -414,12 +419,12 @@ body {
   max-width: none;
 }
 
-/* 手機版依內容自動增高，避免長文與 metadata 被裁掉 */
-@media (max-width: 768px) {
+/* Tablet and mobile: let the banner grow with stacked metadata. */
+@media (max-width: 1024px) {
   .banner {
     height: auto;
     min-height: 719px;
-    padding: calc(clamp(8px, 1.4vw, 18px) + 86px) 0 48px;
+    padding: calc(clamp(8px, 1.4vw, 18px) + 120px) 0 48px;
     box-sizing: border-box;
   }
 
@@ -452,7 +457,8 @@ body {
   display: flex;
   flex-direction: column;
   gap: 42px;
-  margin-left: 180px;
+  max-width: var(--case-study-column-width);
+  margin-left: var(--case-study-toc-offset);
 }
 
 @media (min-width: 1200px) {
@@ -544,12 +550,7 @@ body {
   column-gap: 36px;
 }
 
-@media (max-width: 768px) {
-  .navbar,
-  .navbar-glass {
-    height: 54px;
-  }
-
+@media (max-width: 1024px) {
   .banner-overlay {
     position: relative;
     top: auto;
@@ -560,12 +561,26 @@ body {
 
   .banner-content {
     gap: 28px;
-    margin-left: 0;
   }
 
   .banner-meta {
     grid-template-columns: 1fr;
     gap: 22px;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar,
+  .navbar-glass {
+    height: 54px;
+  }
+
+  .banner {
+    padding-top: calc(clamp(8px, 1.4vw, 18px) + 86px);
+  }
+
+  .banner-content {
+    margin-left: 0;
   }
 
   .team-list {
@@ -716,8 +731,8 @@ body {
 
 /* 1. 所有主要內容（包含 Overview 與 Impact）統一往右推 */
 .project-content.with-toc > .content-block {
-  margin-left: 180px;
-  max-width: 900px;
+  margin-left: var(--case-study-toc-offset);
+  max-width: var(--case-study-column-width);
 }
 
 /* 2. 大綱快捷（#toc）改用「-」取代圓點 */
