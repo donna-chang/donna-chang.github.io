@@ -483,7 +483,7 @@ body {
 
 .project-intro {
   max-width: 900px;
-  color: #fff;
+  color: #929292;
   font-size: 16px;
   font-weight: 300;
   line-height: 1.8;
@@ -505,7 +505,7 @@ body {
 .meta-title {
   font-size: 14px;
   font-weight: 600;
-  color: #929292;
+  color: #7D7D7D;
   margin: 0;
 }
 
@@ -518,7 +518,7 @@ body {
 }
 
 .meta-list {
-  color: #fff;
+  color: #929292;
   font-size: 16px;
   font-weight: 300;
   line-height: 1.8;
