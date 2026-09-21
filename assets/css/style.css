@@ -435,7 +435,7 @@ body {
   position: absolute;
   z-index: 1;
   /* Header top position + 60px header height + 40px breathing room */
-  top: calc(clamp(8px, 1.4vw, 18px) + 100px);
+  top: calc(clamp(8px, 1.4vw, 18px) + 120px);
   bottom: auto;
   left: clamp(20px, 8.2vw, 112px);
   right: clamp(20px, 8.2vw, 112px);
