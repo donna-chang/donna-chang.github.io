@@ -414,10 +414,18 @@ body {
   max-width: none;
 }
 
-/* 手機時也固定高度，不讓縮高 */
+/* 手機版依內容自動增高，避免長文與 metadata 被裁掉 */
 @media (max-width: 768px) {
   .banner {
-    height: 719px;       /* 固定高度，和桌面同高度 */
+    height: auto;
+    min-height: 719px;
+    padding: calc(clamp(8px, 1.4vw, 18px) + 86px) clamp(20px, 8.2vw, 112px) 48px;
+    box-sizing: border-box;
+  }
+
+  .banner-image {
+    position: absolute;
+    inset: 0;
   }
 }
 
@@ -426,7 +434,9 @@ body {
 .banner-overlay {
   position: absolute;
   z-index: 1;
-  bottom: 96px;
+  /* Header top position + 60px header height + 40px breathing room */
+  top: calc(clamp(8px, 1.4vw, 18px) + 100px);
+  bottom: auto;
   left: clamp(20px, 8.2vw, 112px);
   right: clamp(20px, 8.2vw, 112px);
 
@@ -532,7 +542,11 @@ body {
   }
 
   .banner-overlay {
-    bottom: 32px;
+    position: relative;
+    top: auto;
+    right: auto;
+    bottom: auto;
+    left: auto;
     gap: 28px;
   }
 
@@ -543,6 +557,8 @@ body {
 
   .team-list {
     grid-template-columns: 1fr;
+    grid-template-rows: none;
+    grid-auto-flow: row;
   }
 }
 
