@@ -542,6 +542,10 @@ body {
   column-gap: 36px;
 }
 
+.team-me {
+  color: #595959;
+}
+
 @media (max-width: 1024px) {
   .banner-overlay {
     position: relative;
