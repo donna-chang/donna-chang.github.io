@@ -919,6 +919,33 @@ body {
   }
 }
 
+.project2-project .design-principles {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+.project2-project .design-principle-item {
+  min-width: 0;
+}
+
+.project2-project .design-principle-item .project-image {
+  width: 100%;
+  height: auto;
+  margin: 30px 0 22px;
+}
+
+.project2-project .design-principle-item .content-text {
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .project2-project .design-principles {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
 /* ===== About Page Styles ===== */
 .about-header {
   display: flex;
