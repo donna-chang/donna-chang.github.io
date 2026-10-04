@@ -121,7 +121,7 @@ body {
 
 .navbar.on-dark .hamburger::before,
 .navbar.on-dark .hamburger::after {
-  background-color: #fff;
+  background-color: #DCDCDC;
 }
 
 .hamburger::before {
