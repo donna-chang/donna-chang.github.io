@@ -161,6 +161,11 @@ body {
   font-weight: 300;
 }
 
+.work-page .navbar.on-dark .nav-link.about,
+.work-page .navbar.on-dark .nav-link.about:visited {
+  color: #fff;
+}
+
 .about-page .nav-link.work,
 .about-page .nav-link.work:visited {
   color: #000;
