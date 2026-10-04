@@ -52,6 +52,23 @@ document.addEventListener('DOMContentLoaded', function () {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 
+  // === Navbar text color ===
+  const navbar = document.querySelector('.navbar');
+  const banner = document.querySelector('.banner');
+  
+  function updateNavbarColor() {
+    if (!navbar || !banner) return;
+  
+    const bannerBottom = banner.getBoundingClientRect().bottom;
+    const navbarBottom = navbar.getBoundingClientRect().bottom;
+  
+    navbar.classList.toggle('on-dark', bannerBottom > navbarBottom);
+  }
+  
+  updateNavbarColor();
+  window.addEventListener('scroll', updateNavbarColor, { passive: true });
+  window.addEventListener('resize', updateNavbarColor);
+  
   // === 卡片淡入動畫 ===
   const cards = document.querySelectorAll('.work-card');
   const cardObserver = new IntersectionObserver(entries => {
