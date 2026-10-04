@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Smart Remote</title>
+  <link rel="icon" href="assets/images/favicon.png" type="image/x-icon" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap" rel="stylesheet" />
+  <script src="assets/js/liquidGL.js" defer></script>
+  <script src="assets/js/script.js" defer></script>
+</head>
+<body class="work-page">
+
+  <header class="navbar">
+    <div class="navbar-glass" aria-hidden="true"></div>
+    <div class="container nav-inner">
+      <div class="nav-left">
+        <button class="hamburger" id="hamburger" aria-label="Open navigation">&#9776;</button>
+        <a href="index.html">
+          <img src="assets/images/logo.png" alt="Logo" class="logo" />
+        </a>
+      </div>
+      <nav class="nav-links" id="nav-links">
+        <a href="index.html" class="nav-link work">WORK</a>
+        <a href="about.html" class="nav-link about">ABOUT</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="banner">
+    <!-- Add the banner image to assets/images/SmartRemote/banner.png -->
+    <img src="assets/images/SmartRemote/banner.png" alt="Smart Remote banner" class="banner-image" />
+    <div class="banner-overlay">
+      <div class="banner-layout">
+        <div class="banner-content">
+          <div class="banner-header">
+            <h1 class="project-title">Smart Remote</h1>
+            <div class="project-tags" aria-label="Project categories">
+              <span class="project-tag">Software ↔ Hardware</span>
+              <span class="project-tag">Consumer Electronics</span>
+              <span class="project-tag">iOS &amp; Android</span>
+            </div>
+            <p class="project-intro">To provide a more flexible and intuitive way to interact with the projector, we explored the potential of a mobile remote app. The insights informed a Smart Remote experience that goes beyond basic remote control, integrating essential projector functions and extended applications while creating a scalable foundation for future projector models.</p>
+          </div>
+
+          <div class="banner-meta">
+            <div class="meta-group">
+              <h3 class="meta-title">TEAM</h3>
+              <ul class="meta-list team-list">
+                <li>1 UI UX designer <span class="team-me">(Me)</span></li>
+                <li>1 GUI designer</li>
+                <li>CX manager</li>
+                <li>Projector PM</li>
+                <li>iOS developer</li>
+                <li>Android developer</li>
+                <li>QA developer</li>
+              </ul>
+            </div>
+            <div class="meta-group">
+              <h3 class="meta-title">MAIN TARGET MARKETS</h3>
+              <ul class="meta-list">
+                <li>United States</li>
+                <li>Taiwan</li>
+              </ul>
+            </div>
+            <div class="meta-group">
+              <h3 class="meta-title">DURATION</h3>
+              <ul class="meta-list">
+                <li>Nov 2023 - Aug 2024</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="toc-wrapper" class="toc-wrapper">
+    <nav id="toc" class="toc" aria-label="Table of contents">
+      <ul>
+        <li><a href="#background" data-id="background">Background</a></li>
+        <li><a href="#existing-solutions" data-id="existing-solutions">Existing solutions</a></li>
+        <li><a href="#competitive-analysis" data-id="competitive-analysis">Competitive Analysis</a></li>
+        <li><a href="#voice-of-the-customer" data-id="voice-of-the-customer">Voice of the Customer</a></li>
+        <li><a href="#value-proposition" data-id="value-proposition">Value Proposition</a></li>
+        <li><a href="#design-principle" data-id="design-principle">Design principle</a></li>
+        <li><a href="#wireframe" data-id="wireframe">Wireframe</a></li>
+        <li><a href="#usability-test" data-id="usability-test">Usability test</a></li>
+        <li><a href="#major-design-deliverables" data-id="major-design-deliverables">Major Design Deliverables</a></li>
+        <li><a href="#outcome" data-id="outcome">Outcome</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <section class="project-content container with-toc gv50-project project2-project">
+    <div id="background" class="content-block">
+      <h2 class="content-title">Overview</h2>
+      <p class="content-text">To provide a more flexible and intuitive way to interact with the projector, we explored the potential of a mobile remote app. The insights informed a Smart Remote experience that goes beyond basic remote control, integrating essential projector functions and extended applications while creating a scalable foundation for future projector models. The app was downloaded approximately <strong>1.1 times the number of projectors sold</strong> by the first model to adopt the app. Within six months of launch, the app had been adopted by <strong>three or more projector models</strong>.</p>
+    </div>
+
+    <div class="content-block section-with-divider">
+      <h2 class="content-title">Impact</h2>
+      <ol class="content-text">
+        <li>Designed a mobile app to support multiple projector models running Google TV OS</li>
+        <li>Established the foundations of a design system for the BenQ app, improving interface consistency and supporting future iterations</li>
+        <li>Created an ongoing customer touchpoint beyond the initial projector purchase</li>
+      </ol>
+      <hr class="bottom-line" />
+    </div>
+
+    <div class="content-block section-with-divider">
+      <h2 class="section-title">Background</h2>
+      <p class="content-text">For To C projector users, a fast and simple path to the entertainment experience is important. However, the physical remote cannot always meet the interaction needs of today’s smart projector platforms.</p>
+      <!-- Add the research diagram to assets/images/SmartRemote/background-research.png -->
+      <img src="assets/images/SmartRemote/background-research.png" alt="Research diagram on projector remote use" class="project-image" />
+      <p class="content-text">As more features are introduced, some interactions become more user-friendly on a smartphone. Voice of the Customer feedback also highlighted practical reasons for using a phone as a remote, including not wanting to handle both a phone and a physical remote, losing the physical remote, or having a broken one. These observations led us to explore a mobile remote app as an alternative way to interact with the projector.</p>
+      <!-- Add the Voice of the Customer screenshots to assets/images/SmartRemote/voc-screenshots.png -->
+      <img src="assets/images/SmartRemote/voc-screenshots.png" alt="Voice of the Customer screenshots" class="project-image" />
+      <hr class="bottom-line" />
+    </div>
+
+    <div id="existing-solutions" class="content-block section-with-divider">
+      <h2 class="section-title">Existing solutions are not designed for projectors</h2>
+      <p class="content-text">Google’s built-in solutions, including Google TV and Google Home, provide basic remote functionality but have limitations in projector-specific features and support.</p>
+      <p class="content-text">Meanwhile, user reviews of a direct competitor’s remote app highlighted the value of mobile control, particularly for interactions such as projection adjustment, text input, and navigation.</p>
+      <!-- Add the reference app screenshots to assets/images/SmartRemote/google-apps.png and nebula-review.png -->
+      <img src="assets/images/SmartRemote/google-apps.png" alt="Google remote app reference" class="project-image" />
+      <img src="assets/images/SmartRemote/nebula-review.png" alt="Competitor remote app review" class="project-image" />
+      <hr class="bottom-line" />
+    </div>
+
+    <div id="competitive-analysis" class="content-block section-with-divider">
+      <h2 class="section-title">Competitive Analysis</h2>
+      <h3 class="numbered-subtitle">01 — Landing Page: Frequently Used Functions Serve Both Users and Brands</h3>
+      <!-- Add the comparison to assets/images/SmartRemote/landing-page.png -->
+      <img src="assets/images/SmartRemote/landing-page.png" alt="Competitive landing page analysis" class="project-image" />
+      <p class="content-text">Most competitor landing pages allow users to directly access key projector functions. Their interfaces can be broadly categorized into three types: Remote Control, Common Functions, and Scenario Settings. Among these, Common Functions offer a balance between user needs and brand strategy, providing opportunities to reinforce brand identity. The study also observed that most indirect competitors adopt this approach for their landing pages.</p>
+
+      <h3 class="numbered-subtitle">02 — Remote Control: Intuitive Design, Fewer Accidental Inputs</h3>
+      <!-- Add the remote control examples to assets/images/SmartRemote/remote-control.png and remote-control-media.png -->
+      <img src="assets/images/SmartRemote/remote-control.png" alt="Remote control competitive analysis" class="project-image" />
+      <p class="content-text">Most are designed with a simple and intuitive layout, allowing users to quickly get started while minimizing accidental inputs. Only frequently used controls are shown upfront, while other functions are typically tucked into menus or placed on separate tabs.</p>
+      <img src="assets/images/SmartRemote/remote-control-media.png" alt="Dedicated media controls in third-party remote apps" class="project-image" />
+      <p class="content-text">Third-party remote apps provide dedicated media controls, allowing users to quickly control playback—such as previous/next, fast-forward, rewind, and play/pause—without needing to first locate the current focus.</p>
+
+      <h3 class="numbered-subtitle">03 — Beyond Basic Functions: Differentiation and Business Value</h3>
+      <!-- Add the atmosphere example to assets/images/SmartRemote/atmosphere.png -->
+      <img src="assets/images/SmartRemote/atmosphere.png" alt="Extended app feature example" class="project-image" />
+      <p class="content-text">In addition to basic projector functions, most competitors also provide two major categories: <strong>Distinctive Applications</strong> and <strong>Support Resources</strong>. Distinctive Applications address the needs of target audiences and create opportunities for differentiated experiences. Support Resources can help brands collect user insights to optimize their products, while also serving broader business goals, such as strengthening customer service and enabling more targeted marketing.</p>
+      <div class="design-response">
+        <h4>Key takeaway</h4>
+        <p class="content-text">Mobile apps from competitors with a strong market presence focus on projector control while offering additional value through extended applications, tutorials, customer support, and more. This helps create a continuous user experience, allowing users to address their projector-related needs directly through their phones.</p>
+      </div>
+      <!-- Add the conclusion image to assets/images/SmartRemote/competitive-conclusion.png -->
+      <img src="assets/images/SmartRemote/competitive-conclusion.png" alt="Competitive analysis conclusion" class="project-image" />
+      <hr class="bottom-line" />
+    </div>
+
+    <div id="voice-of-the-customer" class="content-block section-with-divider">
+      <h2 class="section-title">Voice of the Customer</h2>
+      <!-- Add the VoC analysis to assets/images/SmartRemote/voc-analysis.png -->
+      <img src="assets/images/SmartRemote/voc-analysis.png" alt="Voice of the Customer analysis" class="project-image" />
+      <p class="content-text">Three key findings emerged from an analysis of negative Voice of the Customer entries across the Nebula and Samsung apps (N=200):</p>
+      <ol class="content-text">
+        <li><strong>System instability</strong> is the most common source of negative feedback, with unstable connections and bugs accounting for the majority of complaints. Examples include features that work intermittently or suddenly become unavailable.</li>
+        <li><strong>Usability issues</strong> are the second major type of negative feedback, mainly involving overly complicated processes and interactions that are not intuitive or convenient.</li>
+        <li>Some users also felt that the app’s <strong>functionality was too limited</strong> and expressed interest in additional features such as Focus, Screen Mirroring, and Volume Control.</li>
+      </ol>
+      <hr class="bottom-line" />
+    </div>
+
+    <div id="value-proposition" class="content-block section-with-divider">
+      <h2 class="section-title">Value Proposition</h2>
+      <h3 class="content-subtitle">Explore with Ease, Take Control of Your Entertainment</h3>
+      <p class="content-text">Following cross-team discussions and brainstorming, we developed the value proposition and defined the following key features for the first model to adopt the app, the GV50.</p>
+      <!-- Add both diagrams to assets/images/SmartRemote/key-features.png and functional-map.png -->
+      <img src="assets/images/SmartRemote/key-features.png" alt="Smart Remote key features" class="project-image" />
+      <img src="assets/images/SmartRemote/functional-map.png" alt="Smart Remote functional map" class="project-image" />
+      <hr class="bottom-line" />
+    </div>
+
+    <div id="design-principle" class="content-block section-with-divider">
+      <h2 class="section-title">Design principle</h2>
+      <h3 class="numbered-subtitle">01 — Consistent</h3>
+      <!-- Add the principle visual to assets/images/SmartRemote/consistent.png -->
+      <img src="assets/images/SmartRemote/consistent.png" alt="Consistent design principle" class="project-image" />
+      <p class="content-text">Maintain consistency across the BenQ portable projector experience, aligning the app with the model-specific physical remote, OSD, and built-in software, while also ensuring a consistent experience across different projector models.</p>
+
+      <h3 class="numbered-subtitle">02 — Ease of use</h3>
+      <!-- Add the principle visual to assets/images/SmartRemote/ease-of-use.png -->
+      <img src="assets/images/SmartRemote/ease-of-use.png" alt="Ease of use design principle" class="project-image" />
+      <p class="content-text">For To C users, the design should help them reach their goals quickly, with clear and intuitive navigation throughout the experience.</p>
+
+      <h3 class="numbered-subtitle">03 — Simple</h3>
+      <!-- Add the principle visual to assets/images/SmartRemote/simple.png -->
+      <img src="assets/images/SmartRemote/simple.png" alt="Simple design principle" class="project-image" />
+      <p class="content-text">Keep the interface clean and straightforward, so users can operate the projector without constantly looking at their phone screen.</p>
+      <hr class="bottom-line" />
+    </div>
+
+    <div id="wireframe" class="content-block section-with-divider">
+      <h2 class="section-title">Wireframe</h2>
+      <p class="content-text">We decided to divide the product design into two phases, as the longer development timeline required for the Scenario Settings feature would not align with the GV50’s launch schedule. The first phase focused on essential user needs, with the initial app interface designed for the GV50.</p>
+      <!-- Add the wireframes to assets/images/SmartRemote/wireframe-phase.png and wireframe.png -->
+      <img src="assets/images/SmartRemote/wireframe-phase.png" alt="Smart Remote wireframe phases" class="project-image" />
+      <img src="assets/images/SmartRemote/wireframe.png" alt="Smart Remote wireframes" class="project-image" />
+      <hr class="bottom-line" />
+    </div>
+
+    <div id="usability-test" class="content-block section-with-divider">
+      <h2 class="section-title">Usability test</h2>
+      <p class="content-text">We developed a high-fidelity prototype based on the wireframes and conducted usability testing using the Wizard of Oz method.</p>
+      <!-- Add the research flow to assets/images/SmartRemote/usability-test-flow.png -->
+      <img src="assets/images/SmartRemote/usability-test-flow.png" alt="Usability test research flow" class="project-image" />
+
+      <h3 class="accent-subtitle">Key findings</h3>
+      <h4 class="numbered-subtitle">01 — Unfamiliar with swiping left to rename</h4>
+      <!-- Add the test finding to assets/images/SmartRemote/test-finding-1.png -->
+      <img src="assets/images/SmartRemote/test-finding-1.png" alt="Usability test finding about renaming" class="project-image" />
+      <div class="design-response">
+        <h4>Design response</h4>
+        <p class="content-text">The swipe-left gesture is retained, while an “Edit” button is added in the top-right corner, allowing users to access options to remove or rename devices with a tap.</p>
+      </div>
+
+      <h4 class="numbered-subtitle">02 — Participants still frequently look down at their phone screen</h4>
+      <!-- Add the test finding to assets/images/SmartRemote/test-finding-2.png -->
+      <img src="assets/images/SmartRemote/test-finding-2.png" alt="Usability test finding about remote control layout" class="project-image" />
+      <div class="design-response">
+        <h4>Design response</h4>
+        <p class="content-text">Move the frequently used “Back” and “Home” buttons closer to the D-pad.</p>
+      </div>
+
+      <h4 class="numbered-subtitle">03 — Most participants would download the app if they saw it during unboxing</h4>
+      <blockquote class="research-quote">“There are too many remotes, and I’m used to controlling digital products with my phone.”</blockquote>
+      <blockquote class="research-quote">“Paper warranty cards and manuals can easily get lost, so having an app would be convenient.”</blockquote>
+      <blockquote class="research-quote">“Most apps require Google sign-in, so I’d want to download the app for text input.”</blockquote>
+      <p class="content-text">Participants had previously used mobile remote apps for reasons such as not being able to find their physical remote, not wanting to reach for it, or using the keyboard feature. When asked, most participants said they would be willing to download the Smart Remote app for similar reasons if they purchased the projector.</p>
+      <hr class="bottom-line" />
+    </div>
+
+    <div id="major-design-deliverables" class="content-block section-with-divider">
+      <h2 class="section-title">Major Design Deliverables</h2>
+      <!-- Add the final product screens to assets/images/SmartRemote/landing.png, connect.png, main.png, select-device.png, atmosphere.png, remote-control-final.png, account.png, and explore.png -->
+      <img src="assets/images/SmartRemote/landing.png" alt="Smart Remote landing page" class="project-image" />
+      <img src="assets/images/SmartRemote/connect.png" alt="Smart Remote connection flow" class="project-image" />
+      <img src="assets/images/SmartRemote/main.png" alt="Smart Remote main page" class="project-image" />
+      <img src="assets/images/SmartRemote/select-device.png" alt="Smart Remote device selection" class="project-image" />
+      <img src="assets/images/SmartRemote/atmosphere-final.png" alt="Smart Remote atmosphere feature" class="project-image" />
+      <img src="assets/images/SmartRemote/remote-control-final.png" alt="Smart Remote remote control" class="project-image" />
+      <img src="assets/images/SmartRemote/account.png" alt="Smart Remote account page" class="project-image" />
+      <img src="assets/images/SmartRemote/explore.png" alt="Smart Remote explore page" class="project-image" />
+      <hr class="bottom-line" />
+    </div>
+
+    <div id="outcome" class="content-block">
+      <h2 class="section-title">Outcome</h2>
+      <!-- Add the outcome chart to assets/images/SmartRemote/outcome-metrics.png -->
+      <img src="assets/images/SmartRemote/outcome-metrics.png" alt="Smart Remote adoption results" class="project-image" />
+      <p class="content-text">The remote control app was downloaded approximately 1.1 times the number of projectors sold. Within six months of the first version of the app being launched, three or more projector models had adopted the app.</p>
+      <p class="content-text">As an ongoing touchpoint with users, the app helps the team better understand user behavior, provide more comprehensive customer support, and strengthen long-term brand engagement. From a product perspective, these insights also help us optimize the product and better meet user needs.</p>
+      <!-- Add the event tracking visual to assets/images/SmartRemote/event-tracking.png -->
+      <img src="assets/images/SmartRemote/event-tracking.png" alt="Smart Remote event tracking" class="project-image" />
+      <p class="content-text">I also established the foundations of a design system for the BenQ app, improving interface consistency and supporting future iterations.</p>
+      <!-- Add the design system visual to assets/images/SmartRemote/design-system.png -->
+      <img src="assets/images/SmartRemote/design-system.png" alt="BenQ app design system" class="project-image" />
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>Crafted with care © Donna Chang 2025</p>
+  </footer>
+
+  <button id="scrollTopBtn" title="Go to top" aria-label="Scroll to top">
+    <img src="assets/images/scroll-up.svg" alt="Scroll to top" />
+  </button>
+
+</body>
+</html>
