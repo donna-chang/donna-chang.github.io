@@ -180,6 +180,7 @@ body {
 /* Intro Section */
 .intro {
   margin-top: 140px;
+  text-align: center;
 }
 
 .intro h1 {
