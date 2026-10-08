@@ -227,7 +227,7 @@ body {
   border: 1px solid #FFFFFF;
   text-decoration: none;
   overflow: hidden;
-  padding: 30px;
+  padding: 30px 40px;
   box-sizing: border-box;
   transition: transform 0.3s ease;
   gap: 20px;
