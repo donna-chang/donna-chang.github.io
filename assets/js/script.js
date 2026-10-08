@@ -1,5 +1,81 @@
 document.addEventListener('DOMContentLoaded', function () {
 
+  // === 首頁問候語輪播 ===
+  const greeting = document.querySelector('.language-greeting');
+  const greetingWord = greeting?.querySelector('.language-greeting__word');
+  const greetings = ['Hallo', 'Hello', '您好', '안녕하세요'];
+
+  if (greeting && greetingWord) {
+    const greetingStyles = document.createElement('style');
+    greetingStyles.textContent = `
+      .language-greeting {
+        display: inline-grid;
+        overflow: hidden;
+        line-height: 1.2;
+        vertical-align: top;
+      }
+
+      .language-greeting__word {
+        grid-area: 1 / 1;
+        display: block;
+        transition: transform 420ms cubic-bezier(.22, .61, .36, 1), opacity 280ms ease;
+      }
+
+      .language-greeting__word.is-leaving {
+        transform: translateY(-110%);
+        opacity: 0;
+      }
+
+      .language-greeting__word.is-entering {
+        transform: translateY(110%);
+        opacity: 0;
+      }
+
+      .language-greeting__word.is-visible {
+        transform: translateY(0);
+        opacity: 1;
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .language-greeting__word { transition: none; }
+      }
+    `;
+    document.head.appendChild(greetingStyles);
+
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    let greetingIndex = greetings.indexOf(greetingWord.textContent.trim());
+    let greetingTimer;
+
+    function showNextGreeting() {
+      if (reducedMotion.matches) return;
+
+      greetingIndex = (greetingIndex + 1) % greetings.length;
+      greetingWord.classList.remove('is-visible');
+      greetingWord.classList.add('is-leaving');
+
+      window.setTimeout(() => {
+        greetingWord.textContent = greetings[greetingIndex];
+        greeting.setAttribute('aria-label', greetings[greetingIndex]);
+        greetingWord.classList.remove('is-leaving');
+        greetingWord.classList.add('is-entering');
+
+        requestAnimationFrame(() => {
+          greetingWord.classList.replace('is-entering', 'is-visible');
+        });
+      }, 300);
+    }
+
+    function startGreetingLoop() {
+      window.clearInterval(greetingTimer);
+      if (!reducedMotion.matches) {
+        greetingTimer = window.setInterval(showNextGreeting, 2200);
+      }
+    }
+
+    startGreetingLoop();
+    reducedMotion.addEventListener?.('change', startGreetingLoop);
+  }
+
   // === Liquid Glass Navbar ===
   if (typeof liquidGL === 'function') {
     liquidGL({
