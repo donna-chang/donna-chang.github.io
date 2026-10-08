@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function () {
       .language-greeting__word {
         grid-area: 1 / 1;
         display: block;
-        transition: transform 620ms cubic-bezier(.22, .61, .36, 1), opacity 400ms ease;
+        transition: transform 760ms cubic-bezier(.22, .61, .36, 1), opacity 520ms ease;
       }
 
       .language-greeting__word.is-leaving {
@@ -70,13 +70,13 @@ document.addEventListener('DOMContentLoaded', function () {
             greetingWord.classList.replace('is-entering', 'is-visible');
           });
         });
-      }, 620);
+      }, 760);
     }
 
     function startGreetingLoop() {
       window.clearInterval(greetingTimer);
       if (!reducedMotion.matches) {
-        greetingTimer = window.setInterval(showNextGreeting, 2600);
+        greetingTimer = window.setInterval(showNextGreeting, 2900);
       }
     }
 
