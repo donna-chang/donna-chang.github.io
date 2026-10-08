@@ -186,7 +186,7 @@ body {
 /* 首頁 Intro 專用：僅在筆電／一般桌機依視窗比例限制行長。 */
 @media (min-width: 769px) and (max-width: 1799px) {
   .work-page .homepage-intro-content {
-    width: min(100%, 62vw);
+    width: min(100%, 56vw);
     margin-inline: auto;
   }
 }
@@ -198,7 +198,7 @@ body {
 }
 
 .intro p {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 200;
   margin: 5px 0;
   line-height: 1.5
@@ -291,7 +291,8 @@ body {
   font-size: 12px;
   font-weight: 300;
   letter-spacing: 0.02em;
-  padding: 6px 10px;
+  line-height: 1.8;
+  padding: 8px 18px;
 }
 
 .card-summary {
