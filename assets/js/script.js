@@ -31,10 +31,6 @@ document.addEventListener('DOMContentLoaded', function () {
         opacity: 0;
       }
 
-      .language-greeting__word.is-preparing {
-        transition: none;
-      }
-
       .language-greeting__word.is-visible {
         transform: translateY(0);
         opacity: 1;
@@ -48,35 +44,39 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
     let greetingIndex = greetings.indexOf(greetingWord.textContent.trim());
+    let currentGreetingWord = greetingWord;
     let greetingTimer;
 
     function showNextGreeting() {
       if (reducedMotion.matches) return;
 
       greetingIndex = (greetingIndex + 1) % greetings.length;
-      greetingWord.classList.remove('is-visible');
-      greetingWord.classList.add('is-leaving');
+      const nextGreetingWord = document.createElement('span');
+      nextGreetingWord.className = 'language-greeting__word is-entering';
+      nextGreetingWord.setAttribute('aria-hidden', 'true');
+      nextGreetingWord.textContent = greetings[greetingIndex];
+      greeting.appendChild(nextGreetingWord);
+      greeting.setAttribute('aria-label', greetings[greetingIndex]);
+
+      // 舊字上移與新字上移進場同步進行，畫面不會出現空白。
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          currentGreetingWord.classList.remove('is-visible');
+          currentGreetingWord.classList.add('is-leaving');
+          nextGreetingWord.classList.replace('is-entering', 'is-visible');
+        });
+      });
 
       window.setTimeout(() => {
-        greetingWord.textContent = greetings[greetingIndex];
-        greeting.setAttribute('aria-label', greetings[greetingIndex]);
-        greetingWord.classList.remove('is-leaving');
-        greetingWord.classList.add('is-entering', 'is-preparing');
-
-        requestAnimationFrame(() => {
-          // 先無動畫地把新文字定位在下方，再向上滑入。
-          requestAnimationFrame(() => {
-            greetingWord.classList.remove('is-preparing');
-            greetingWord.classList.replace('is-entering', 'is-visible');
-          });
-        });
+        currentGreetingWord.remove();
+        currentGreetingWord = nextGreetingWord;
       }, 760);
     }
 
     function startGreetingLoop() {
       window.clearInterval(greetingTimer);
       if (!reducedMotion.matches) {
-        greetingTimer = window.setInterval(showNextGreeting, 2900);
+        greetingTimer = window.setInterval(showNextGreeting, 2400);
       }
     }
 
