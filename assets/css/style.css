@@ -269,6 +269,14 @@ body {
   padding: clamp(12px, 2vw, 28px);
 }
 
+.card-brand {
+  margin: 0 0 18px;
+  color: #7D7D7D;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.16em;
+}
+
 .card-title {
   font-family: 'Inter', sans-serif;
   font-weight: 300;
@@ -302,6 +310,37 @@ body {
   font-size: 15px;
   font-weight: 300;
   line-height: 1.65;
+}
+
+.card-outcomes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 28px;
+  width: 100%;
+  margin-top: 26px;
+  padding-top: 22px;
+  border-top: 1px solid #DBDBDB;
+}
+
+.card-outcome {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.card-outcome strong {
+  color: #595959;
+  font-size: 26px;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.card-outcome span {
+  color: #929292;
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  line-height: 1.4;
 }
 
 .card-icon {
@@ -399,6 +438,10 @@ body {
     flex-basis: auto;
     min-height: 180px;
     margin-top: 12px;
+  }
+
+  .card-outcomes {
+    gap: 20px;
   }
 }
 
