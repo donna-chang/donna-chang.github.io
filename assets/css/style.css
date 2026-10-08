@@ -180,6 +180,7 @@ body {
 /* Intro Section */
 .intro {
   margin-top: 140px;
+  text-align: center;
 }
 
 /* 首頁 Intro 專用：僅在筆電／一般桌機依視窗比例限制行長。 */
@@ -197,9 +198,9 @@ body {
 }
 
 .intro p {
-  font-size: 20px;
-  font-weight: 300;
-  margin: 10px 0;
+  font-size: 18px;
+  font-weight: 200;
+  margin: 5px 0;
 }
 
 .work-section {
