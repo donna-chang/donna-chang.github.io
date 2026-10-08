@@ -180,7 +180,13 @@ body {
 /* Intro Section */
 .intro {
   margin-top: 140px;
-  text-align: center;
+}
+
+/* 首頁：筆電時限制 Intro 行長；大螢幕仍可使用 container 的完整寬度。 */
+@media (min-width: 769px) {
+  .work-page .intro {
+    width: min(100%, 70vw);
+  }
 }
 
 .intro h1 {
@@ -190,9 +196,9 @@ body {
 }
 
 .intro p {
-  font-size: 18px;
-  font-weight: 200;
-  margin: 5px 0;
+  font-size: 20px;
+  font-weight: 300;
+  margin: 10px 0;
 }
 
 .work-section {
