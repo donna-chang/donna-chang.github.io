@@ -182,10 +182,10 @@ body {
   margin-top: 140px;
 }
 
-/* 首頁內文：筆電收斂行長，大螢幕與手機保留既有排版。 */
+/* 首頁 Intro 專用：只在非手機尺寸依視窗比例收斂內容行長。 */
 @media (min-width: 769px) {
-  .work-page .intro > p {
-    max-width: 70vw;
+  .work-page .homepage-intro-content {
+    width: min(100%, 62vw);
     margin-inline: auto;
   }
 }
