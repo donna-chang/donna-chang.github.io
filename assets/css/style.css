@@ -186,7 +186,7 @@ body {
 /* 首頁 Intro 專用：僅在筆電／一般桌機依視窗比例限制行長。 */
 @media (min-width: 769px) and (max-width: 1799px) {
   .work-page .homepage-intro-content {
-    width: min(100%, 56vw);
+    width: min(100%, 62vw);
     margin-inline: auto;
   }
 }
