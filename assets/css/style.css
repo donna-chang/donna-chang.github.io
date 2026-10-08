@@ -227,9 +227,10 @@ body {
   border: 1px solid #FFFFFF;
   text-decoration: none;
   overflow: hidden;
-  padding: 20px;
+  padding: 30px;
   box-sizing: border-box;
   transition: transform 0.3s ease;
+  gap: 20px;
 }
 
 .work-card::after {
