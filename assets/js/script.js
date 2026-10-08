@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function () {
       .language-greeting__word {
         grid-area: 1 / 1;
         display: block;
-        transition: transform 760ms cubic-bezier(.22, .61, .36, 1), opacity 520ms ease;
+        transition: transform 1000ms cubic-bezier(.22, .61, .36, 1), opacity 700ms ease;
       }
 
       .language-greeting__word.is-leaving {
@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', function () {
       window.setTimeout(() => {
         currentGreetingWord.remove();
         currentGreetingWord = nextGreetingWord;
-      }, 760);
+      }, 1000);
     }
 
     function startGreetingLoop() {
