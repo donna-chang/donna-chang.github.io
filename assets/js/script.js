@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function () {
       .language-greeting__word {
         grid-area: 1 / 1;
         display: block;
-        transition: transform 420ms cubic-bezier(.22, .61, .36, 1), opacity 280ms ease;
+        transition: transform 620ms cubic-bezier(.22, .61, .36, 1), opacity 400ms ease;
       }
 
       .language-greeting__word.is-leaving {
@@ -60,15 +60,18 @@ document.addEventListener('DOMContentLoaded', function () {
         greetingWord.classList.add('is-entering');
 
         requestAnimationFrame(() => {
-          greetingWord.classList.replace('is-entering', 'is-visible');
+          // 先讓瀏覽器繪製文字在下方，再向上滑入。
+          requestAnimationFrame(() => {
+            greetingWord.classList.replace('is-entering', 'is-visible');
+          });
         });
-      }, 300);
+      }, 420);
     }
 
     function startGreetingLoop() {
       window.clearInterval(greetingTimer);
       if (!reducedMotion.matches) {
-        greetingTimer = window.setInterval(showNextGreeting, 2200);
+        greetingTimer = window.setInterval(showNextGreeting, 2600);
       }
     }
 
