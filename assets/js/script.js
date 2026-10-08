@@ -31,6 +31,10 @@ document.addEventListener('DOMContentLoaded', function () {
         opacity: 0;
       }
 
+      .language-greeting__word.is-preparing {
+        transition: none;
+      }
+
       .language-greeting__word.is-visible {
         transform: translateY(0);
         opacity: 1;
@@ -57,15 +61,16 @@ document.addEventListener('DOMContentLoaded', function () {
         greetingWord.textContent = greetings[greetingIndex];
         greeting.setAttribute('aria-label', greetings[greetingIndex]);
         greetingWord.classList.remove('is-leaving');
-        greetingWord.classList.add('is-entering');
+        greetingWord.classList.add('is-entering', 'is-preparing');
 
         requestAnimationFrame(() => {
-          // 先讓瀏覽器繪製文字在下方，再向上滑入。
+          // 先無動畫地把新文字定位在下方，再向上滑入。
           requestAnimationFrame(() => {
+            greetingWord.classList.remove('is-preparing');
             greetingWord.classList.replace('is-entering', 'is-visible');
           });
         });
-      }, 420);
+      }, 620);
     }
 
     function startGreetingLoop() {
