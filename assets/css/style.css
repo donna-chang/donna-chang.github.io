@@ -1054,6 +1054,18 @@ body {
 }
 
 /* ===== About Page Styles ===== */
+
+/* About：內容與 Header 左右邊界對齊 */
+.about-header.container,
+.about-section.container {
+  max-width: none;
+  margin-left: clamp(20px, 8.2vw, 112px);
+  margin-right: clamp(20px, 8.2vw, 112px);
+  padding-left: 0;
+  padding-right: 0;
+  box-sizing: border-box;
+}
+
 .about-header {
   display: flex;
   flex-wrap: nowrap;
@@ -1088,7 +1100,7 @@ body {
   margin-top: 16px;       /* 段落間距 */
   margin-bottom: 16px;
   font-size: 16px;
-  font-weight: 350;
+  font-weight: 200;
   line-height: 1.8;
   color: #000000;
 }
@@ -1103,8 +1115,8 @@ body {
   content: "";
   position: absolute;
   top: 0;
-  left: clamp(20px, 5vw, 60px); /* 與 container 內縮一致 */
-  right: clamp(20px, 5vw, 60px);
+  left: 0; 
+  right: 0;
   border-top: 1px solid #DBDBDB;
 }
 
@@ -1117,7 +1129,7 @@ body {
 
 .about-section p {
   font-size: 16px;
-  font-weight: 350;
+  font-weight: 200;
   color: #000000;
   line-height: 1.8;
   margin: 0;
