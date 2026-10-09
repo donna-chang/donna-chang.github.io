@@ -1145,7 +1145,7 @@ body {
 
 .about-buttons a {
   /* 使用固定的寬度和高度來取代 padding */
-  width: 200px;
+  width: 180px;
   height: 40px;
   
   display: flex; /* 讓內部文字可以水平與垂直居中 */
