@@ -441,9 +441,37 @@ body {
   }
 }
 
+
 @media (max-width: 767px) {
   .work-card {
     flex-direction: column;
+  }
+
+  /* 讓標題區塊依照可用空間縮放，而不是延伸到卡片右側 */
+  .card-header {
+    position: relative;
+    display: inline-block;
+    width: fit-content;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* 為 Logo 預留水平空間，避免標題文字與 Logo 重疊 */
+  .card-header .card-title {
+    box-sizing: border-box;
+    padding-right: 44px;
+  }
+
+  /* Logo 脫離排版流，不影響上下間距 */
+  .card-header .card-icon {
+    position: absolute;
+    left: auto;
+    right: 0;
+    top: 0;
+    transform: none;
+    width: 36px;
+    height: 36px;
+    object-fit: contain;
   }
 
   .card-image-wrapper {
@@ -456,6 +484,7 @@ body {
     gap: 20px;
   }
 }
+
 
 /* RWD settings for mobile navbar */
 @media (max-width: 768px) {
