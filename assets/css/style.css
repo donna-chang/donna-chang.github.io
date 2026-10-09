@@ -1154,16 +1154,16 @@ body {
 
   border-radius: 60px;
   text-decoration: none;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 400;
   color: #008CFF;
-  background-color: #f6f6f6;
+  background-color: #FFFFFF;
   border: 1px solid #dbdbdb;
   transition: background-color 0.3s ease;
 }
 
 .about-buttons a:hover {
-  background-color: #ffffff;
+  background-color: #f6f6f6;
 }
 
 @media (max-width: 768px) {
