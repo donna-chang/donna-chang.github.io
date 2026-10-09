@@ -429,7 +429,7 @@ body {
 .card-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 45px;
+  gap: 52px;
 }
 
 /* Ant Design-style breakpoints */
