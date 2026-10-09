@@ -272,7 +272,7 @@ body {
 
 .card-header .card-icon {
   position: absolute;
-  left: calc(100% + 18px); /* 與標題的水平距離，可調整 */
+  left: calc(100% + 14px); /* 與標題的水平距離，可調整 */
   top: 50%;
   transform: translateY(-50%);
   width: 50px;
