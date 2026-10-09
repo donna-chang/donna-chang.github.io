@@ -173,22 +173,38 @@ document.addEventListener('DOMContentLoaded', function () {
   const tocTriggerSection = document.getElementById('overview');
   const tocLinks = toc ? toc.querySelectorAll('a') : [];
 
-  // ✅ 改為使用 data-id，過濾有效 section
+  
+  // 使用 data-id，過濾有效 section
   const tocSections = Array.from(tocLinks)
     .map(a => document.getElementById(a.dataset.id))
     .filter(Boolean);
 
   if (toc && tocWrapper && tocTriggerSection && tocSections.length) {
-    // TOC 顯示邏輯：Overview 標題進入畫面上方約 35% 時顯示
+    // Overview 到達觸發位置，且 Banner 下緣離開 TOC 頂部後才顯示
     const updateTocVisibility = () => {
       const triggerTop = tocTriggerSection.getBoundingClientRect().top;
       const revealLine = window.innerHeight * 0.35;
-      tocWrapper.classList.toggle('visible', triggerTop <= revealLine);
+
+      const banner = document.querySelector('.banner');
+      const bannerBottom = banner
+        ? banner.getBoundingClientRect().bottom
+        : Infinity;
+
+      const tocTop = tocWrapper.getBoundingClientRect().top;
+
+      const overviewReached = triggerTop <= revealLine;
+      const bannerCleared = bannerBottom <= tocTop;
+
+      tocWrapper.classList.toggle(
+        'visible',
+        overviewReached && bannerCleared
+      );
     };
 
     updateTocVisibility();
     window.addEventListener('scroll', updateTocVisibility, { passive: true });
     window.addEventListener('resize', updateTocVisibility);
+
 
     // Scroll Spy 高亮功能
     const spy = new IntersectionObserver(entries => {
