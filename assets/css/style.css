@@ -1082,6 +1082,46 @@ body {
   }
 }
 
+
+/* project3 */
+.source-tag {
+  margin-top: 18px;
+}
+
+.source-tag .project-tag {
+  display: inline-block;
+  white-space: normal;
+  line-height: 1.5;
+  max-width: 100%;
+}
+
+/* Side-by-side text and image */
+.side-image-row {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+  gap: 24px;
+  align-items: center;
+}
+
+.side-image-row .project-image {
+  width: 100%;
+  margin: 0;
+}
+
+/* Design Constraints image only */
+.side-image-row .constraint-image {
+  width: 25%;
+  justify-self: center;
+}
+
+/* Mobile layout */
+@media (max-width: 700px) {
+  .side-image-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+
 /* ===== About Page Styles ===== */
 
 /* About：內容與 Header 左右邊界對齊 */
