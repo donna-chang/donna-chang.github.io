@@ -1132,18 +1132,17 @@ body {
   justify-self: center;
 }
 
+/* Project 3 only: Outcome section spacing */
+#outcome > h3.numbered-subtitle:nth-of-type(2),
+#outcome > h3.numbered-subtitle:nth-of-type(3) {
+  margin-top: 42px;
+}
 
 /* Mobile layout */
 @media (max-width: 700px) {
   .side-image-row {
     grid-template-columns: 1fr;
   }
-}
-
-/* Project 3 only: Outcome section spacing */
-#outcome > h3.numbered-subtitle:nth-of-type(2),
-#outcome > h3.numbered-subtitle:nth-of-type(3) {
-  margin-top: 42px;
 }
 
 /* ===== About Page Styles ===== */
