@@ -1135,7 +1135,7 @@ body {
 /* Project 3 only: Outcome section spacing */
 #outcome > h3.numbered-subtitle:nth-of-type(2),
 #outcome > h3.numbered-subtitle:nth-of-type(3) {
-  margin-top: 42px;
+  margin-top: 66px;
 }
 
 /* Mobile layout */
