@@ -1125,6 +1125,14 @@ body {
   justify-self: center;
 }
 
+#outcome .numbered-subtitle + blockquote {
+  margin-top: 0;
+}
+
+#outcome p.content-text + .numbered-subtitle {
+  margin-top: 36px;
+}
+
 /* Mobile layout */
 @media (max-width: 700px) {
   .side-image-row {
