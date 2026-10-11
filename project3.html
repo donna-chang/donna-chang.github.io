@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nycu AR</title>
+  <link rel="icon" href="assets/images/favicon.png" type="image/x-icon" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap" rel="stylesheet" />
+  <script src="assets/js/liquidGL.js" defer></script>
+  <script src="assets/js/script.js" defer></script>
+</head>
+<body class="work-page">
+  <header class="navbar">
+    <div class="navbar-glass" aria-hidden="true"></div>
+    <div class="container nav-inner">
+      <div class="nav-left">
+        <button class="hamburger" id="hamburger" aria-label="Open navigation">&#9776;</button>
+        <a href="index.html"><img src="assets/images/logo.png" alt="Logo" class="logo" /></a>
+      </div>
+      <nav class="nav-links" id="nav-links">
+        <a href="index.html" class="nav-link work">WORK</a>
+        <a href="about.html" class="nav-link about">ABOUT</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="banner">
+    <!-- Add the banner image to assets/images/NycuAR/banner.png -->
+    <img src="assets/images/NycuAR/banner.png" alt="Nycu AR campus navigation experience" class="banner-image" />
+    <div class="banner-overlay">
+      <div class="banner-layout">
+        <div class="banner-content">
+          <div class="banner-header">
+            <h1 class="project-title">Nycu AR</h1>
+            <div class="project-tags" aria-label="Project categories">
+              <span class="project-tag">Augmented Reality</span>
+              <span class="project-tag">Navigation system</span>
+              <span class="project-tag">Location-based service</span>
+            </div>
+            <p class="project-intro">I was responsible for the end-to-end design of the AR application, from user research and design development to usability testing, while also establishing the initial design system for the campus promotion app.</p>
+          </div>
+          <div class="banner-meta">
+            <div class="meta-group team-meta-group">
+              <h3 class="meta-title">TEAM</h3>
+              <ul class="meta-list team-list team-list-horizontal">
+                <li>1 UI UX designer <span class="team-me">(Me)</span></li>
+                <li>1 project manager</li>
+                <li>1 Android developer</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <style>
+    /* This project has no duration or target-market fields; keep all three team members on one horizontal, wrapping row. */
+    .team-meta-group { width: 100%; }
+    .team-list-horizontal { display: flex; flex-direction: row; flex-wrap: wrap; gap: 6px 28px; margin: 0; padding: 0; list-style: none; }
+    .team-list-horizontal li { white-space: nowrap; }
+    .source-tag { margin-top: 18px; }
+    .source-tag .project-tag { display: inline-block; white-space: normal; line-height: 1.5; max-width: 100%; }
+    .side-image-row { display: grid; grid-template-columns: minmax(0, 1fr) minmax(220px, 0.8fr); gap: 24px; align-items: center; }
+    .side-image-row .project-image { width: 100%; margin: 0; }
+    .design-response { margin: 18px 0 28px; }
+    .research-quote { margin: 18px 0; }
+    @media (max-width: 700px) { .side-image-row { grid-template-columns: 1fr; } .team-list-horizontal { gap: 8px 18px; } }
+  </style>
+
+  <div id="toc-wrapper" class="toc-wrapper">
+    <nav id="toc" class="toc" aria-label="Table of contents">
+      <ul>
+        <li><a href="#overview" data-id="overview">Overview</a></li>
+        <li><a href="#background" data-id="background">Background</a></li>
+        <li><a href="#desk-research" data-id="desk-research">Desk research</a></li>
+        <li><a href="#user-research" data-id="user-research">User research</a></li>
+        <li><a href="#key-deliverables" data-id="key-deliverables">Design</a></li>
+        <li><a href="#usability-test" data-id="usability-test">Usability test</a></li>
+        <li><a href="#key-findings" data-id="key-findings">Key findings</a></li>
+        <li><a href="#outcome" data-id="outcome">Outcome</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <section class="project-content container with-toc gv50-project">
+    <div id="overview" class="content-block">
+      <h2 class="content-title">Overview</h2>
+      <p class="content-text">To support the development of a smart campus and promote the university mascot, we designed an AR campus navigation system using the Google Maps API, featuring a virtual mascot to guide users around campus. A total of 38 participants took part in usability testing, and the findings informed design recommendations for future product iterations and related applications.</p>
+    </div>
+
+    <div id="background" class="content-block section-with-divider">
+      <h2 class="section-title">Background</h2>
+      <p class="content-text">Universities are rich in humanistic landscapes. Apart from valuing architectural aesthetics, the campus also boasts diverse natural ecosystems. However, due to the extensive size, exploring and comprehending the beauty of campuses can be challenging.</p>
+      <h3 class="numbered-subtitle">Constraints</h3>
+      <div class="side-image-row">
+        <p class="content-text">The project was constrained by the annual objectives, budget and completion deadline of the Human-Agent Interaction department. The solution was also based on the version provided by the Android developer.</p>
+        <!-- Add the original application screenshot to assets/images/NycuAR/original-version.png -->
+        <img src="assets/images/NycuAR/original-version.png" alt="Original version of the campus navigation application" class="project-image" />
+      </div>
+      <hr class="bottom-line" />
+    </div>
+
+    <div id="desk-research" class="content-block section-with-divider">
+      <h2 class="section-title">Turning Campus Navigation into a More Engaging Experience</h2>
+      <p class="content-text">Campus navigation applications often suffer from <strong>dull and unengaging content</strong>, which can discourage faculty, students, and visitors from using them. To address this issue, some researchers have incorporated game elements into these applications. However, such applications can be used without physically visiting the campus, limiting users’ opportunities to become familiar with the actual campus environment (Wu et al., 2019).</p>
+      <!-- Add the competitor examples to assets/images/NycuAR/competitors.png -->
+      <img src="assets/images/NycuAR/competitors.png" alt="Examples of campus navigation competitors" class="project-image" />
+      <p class="content-text">Our literature review also found that virtual characters representing a region can foster a sense of <strong>local identity</strong> among residents while <strong>sparking visitors’ curiosity</strong>. Similar campus tour experiences have also shown that students feel <strong>proud to be part of their university</strong>. Based on these insights, we hypothesized that featuring the university mascot as a virtual guide in the campus navigation system could encourage greater engagement among faculty, staff, and students.</p>
+      <div class="source-tag" aria-label="Research source">
+        <span class="project-tag">Source: Henrich, K. J., &amp; Prorak, D. (2010). A school mascot walks into the library: tapping school spirit for library instruction videos. Reference services review, 38(4), 663-675</span>
+      </div>
+      <hr class="bottom-line" />
+    </div>
+
+    <div id="user-research" class="content-block section-with-divider">
+      <h2 class="section-title">User Research</h2>
+      <!-- Add the participant profile image to assets/images/NycuAR/participant-profile.png -->
+      <img src="assets/images/NycuAR/participant-profile.png" alt="Participant profile" class="project-image" />
+      <p class="content-text">To get to know the user needs at NYCU, I had in-depth interviews with target users, and utilized affinity diagram and customer journey map (CJM) to analyze the data.</p>
+      <!-- Add the affinity diagram to assets/images/NycuAR/affinity-diagram.png -->
+      <img src="assets/images/NycuAR/affinity-diagram.png" alt="Affinity diagram from user interviews" class="project-image" />
+      <!-- Add the customer journey map to assets/images/NycuAR/customer-journey-map.png -->
+      <img src="assets/images/NycuAR/customer-journey-map.png" alt="Customer journey map" class="project-image" />
+      <hr class="bottom-line" />
+    </div>
+
+    <div id="key-deliverables" class="content-block section-with-divider">
+      <h2 class="section-title">Key Deliverables</h2>
+      <h3 class="numbered-subtitle">1. AR application</h3>
+      <!-- Add the first AR application design image to assets/images/NycuAR/ar-application-01.png -->
+      <img src="assets/images/NycuAR/ar-application-01.png" alt="Nycu AR application design" class="project-image" />
+      <!-- Add the second AR application design image to assets/images/NycuAR/ar-application-02.png -->
+      <img src="assets/images/NycuAR/ar-application-02.png" alt="Nycu AR application interface" class="project-image" />
+
+      <h3 class="numbered-subtitle">2. Multimedia Content</h3>
+      <p class="content-text">In collaboration with Fox Tail Studio, we used AR mascot visuals in speaking poses and had the performer record the scripts prepared by this study. For the content, we followed recommendations from previous research and kept each audio guide to around <strong>one minute</strong> to avoid overwhelming users with too much information or making it difficult to absorb (Din et al., 2016).</p>
+      <!-- Add the Nycu mascot image to assets/images/NycuAR/nycu-mascot.png -->
+      <img src="assets/images/NycuAR/nycu-mascot.png" alt="NYCU mascot visuals used in the AR audio guide" class="project-image" />
+      <!-- Add the studio collaboration image to assets/images/NycuAR/fox-tail-studio.png -->
+      <img src="assets/images/NycuAR/fox-tail-studio.png" alt="Fox Tail Studio collaboration" class="project-image" />
+      <p class="content-text">We developed a PHP web page for management, making it easy to update content and ensuring users have access to accurate, up-to-date campus information.</p>
+      <!-- Add the PHP content-management page screenshot to assets/images/NycuAR/php-management.png -->
+      <img src="assets/images/NycuAR/php-management.png" alt="PHP content management page" class="project-image" />
+      <hr class="bottom-line" />
+    </div>
+
+    <div id="usability-test" class="content-block section-with-divider">
+      <h2 class="section-title">Usability Test</h2>
+      <!-- Add the usability test flow to assets/images/NycuAR/test-flow.png -->
+      <img src="assets/images/NycuAR/test-flow.png" alt="Usability test flow" class="project-image" />
+      <ul class="content-text insight-list">
+        <li>I recruited a total of 38 participants for usability testing. Participants with different levels of campus familiarity were included to understand how familiarity affects campus navigation.</li>
+        <li>The task routes were designed around representative campus landmarks while avoiding straight routes as much as possible.</li>
+        <li>The usability test consisted of five tasks. Participants received the next task only after completing the previous one.</li>
+      </ul>
+      <!-- Add the usability test process image to assets/images/NycuAR/test-process.png -->
+      <img src="assets/images/NycuAR/test-process.png" alt="Usability test process" class="project-image" />
+      <p class="content-text">According to the results of the questionnaires, user experience of Nycu AR was acceptable.</p>
+      <!-- Add the SUS results image to assets/images/NycuAR/sus-results.png -->
+      <img src="assets/images/NycuAR/sus-results.png" alt="System Usability Scale results" class="project-image" />
+      <!-- Add the disorientation results image to assets/images/NycuAR/disorientation-results.png -->
+      <img src="assets/images/NycuAR/disorientation-results.png" alt="Disorientation results" class="project-image" />
+      <hr class="bottom-line" />
+    </div>
+
+    <div id="key-findings" class="content-block section-with-divider">
+      <h2 class="section-title">Key Findings</h2>
+      <h3 class="numbered-subtitle">1. Background noise makes it difficult to hear the audio guide clearly</h3>
+      <div class="side-image-row">
+        <p class="content-text">The campus is windier than other areas due to its terrain. During testing, participants had difficulty hearing the audio guide when the weather was poor and had to hold their phones closer to their ears.</p>
+        <!-- Add the windy-campus image to assets/images/NycuAR/windy-campus.png -->
+        <img src="assets/images/NycuAR/windy-campus.png" alt="Windy conditions on campus during testing" class="project-image" />
+      </div>
+      <div class="design-response">
+        <h4>Design response</h4>
+        <p class="content-text">Adding a prompt encouraging users to wear headphones when using the app.</p>
+      </div>
+
+      <h3 class="numbered-subtitle">2. Lack of information causes navigation confusion</h3>
+      <blockquote class="research-quote">“Bamboo Lake has so many small paths. I had to check which path the arrow was pointing to because there were just too many.”</blockquote>
+      <blockquote class="research-quote">“I didn’t expect the department building entrance to be in such an unusual location. I thought it would be along the main road. ... I could tell it was somewhere nearby, but I wasn’t sure which way to go to find the entrance.”</blockquote>
+      <div class="side-image-row">
+        <p class="content-text">Due to unfamiliarity with the campus and the complexity of its paths, simply showing landmarks on the map can still confuse users, making it difficult for them to find their destinations quickly and easily.</p>
+        <!-- Add the location image to assets/images/NycuAR/location-confusion.png -->
+        <img src="assets/images/NycuAR/location-confusion.png" alt="Campus location and path complexity" class="project-image" />
+      </div>
+      <div class="design-response">
+        <h4>Design response</h4>
+        <p class="content-text">Provide multiple photos of each location for users to reference or incorporate AR guidance to minimize confusion and improve navigation efficiency.</p>
+      </div>
+
+      <h3 class="numbered-subtitle">3. Users are interested in following the guided route to explore</h3>
+      <blockquote class="research-quote">“I wanted to follow the route it gave me. ... I usually just walk wherever feels natural, so I thought the route it suggested might be the fastest.”</blockquote>
+      <blockquote class="research-quote">“I wanted to see if the app could show me a shorter route.”</blockquote>
+      <p class="content-text">We found that users wanted to explore shortcuts and felt disappointed when the suggested routes were not faster.</p>
+      <div class="design-response">
+        <h4>Design response</h4>
+        <p class="content-text">Provide multiple route options, including the pathways, allowing users to choose based on their preferences and helping them save time.</p>
+      </div>
+
+      <h3 class="numbered-subtitle">4. Unclear Location Categories</h3>
+      <blockquote class="research-quote">“The categories don’t seem to be clearly defined. Some are restaurants, while others are sports facilities.”</blockquote>
+      <div class="side-image-row">
+        <p class="content-text">Based on the interviews, some participants said they were unsure which existing category the student cafeteria belonged to when looking for the Second Student Cafeteria.</p>
+        <!-- Add the category interface image to assets/images/NycuAR/location-categories.png -->
+        <img src="assets/images/NycuAR/location-categories.png" alt="Location category interface" class="project-image" />
+      </div>
+      <div class="design-response">
+        <h4>Design response</h4>
+        <p class="content-text">Make restaurants a separate category so users can filter locations more quickly.</p>
+      </div>
+      <hr class="bottom-line" />
+    </div>
+
+    <div id="outcome" class="content-block section-with-divider">
+      <h2 class="section-title">Outcome</h2>
+      <h3 class="numbered-subtitle">Motivation across familiarity levels</h3>
+      <blockquote class="research-quote">“I don’t usually visit the pavilion at Bamboo Lake, so after the tour, I got to know more about it. The same goes for this place (the lab).”</blockquote>
+      <p class="content-text">Regardless of familiarity with the campus, we found that users were interested in completing the full guided tour with NYCU AR because it offered new information and experiences.</p>
+
+      <h3 class="numbered-subtitle">Benefits of the AR guide</h3>
+      <blockquote class="research-quote">“It feels more like I’m exploring NYCU. ... Since it’s something from NYCU, it feels more like I’m stepping into the campus.”</blockquote>
+      <blockquote class="research-quote">“Using the virtual character developed by my own university definitely gives me a stronger sense of identity and familiarity.”</blockquote>
+      <p class="content-text">We found that using the university's mascot as a guide can indeed spark users' interest and strengthen their sense of belonging to the university.</p>
+      <blockquote class="research-quote">“I’m more interested in listening when I see her (mascot) actually speaking. ... Without that, I might just automatically tune out the audio.”</blockquote>
+      <blockquote class="research-quote">“It feels quite welcoming. Campus tours have always been led by senior students, or sometimes they just use plain, impersonal text. Having someone in front of me who is a virtual avatar, not quite human but still human-like, feels really cute.”</blockquote>
+      <p class="content-text">The results also showed that the AR mascot did make the experience more immersive. In the future, increasing interaction with the character could further strengthen users' motivation to use the system and encourage continued use.</p>
+
+      <h3 class="numbered-subtitle">Design System</h3>
+      <p class="content-text">In this project, an initial design system was established for the Human-Agent Interaction project app, improving interface consistency and supporting future iterations.</p>
+    </div>
+  </section>
+
+  <footer class="footer"><p>Crafted with care © Donna Chang 2026</p></footer>
+  <button id="scrollTopBtn" title="Go to top" aria-label="Scroll to top"><img src="assets/images/scroll-up.svg" alt="Scroll to top" /></button>
+</body>
+</html>
