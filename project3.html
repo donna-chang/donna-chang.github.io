@@ -47,6 +47,7 @@
                 <li>1 UI UX Designer <span class="team-me">(Me)</span></li>
                 <li>1 Project Manager</li>
                 <li>1 Android Developer</li>
+              </ul>
             </div>
           </div>
         </div>
@@ -54,17 +55,34 @@
     </div>
   </section>
   <style>
-    /* This project has no duration or target-market fields; keep all three team members on one horizontal, wrapping row. */
-    .team-meta-group { width: 100%; }
-    .team-list-horizontal { display: flex; flex-direction: row; flex-wrap: wrap; gap: 6px 28px; margin: 0; padding: 0; list-style: none; }
-    .team-list-horizontal li { white-space: nowrap; }
-    .source-tag { margin-top: 18px; }
-    .source-tag .project-tag { display: inline-block; white-space: normal; line-height: 1.5; max-width: 100%; }
-    .side-image-row { display: grid; grid-template-columns: minmax(0, 1fr) minmax(220px, 0.8fr); gap: 24px; align-items: center; }
-    .side-image-row .project-image { width: 100%; margin: 0; }
-    .design-response { margin: 18px 0 28px; }
-    .research-quote { margin: 18px 0; }
-    @media (max-width: 700px) { .side-image-row { grid-template-columns: 1fr; } .team-list-horizontal { gap: 8px 18px; } }
+    .source-tag {
+      margin-top: 18px;
+    }
+  
+    .source-tag .project-tag {
+      display: inline-block;
+      white-space: normal;
+      line-height: 1.5;
+      max-width: 100%;
+    }
+  
+    .side-image-row {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(220px, 0.8fr);
+      gap: 24px;
+      align-items: center;
+    }
+  
+    .side-image-row .project-image {
+      width: 100%;
+      margin: 0;
+    }
+  
+    @media (max-width: 700px) {
+      .side-image-row {
+        grid-template-columns: 1fr;
+      }
+    }
   </style>
 
   <div id="toc-wrapper" class="toc-wrapper">
