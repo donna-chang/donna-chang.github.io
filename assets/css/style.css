@@ -1093,6 +1093,12 @@ body {
   white-space: normal;
   line-height: 1.5;
   max-width: 100%;
+
+  /* 移除 tag 外觀 */
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  background: none;
 }
 
 /* Side-by-side text and image */
