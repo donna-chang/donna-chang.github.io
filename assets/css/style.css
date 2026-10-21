@@ -20,12 +20,10 @@ body {
 
 
 .container {
-  width: 100%;
   padding-left: clamp(20px, 5vw, 60px);
   padding-right: clamp(20px, 5vw, 60px);
   max-width: var(--site-content-max-width);
   margin: 0 auto;
-  box-sizing: border-box;
 }
 
 .navbar {
