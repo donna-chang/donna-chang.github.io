@@ -221,6 +221,16 @@ body {
   margin-inline: auto;
 }
 
+/* Laptop and smaller desktop: align home content with the navbar edges.
+   Very wide displays use the centred maximum width above. */
+@media (min-width: 769px) and (max-width: 1799px) {
+  .work-section.container {
+    max-width: none;
+    margin-inline: clamp(20px, 8.2vw, 112px);
+    padding-inline: 0;
+  }
+}
+
 .work-card {
   display: flex;
   flex-direction: row;
@@ -1153,6 +1163,16 @@ body {
 .about-section.container {
   max-width: var(--site-content-max-width);
   margin-inline: auto;
+}
+
+/* Keep About aligned with the navbar on laptop-size viewports. */
+@media (min-width: 769px) and (max-width: 1799px) {
+  .about-header.container,
+  .about-section.container {
+    max-width: none;
+    margin-inline: clamp(20px, 8.2vw, 112px);
+    padding-inline: 0;
+  }
 }
 
 .about-header {
