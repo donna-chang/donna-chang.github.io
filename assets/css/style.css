@@ -1,5 +1,10 @@
 /* Global */
 
+:root {
+  /* All page-level content uses this shared, centred reading width. */
+  --site-content-max-width: 1440px;
+}
+
 body {
   font-family: 'Inter', sans-serif;
   margin: 0;
@@ -15,10 +20,12 @@ body {
 
 
 .container {
+  width: 100%;
   padding-left: clamp(20px, 5vw, 60px);
   padding-right: clamp(20px, 5vw, 60px);
-  max-width: 1440px;
+  max-width: var(--site-content-max-width);
   margin: 0 auto;
+  box-sizing: border-box;
 }
 
 .navbar {
@@ -209,9 +216,9 @@ body {
 }
 
 .work-section.container {
-  max-width: none;
-  margin-inline: clamp(20px, 8.2vw, 112px);
-  padding-inline: 0;
+  /* Keep the home cards aligned with the shared centred page container. */
+  max-width: var(--site-content-max-width);
+  margin-inline: auto;
 }
 
 .work-card {
@@ -1141,15 +1148,11 @@ body {
 
 /* ===== About Page Styles ===== */
 
-/* About：內容與 Header 左右邊界對齊 */
+/* About：與作品內頁共用置中的最大內容寬度與側邊留白 */
 .about-header.container,
 .about-section.container {
-  max-width: none;
-  margin-left: clamp(20px, 8.2vw, 112px);
-  margin-right: clamp(20px, 8.2vw, 112px);
-  padding-left: 0;
-  padding-right: 0;
-  box-sizing: border-box;
+  max-width: var(--site-content-max-width);
+  margin-inline: auto;
 }
 
 .about-header {
