@@ -237,7 +237,7 @@ body {
   position: relative;
   width: 100%;
   min-height: 280px;
-  background-color: #F6F6F6;
+  background-color: rgba(255, 255, 255, 0.4);
   border-radius: 10px;
   border: 1px solid #FFFFFF;
   text-decoration: none;
@@ -252,7 +252,7 @@ body {
   content: '';
   position: absolute;
   inset: 0;
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.8);
   opacity: 0;
   transition: opacity 0.3s ease;
   pointer-events: none;
