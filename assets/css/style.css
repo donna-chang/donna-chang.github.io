@@ -398,6 +398,13 @@ body {
   display: block;
 }
 
+/* 直式圖片（如 Smart Remote）縮小，避免撐高卡片 */
+.card-image--compact {
+  max-width: 80%;
+  max-height: 360px;
+  width: auto;
+}
+
 /* Footer */
 .footer {
   text-align: center;
