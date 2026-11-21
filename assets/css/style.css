@@ -674,6 +674,12 @@ body {
   color: #929292;
 }
 
+/* 成員少的專案：排成一行，間距沿用 .team-list 的 column-gap，空間不夠時自動換行 */
+.team-list--inline {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 @media (max-width: 1024px) {
   .banner-content {
     gap: 28px;
