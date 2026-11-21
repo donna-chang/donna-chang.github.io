@@ -675,35 +675,21 @@ body {
   font-size: 0.875em; /* 職位文字 16px → 14px */
 }
 
-/*
- * 成員少的專案（只有 TEAM 一組）：成員排成一行，
- * 每個職位的起點對齊 Smart Remote 的四欄（TEAM 左欄 / TEAM 右欄 / MARKETS / DURATION）。
- * 數字來自 .banner-meta（1.55fr 1fr 0.55fr、gap 42px）和 .team-list（column-gap 36px）。
- */
+/* 成員少的專案（只有 TEAM 一組）：成員排成一行，用「·」分隔，空間不夠時自動換行 */
 .banner-meta .meta-group:has(> .team-list--inline) {
   grid-column: 1 / -1;
 }
 
 .team-list--inline {
-  --meta-space: calc(100% - 84px);                       /* 扣掉 banner-meta 兩個 42px gap */
-  --team-col: calc((var(--meta-space) / 2 - 36px) / 2);  /* TEAM 區（1.55 / 3.1 = 一半）再分兩欄 */
-
-  grid-template-columns:
-    calc(var(--team-col) - 6px)   /* 36px 間距改用 42px，左欄少 6px 補回來 */
-    var(--team-col)
-    calc(var(--meta-space) / 3.1)
-    calc(var(--meta-space) * 0.55 / 3.1);
-  grid-template-rows: none;
-  grid-auto-flow: row;
-  column-gap: 42px;
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 0;
 }
 
-/* 平板：跟其他專案一樣兩欄 */
-@media (max-width: 1024px) {
-  .team-list--inline {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    column-gap: 36px;
-  }
+.team-list--inline li + li::before {
+  content: "·";
+  margin-inline: 12px;
+  color: #B6B6B6;
 }
 
 @media (max-width: 1024px) {
