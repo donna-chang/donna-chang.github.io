@@ -648,7 +648,7 @@ body {
 .meta-title {
   font-size: 14px;
   font-weight: 600;
-  color: #7D7D7D;
+  color: #B6B6B6;
   margin: 0;
 }
 
@@ -671,7 +671,7 @@ body {
 }
 
 .team-me {
-  color: #929292;
+  color: #B6B6B6;
 }
 
 /* 成員少的專案：排成一行，間距沿用 .team-list 的 column-gap，空間不夠時自動換行 */
