@@ -633,6 +633,22 @@ body {
   margin: 0;
 }
 
+/* 尚未完成的專案狀態：前面加藍色圓點（例如 CASE STUDY COMING SOON） */
+.project-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.project-status::before {
+  content: "";
+  flex-shrink: 0;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #008CFF;
+}
+
 .meta-group {
   display: flex;
   flex-direction: column;
