@@ -67,10 +67,10 @@ body {
 
   border-radius: 30px;
 
-  /* WebGL 不支援時的 fallback */
-  background: rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
+  /* 霧面玻璃：半透明白 + 背景模糊 */
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(16px) saturate(160%);
+  -webkit-backdrop-filter: blur(16px) saturate(160%);
 
   /* 絕對不能擋 WORK / ABOUT / hamburger */
   pointer-events: none;
