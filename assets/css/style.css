@@ -689,7 +689,7 @@ body {
 .team-list--inline li + li::before {
   content: "·";
   margin-inline: 12px;
-  color: #B6B6B6;
+  color: #595959;
 }
 
 @media (max-width: 1024px) {
