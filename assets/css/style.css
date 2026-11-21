@@ -125,11 +125,6 @@ body {
   transition: all 0.3s ease;
 }
 
-.navbar.on-dark .hamburger::before,
-.navbar.on-dark .hamburger::after {
-  background-color: #DCDCDC;
-}
-
 .hamburger::before {
   top: 4px;
 }
@@ -170,11 +165,6 @@ body {
 .work-page .nav-link.about:visited {
   color: #000;
   font-weight: 300;
-}
-
-.work-page .navbar.on-dark .nav-link.about,
-.work-page .navbar.on-dark .nav-link.about:visited {
-  color: #DCDCDC;
 }
 
 .about-page .nav-link.work,
@@ -561,50 +551,19 @@ body {
 
 /* Project 1 */
 
-/* ✅ 讓 banner 圖片保留原始高度、RWD 裁左右 */
-
+/* Banner：純色背景，高度隨內容 */
 .banner {
-  position: relative;
-  width: 100%;
-  height: 560px;        /* 固定高度，和圖片原始高度一致 */
-  overflow: hidden;
+  --banner-bg: #EBEBEB;
+
+  background-color: var(--banner-bg);
+  /* Header top position + 60px header height + 60px breathing room */
+  padding: calc(clamp(8px, 1.4vw, 18px) + 120px) 0 64px;
 }
 
-/* 圖片強制填滿容器，裁切左右 */
-.banner-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  display: block;
-  max-width: none;
-}
-
-/* Tablet and mobile: let the banner grow with stacked metadata. */
 @media (max-width: 1024px) {
   .banner {
-    height: auto;
-    min-height: 719px;
-    padding: calc(clamp(8px, 1.4vw, 18px) + 120px) 0 48px;
-    box-sizing: border-box;
+    padding-bottom: 48px;
   }
-
-  .banner-image {
-    position: absolute;
-    inset: 0;
-  }
-}
-
-
-
-.banner-overlay {
-  position: absolute;
-  z-index: 1;
-  /* Header top position + 60px header height + 40px breathing room */
-  top: calc(clamp(8px, 1.4vw, 18px) + 120px);
-  bottom: auto;
-  left: 0;
-  right: 0;
 }
 
 /* Matches the project-content container and its table-of-contents offset. */
@@ -645,7 +604,7 @@ body {
   font-size: 28px;
   font-weight: 700;
   line-height: 1.4;
-  color: #fff;
+  color: #000;
   margin: 0;
 }
 
@@ -656,9 +615,9 @@ body {
 }
 
 .project-tag {
-  border: 0.6px solid #595959;
+  border: 0.6px solid #D2D2D2;
   border-radius: 999px;
-  color: #929292;
+  color: #7D7D7D;
   font-size: 12px;
   font-weight: 300;
   line-height: 1.8;
@@ -667,7 +626,7 @@ body {
 
 .project-intro {
   max-width: 900px;
-  color: #DCDCDC;
+  color: #595959;
   font-size: 16px;
   font-weight: 300;
   line-height: 1.8;
@@ -694,7 +653,7 @@ body {
 }
 
 .meta-list {
-  color: #DCDCDC;
+  color: #595959;
   font-size: 16px;
   font-weight: 300;
   line-height: 1.8;
@@ -712,18 +671,10 @@ body {
 }
 
 .team-me {
-  color: #595959;
+  color: #929292;
 }
 
 @media (max-width: 1024px) {
-  .banner-overlay {
-    position: relative;
-    top: auto;
-    right: auto;
-    bottom: auto;
-    left: auto;
-  }
-
   .banner-content {
     gap: 28px;
   }
