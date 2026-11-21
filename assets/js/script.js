@@ -84,28 +84,6 @@ document.addEventListener('DOMContentLoaded', function () {
     reducedMotion.addEventListener?.('change', startGreetingLoop);
   }
 
-  // === Liquid Glass Navbar ===
-  if (typeof liquidGL === 'function') {
-    liquidGL({
-      snapshot: "body",
-      target: ".navbar-glass",
-    
-      resolution: 1.5,
-      refraction: 0.045,
-      aberration: 0.018,
-      bevelDepth: 0.10,
-      bevelWidth: 0.18,
-      frost: 1.1,
-    
-      shadow: false,
-      specular: false,
-    
-      reveal: "none",
-      tilt: false,
-      magnify: 1
-    });
-  }
-
   // === 漢堡選單 ===
   const hamburger = document.getElementById('hamburger');
   const navLinks = document.getElementById('nav-links');
