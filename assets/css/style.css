@@ -1358,7 +1358,7 @@ body {
   width: 100%;       /* 填滿 container 寬度 */
   display: flex;     /* 方便置中圖片 */
   justify-content: center;
-  margin-bottom: 16px; 
+  margin-bottom: 32px;
 }
 
 .community-gallery img {
