@@ -75,7 +75,8 @@ body {
   /* 絕對不能擋 WORK / ABOUT / hamburger */
   pointer-events: none;
 
-  z-index: 998;
+  /* 它在 .navbar 裡面，用 -1 放到 logo / 連結的後面 */
+  z-index: -1;
 }
 
 .nav-inner {
