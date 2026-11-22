@@ -586,13 +586,13 @@ body {
   --banner-bg: #EBEBEB;
 
   background-color: var(--banner-bg);
-  /* Header top position + 60px header height + 68px breathing room */
-  padding: calc(clamp(8px, 1.4vw, 18px) + 60px + 68px) 0 72px;
+  /* Header top position + 60px header height + 84px breathing room */
+  padding: calc(clamp(8px, 1.4vw, 18px) + 60px + 84px) 0 88px;
 }
 
 @media (max-width: 1024px) {
   .banner {
-    padding-bottom: 54px;
+    padding-bottom: 66px;
   }
 }
 
@@ -750,8 +750,8 @@ body {
   }
 
   .banner {
-    /* Header top position + 54px header height + 36px breathing room */
-    padding-top: calc(clamp(8px, 1.4vw, 18px) + 54px + 36px);
+    /* Header top position + 54px header height + 44px breathing room */
+    padding-top: calc(clamp(8px, 1.4vw, 18px) + 54px + 44px);
   }
 
   .banner-content {
