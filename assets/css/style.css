@@ -1004,6 +1004,11 @@ body {
   margin-bottom: calc(var(--section-gap) / 2);
 }
 
+/* 內文頂部離 banner 的距離 = 段落到灰線的距離（同一個變數，改一處兩邊一起變） */
+.gv50-project.project-content.container {
+  margin-top: calc(var(--section-gap) / 2);
+}
+
 .gv50-project .content-block:first-child {
   margin-bottom: 38px;
 }
