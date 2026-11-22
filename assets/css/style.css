@@ -903,26 +903,41 @@ body {
   margin-right: 0;
 }
 
-/* 2. 大綱快捷（#toc）改用「-」取代圓點 */
+/* 2. 大綱快捷（#toc）：左側一條細線，目前段落的那一段亮藍色 */
 #toc ul {
+  --toc-rail-color: #DBDBDB;
+  --toc-active-color: #008CFF;
+
   list-style: none;
   padding: 0;
   margin: 0;
+  border-left: 1px solid var(--toc-rail-color);
 }
+
 #toc li {
   margin-bottom: 8px;
 }
 
+#toc li:last-child {
+  margin-bottom: 0;  /* 細線剛好停在最後一項 */
+}
 
-#toc li::before {
-  content: "-";
-  display: inline-block;
-  width: 1em;
-  margin-right: 5px;
-  color: rgba(0,0,0,0.4);
-  font-weight: 300;    /* 變細 */
-  font-size: 18px;     /* 可調整大小，看起來更細 */
-  line-height: 1;      /* 避免垂直間距多 */
+#toc a {
+  position: relative;
+  display: block;
+  padding-left: 16px;
+  line-height: 1.6;
+}
+
+/* 目前段落：蓋在細線上的藍色短線 */
+#toc a.active::before {
+  content: "";
+  position: absolute;
+  left: -1.5px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background-color: var(--toc-active-color);
 }
 
 /* 🔽 新增：在手機畫面時隱藏 TOC 且取消 margin-left */
