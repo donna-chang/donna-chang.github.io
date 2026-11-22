@@ -10,7 +10,7 @@
   /* 框的左右邊距（% 依使用處的容器寬度計算） */
   --page-inset: max(var(--page-gutter), calc((100% - var(--page-max)) / 2));
   /* 框內左右內距：logo、索引、banner 標題都從這條線開始 */
-  --frame-pad: 32px;
+  --frame-pad: 44px;
 }
 
 @media (max-width: 768px) {
@@ -29,7 +29,7 @@ body {
 
 .work-page {
   --case-study-column-width: 900px;
-  --case-study-toc-offset: 180px;
+  --case-study-toc-offset: 168px; /* 索引起點到內文的距離；搭配 --frame-pad 調整 */
 }
 
 
