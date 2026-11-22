@@ -200,10 +200,18 @@ body {
   text-align: center;
 }
 
-/* 首頁 Intro：限制行長並置中。大螢幕最寬 800px，維持跟筆電一樣兩行左右的比例 */
-@media (min-width: 769px) {
+/* 首頁 Intro 專用：僅在筆電／一般桌機依視窗比例限制行長。 */
+@media (min-width: 769px) and (max-width: 1799px) {
   .work-page .homepage-intro-content {
-    width: min(100%, 62vw, 800px);
+    width: min(100%, 62vw);
+    margin-inline: auto;
+  }
+}
+
+/* 大螢幕：不再拉滿，固定最寬 960px，維持兩行左右 */
+@media (min-width: 1800px) {
+  .work-page .homepage-intro-content {
+    width: min(100%, 960px);
     margin-inline: auto;
   }
 }
