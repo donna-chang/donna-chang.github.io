@@ -586,13 +586,13 @@ body {
   --banner-bg: #EBEBEB;
 
   background-color: var(--banner-bg);
-  /* Header top position + 60px header height + 60px breathing room */
-  padding: calc(clamp(8px, 1.4vw, 18px) + 120px) 0 64px;
+  /* Header top position + 60px header height + 68px breathing room */
+  padding: calc(clamp(8px, 1.4vw, 18px) + 60px + 68px) 0 72px;
 }
 
 @media (max-width: 1024px) {
   .banner {
-    padding-bottom: 48px;
+    padding-bottom: 54px;
   }
 }
 
@@ -750,7 +750,8 @@ body {
   }
 
   .banner {
-    padding-top: calc(clamp(8px, 1.4vw, 18px) + 86px);
+    /* Header top position + 54px header height + 36px breathing room */
+    padding-top: calc(clamp(8px, 1.4vw, 18px) + 54px + 36px);
   }
 
   .banner-content {
