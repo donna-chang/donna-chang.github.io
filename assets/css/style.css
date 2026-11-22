@@ -864,14 +864,13 @@ body {
   transition-delay: 0s;
 }
 
-/* TOC 左邊跟 header 的 logo 對齊（同一個框 + 同一個內距） */
+/* TOC 左邊跟 header 膠囊的最左邊對齊 */
 .toc {
   pointer-events: auto;
   width: fit-content;  /* 只佔文字寬度，不擋住旁邊內文的點擊 */
 
   font-size: 14px;
   margin-left: var(--page-inset);
-  padding-left: var(--frame-pad);
   box-sizing: border-box;
 }
 
