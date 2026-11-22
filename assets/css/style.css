@@ -29,7 +29,9 @@ body {
 
 .work-page {
   --case-study-column-width: 900px;
-  --case-study-toc-offset: 168px; /* 索引起點到內文的距離；搭配 --frame-pad 調整 */
+  --case-study-toc-offset: 168px; /* 內文左邊最少要離索引起點這麼遠 */
+  /* 內文欄寬：最寬 900px，空間不夠時縮小，但一定留出索引的位置 */
+  --case-study-content-width: min(var(--case-study-column-width), 100% - var(--case-study-toc-offset));
 }
 
 
@@ -589,12 +591,13 @@ body {
   box-sizing: border-box;
 }
 
+/* Banner 文字跟內文同一欄：靠框的右邊 */
 .banner-content {
   display: flex;
   flex-direction: column;
   gap: 42px;
-  max-width: var(--case-study-column-width);
-  margin-left: var(--case-study-toc-offset);
+  width: var(--case-study-content-width);
+  margin-left: auto;
 }
 
 
@@ -739,6 +742,7 @@ body {
   }
 
   .banner-content {
+    width: auto;
     margin-left: 0;
   }
 
@@ -889,10 +893,13 @@ body {
   font-weight: 400;
 }
 
-/* 1. 所有主要內容（包含 Overview 與 Impact）統一往右推 */
-.project-content.with-toc > .content-block {
-  margin-left: var(--case-study-toc-offset);
-  max-width: var(--case-study-column-width);
+/* 1. 所有主要內容（包含 Overview 與 Impact）靠框的右邊，左邊留給索引 */
+.project-content.with-toc > .content-block,
+.project-content.with-toc > .bottom-line {
+  width: var(--case-study-content-width);
+  max-width: none;
+  margin-left: auto;
+  margin-right: 0;
 }
 
 /* 2. 大綱快捷（#toc）改用「-」取代圓點 */
@@ -923,8 +930,11 @@ body {
     display: none !important;  /* 強制隱藏 TOC */
   }
 
-  .project-content.with-toc > .content-block {
-    margin-left: 0 !important; /* 回復內文原位 */
+  /* 手機沒有索引：內文佔滿寬度 */
+  .project-content.with-toc > .content-block,
+  .project-content.with-toc > .bottom-line {
+    width: auto;
+    margin-left: 0;
   }
 }
 
