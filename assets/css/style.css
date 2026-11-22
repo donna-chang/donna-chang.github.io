@@ -32,6 +32,8 @@ body {
   --case-study-toc-offset: 168px; /* 內文左邊最少要離索引起點這麼遠 */
   /* 內文欄寬：最寬 900px，空間不夠時縮小，但一定留出索引的位置 */
   --case-study-content-width: min(var(--case-study-column-width), 100% - var(--case-study-toc-offset));
+  /* 閱讀欄左邊：在框裡置中，但至少讓出索引的位置。banner 和內文共用，永遠對齊 */
+  --case-study-content-left: max(var(--case-study-toc-offset), (100% - var(--case-study-content-width)) / 2);
 }
 
 
@@ -591,13 +593,13 @@ body {
   box-sizing: border-box;
 }
 
-/* Banner 內容區塊：在框裡水平置中（文字本身維持靠左排列） */
+/* Banner 內容跟內文同一個閱讀欄（見 --case-study-content-left） */
 .banner-content {
   display: flex;
   flex-direction: column;
   gap: 42px;
-  width: min(var(--case-study-column-width), 100%);
-  margin-inline: auto;
+  width: var(--case-study-content-width);
+  margin-left: var(--case-study-content-left);
 }
 
 
@@ -743,7 +745,7 @@ body {
 
   .banner-content {
     width: auto;
-    margin-inline: 0;
+    margin-left: 0;
   }
 
   /* 手機維持原本貼近螢幕邊緣的留白 */
@@ -893,12 +895,12 @@ body {
   font-weight: 400;
 }
 
-/* 1. 所有主要內容（包含 Overview 與 Impact）靠框的右邊，左邊留給索引 */
+/* 1. 所有主要內容（包含 Overview 與 Impact）放在置中的閱讀欄，左邊留給索引 */
 .project-content.with-toc > .content-block,
 .project-content.with-toc > .bottom-line {
   width: var(--case-study-content-width);
   max-width: none;
-  margin-left: auto;
+  margin-left: var(--case-study-content-left);
   margin-right: 0;
 }
 
