@@ -1,8 +1,22 @@
 /* Global */
 
 :root {
-  /* All page-level content uses this shared, centred reading width. */
-  --site-content-max-width: 1440px;
+  /*
+   * 版面框架：header 膠囊、banner、索引、內文、首頁卡片、About 都對齊同一個框。
+   * 大螢幕時框寬最多 --page-max 並置中；較窄時左右留 --page-gutter。
+   */
+  --page-max: 1440px;
+  --page-gutter: clamp(20px, 8.2vw, 112px);
+  /* 框的左右邊距（% 依使用處的容器寬度計算） */
+  --page-inset: max(var(--page-gutter), calc((100% - var(--page-max)) / 2));
+  /* 框內左右內距：logo、索引、banner 標題都從這條線開始 */
+  --frame-pad: 32px;
+}
+
+@media (max-width: 768px) {
+  :root {
+    --frame-pad: 20px;
+  }
 }
 
 body {
@@ -22,7 +36,7 @@ body {
 .container {
   padding-left: clamp(20px, 5vw, 60px);
   padding-right: clamp(20px, 5vw, 60px);
-  max-width: var(--site-content-max-width);
+  max-width: var(--page-max);
   margin: 0 auto;
 }
 
@@ -30,8 +44,8 @@ body {
   position: fixed;
 
   top: clamp(8px, 1.4vw, 18px);
-  left: clamp(20px, 8.2vw, 112px);
-  right: clamp(20px, 8.2vw, 112px);
+  left: var(--page-inset);
+  right: var(--page-inset);
   width: auto;
 
   height: 60px;
@@ -56,16 +70,11 @@ body {
 }
 
 .navbar-glass {
-  position: fixed;
+  /* 直接填滿 .navbar，位置和高度都跟著 navbar */
+  position: absolute;
+  inset: 0;
 
-  /* 完全跟 navbar 疊在相同位置 */
-  top: clamp(8px, 1.4vw, 18px);
-  left: clamp(20px, 8.2vw, 112px);
-  right: clamp(20px, 8.2vw, 112px);
-  width: auto;
-  height: 60px;
-
-  border-radius: 30px;
+  border-radius: inherit;
 
   /* 霧面玻璃：半透明白 + 背景模糊 */
   background: rgba(255, 255, 255, 0.15);
@@ -84,6 +93,14 @@ body {
   justify-content: space-between;
   align-items: center;
   width: 100%;
+}
+
+/* logo 貼膠囊左邊、連結貼右邊，固定內距 */
+.navbar .nav-inner.container {
+  max-width: none;
+  margin: 0;
+  padding-inline: var(--frame-pad);
+  box-sizing: border-box;
 }
 
 .nav-left {
@@ -206,16 +223,15 @@ body {
 
 .work-section.container {
   /* Keep the home cards aligned with the shared centred page container. */
-  max-width: var(--site-content-max-width);
+  max-width: var(--page-max);
   margin-inline: auto;
 }
 
-/* Laptop and smaller desktop: align home content with the navbar edges.
-   Very wide displays use the centred maximum width above. */
-@media (min-width: 769px) and (max-width: 1799px) {
+/* 桌機以上：卡片左右邊緣對齊 header 膠囊 */
+@media (min-width: 769px) {
   .work-section.container {
     max-width: none;
-    margin-inline: clamp(20px, 8.2vw, 112px);
+    margin-inline: var(--page-inset);
     padding-inline: 0;
   }
 }
@@ -566,10 +582,10 @@ body {
   }
 }
 
-/* Matches the project-content container and its table-of-contents offset. */
+/* 跟 .project-content 同一個框，標題才會和內文對齊 */
 .banner-layout {
-  width: 100%;
-  padding-inline: clamp(20px, 5vw, 60px);
+  margin-inline: var(--page-inset);
+  padding-inline: var(--frame-pad);
   box-sizing: border-box;
 }
 
@@ -581,13 +597,7 @@ body {
   margin-left: var(--case-study-toc-offset);
 }
 
-@media (min-width: 1200px) {
-  .banner-layout {
-    width: min(100%, 1620px);
-    margin-inline: auto;
-    padding-inline: 90px;
-  }
-}
+
 
 
 
@@ -720,8 +730,7 @@ body {
 }
 
 @media (max-width: 768px) {
-  .navbar,
-  .navbar-glass {
+  .navbar {
     height: 54px;
   }
 
@@ -733,6 +742,12 @@ body {
     margin-left: 0;
   }
 
+  /* 手機維持原本貼近螢幕邊緣的留白 */
+  .banner-layout {
+    margin-inline: 0;
+    padding-inline: clamp(20px, 5vw, 60px);
+  }
+
   .team-list {
     grid-template-columns: 1fr;
     grid-template-rows: none;
@@ -740,19 +755,20 @@ body {
   }
 }
 
-/* Main content starts 55px after banner */
-.project-content {
+/* Main content starts 55px after banner；跟 header 膠囊同一個框 */
+.project-content.container {
+  max-width: none;
   margin-top: 55px;
-  padding-left: clamp(20px, 5vw, 60px);
-  padding-right: clamp(20px, 5vw, 60px);
+  margin-inline: var(--page-inset);
+  padding-inline: var(--frame-pad);
   box-sizing: border-box;
 }
 
-/* 桌機加額外內推 */
-@media (min-width: 1200px) {
-  .project-content {
-    padding-left: calc(clamp(20px, 5vw, 60px) + 30px);
-    padding-right: calc(clamp(20px, 5vw, 60px) + 30px);
+/* 手機維持原本貼近螢幕邊緣的留白 */
+@media (max-width: 768px) {
+  .project-content.container {
+    margin-inline: 0;
+    padding-inline: clamp(20px, 5vw, 60px);
   }
 }
 
@@ -827,7 +843,6 @@ body {
   left: 0;
   right: 0;
   z-index: 1001;
-  justify-content: center;
   pointer-events: none;
   opacity: 0;
   visibility: hidden;
@@ -843,20 +858,15 @@ body {
   transition-delay: 0s;
 }
 
-/* ✅ TOC 本體靠 container 左對齊 */
+/* TOC 左邊跟 header 的 logo 對齊（同一個框 + 同一個內距） */
 .toc {
   pointer-events: auto;
-  width: 240px;
+  width: fit-content;  /* 只佔文字寬度，不擋住旁邊內文的點擊 */
 
   font-size: 14px;
-  padding-left: calc(clamp(20px, 5vw, 60px) + 30px);
+  margin-left: var(--page-inset);
+  padding-left: var(--frame-pad);
   box-sizing: border-box;
-
-  max-width: 1440px;
-  width: 100%;         /* ✅ 填滿 container 區域，讓 padding-left 生效 */
-
-  margin-left: auto;
-  margin-right: auto;
 }
 
 
@@ -1152,16 +1162,16 @@ body {
 /* About：與作品內頁共用置中的最大內容寬度與側邊留白 */
 .about-header.container,
 .about-section.container {
-  max-width: var(--site-content-max-width);
+  max-width: var(--page-max);
   margin-inline: auto;
 }
 
-/* Keep About aligned with the navbar on laptop-size viewports. */
-@media (min-width: 769px) and (max-width: 1799px) {
+/* 桌機以上：About 內容左右邊緣對齊 header 膠囊 */
+@media (min-width: 769px) {
   .about-header.container,
   .about-section.container {
     max-width: none;
-    margin-inline: clamp(20px, 8.2vw, 112px);
+    margin-inline: var(--page-inset);
     padding-inline: 0;
   }
 }
