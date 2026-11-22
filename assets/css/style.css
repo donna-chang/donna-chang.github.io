@@ -591,13 +591,13 @@ body {
   box-sizing: border-box;
 }
 
-/* Banner 文字跟內文同一欄：靠框的右邊 */
+/* Banner 內容區塊：在框裡水平置中（文字本身維持靠左排列） */
 .banner-content {
   display: flex;
   flex-direction: column;
   gap: 42px;
-  width: var(--case-study-content-width);
-  margin-left: auto;
+  width: min(var(--case-study-column-width), 100%);
+  margin-inline: auto;
 }
 
 
@@ -743,7 +743,7 @@ body {
 
   .banner-content {
     width: auto;
-    margin-left: 0;
+    margin-inline: 0;
   }
 
   /* 手機維持原本貼近螢幕邊緣的留白 */
