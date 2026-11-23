@@ -658,6 +658,18 @@ body {
   margin: 0;
 }
 
+/* Banner 影片：放在專案介紹下方，寬度跟閱讀欄一致，自動循環播放 */
+.banner-video {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  margin-top: 12px; /* 加上 .banner-header 的 18px gap，和段落距離 30px */
+  border-radius: 10px;
+  background-color: #000;
+}
+
 /* 尚未完成的專案狀態：前面加藍色圓點（例如 CASE STUDY COMING SOON） */
 .project-status {
   display: inline-flex;
