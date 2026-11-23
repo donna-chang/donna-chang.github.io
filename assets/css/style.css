@@ -658,16 +658,31 @@ body {
   margin: 0;
 }
 
-/* Banner 影片：放在專案介紹下方，寬度跟閱讀欄一致，自動循環播放 */
+/* Banner 影片：和 header 膠囊同寬（左右對齊 --page-inset），放在專案介紹下方，自動循環播放 */
 .banner-video {
   display: block;
-  width: 100%;
+  /* .banner-layout 左右有 --frame-pad 內距，用負邊距抵銷，邊緣就和 header 對齊 */
+  width: calc(100% + 2 * var(--frame-pad));
+  margin: 30px calc(-1 * var(--frame-pad)) 42px; /* 上：和介紹段落的距離；下：和 TEAM 的距離（= .banner-content 的 gap） */
   height: auto;
   aspect-ratio: 16 / 9;
   object-fit: cover;
-  margin-top: 12px; /* 加上 .banner-header 的 18px gap，和段落距離 30px */
   border-radius: 10px;
   background-color: #000;
+}
+
+@media (max-width: 1024px) {
+  .banner-video {
+    margin-bottom: 28px;
+  }
+}
+
+@media (max-width: 768px) {
+  /* 手機的 .banner-layout 沒有外距、內距是 clamp(20px, 5vw, 60px)，改用 header 的 --page-gutter 對齊 */
+  .banner-video {
+    width: calc(100% - 2 * (var(--page-gutter) - clamp(20px, 5vw, 60px)));
+    margin-inline: calc(var(--page-gutter) - clamp(20px, 5vw, 60px));
+  }
 }
 
 /* 尚未完成的專案狀態：前面加藍色圓點（例如 CASE STUDY COMING SOON） */
