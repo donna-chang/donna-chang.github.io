@@ -1385,64 +1385,13 @@ body {
   width: 100%;
 }
 
-/* ---------- Poster photo (hover 斜貼照片) ---------- */
-.poster-photo {
-  --poster-rotate: -10deg;   /* 傾斜角度 */
-  --poster-width: 60%;       /* 海報相對主照片的寬度 */
-  position: relative;
-}
-
-.poster-photo__main {
+.about-photo img {
   display: block;
   width: 100%;
   height: auto;
   border-radius: 20px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
   object-fit: cover;
-}
-
-.poster-photo__poster {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: var(--poster-width);
-  height: auto;
-  border: 4px solid #fff;
-  border-radius: 4px;
-  box-shadow: 0 12px 28px rgba(0,0,0,0.25);
-  transform: translate(-50%, -50%) rotate(var(--poster-rotate));
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-}
-
-/* 只在有滑鼠的裝置啟用；手機/平板不顯示 */
-@media (hover: hover) and (pointer: fine) {
-  .poster-photo {
-    cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'><text x='50%' y='50%' font-size='32' text-anchor='middle' dominant-baseline='central'>💃</text></svg>") 20 20, pointer;
-  }
-
-  /* 滑入：啪一下貼上；滑出：沒有 transition，直接消失 */
-  .poster-photo:hover .poster-photo__poster {
-    opacity: 1;
-    visibility: visible;
-    animation: poster-stick 0.25s cubic-bezier(0.2, 0.8, 0.3, 1.3);
-  }
-}
-
-@keyframes poster-stick {
-  from {
-    opacity: 0;
-    transform: translate(-50%, -50%) rotate(var(--poster-rotate)) scale(1.15);
-  }
-  to {
-    opacity: 1;
-    transform: translate(-50%, -50%) rotate(var(--poster-rotate)) scale(1);
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .poster-photo:hover .poster-photo__poster { animation: none; }
 }
 
 .intro-title {
